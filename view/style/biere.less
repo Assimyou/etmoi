@@ -1,0 +1,451 @@
+/***********************************
+             _, . '__ . 
+          '_(_0o),(__)o().
+        ,o(__),_)o(_)O,(__)o
+      o(_,-o(_ )(),(__(_)oO)_
+      .O(__)o,__).(_ )o(_)Oo_)
+  .----|   |   |   |   |   |_)0
+ /  .--|   |   |   |   |   |,_)
+|  /   |   |   |   |   |   |o(_)
+|  |   |   Bièrestroming   |_/`)
+|  |   |   | Loïc Huck |   |O_) 
+|  |   | loic@bierestorm.in|
+|  \   |   |   |   |   |   |
+ \  '--|   |   |   |   |   |
+  '----|   |   |   |   |   |
+       |   |   |   |   |   |
+       \   \   \   /   /   /
+        `"""""""""""""""""`
+
+ **********************************/
+
+@import "fonts.less";
+
+///////////////////////////////
+///////    Variables    ///////
+///////////////////////////////
+
+//Couleurs 
+@blanc: #fff;
+@noir: #111;
+@grisclair: #e3e9e1;
+@gris: #4c4c4c;
+@grisfonce: #333;
+@jaune: #f7bb11;
+@rouge: #ac272d;
+@rougefonce: #5b0000;
+@nuages : #e6eae0;
+
+//fonts
+@fontlogo: Arial, sans-serif;
+@fontbase: Arial, sans-serif;
+@fonttitre: 'Bebas', Arial, sans-serif;
+
+//backgrounds
+@bgrouge: @rouge url("img/bg-btn-red.jpg");
+@bgjaune: @jaune url("img/bg-btn-gold.jpg");
+
+
+/***********************************
+ *    Géneral
+ *
+ **********************************/
+html, button, input, select, textarea {
+	color: @grisfonce;
+}
+
+body {
+	font-size: 1em;
+	line-height: 1.4;
+	background: @nuages;
+}
+
+img{ max-width: 100%; }
+
+a{  
+	color: @rouge;
+	&:hover, &:active, &:focus{
+
+	}
+}
+
+/* Fonts */
+a.btn, 
+input.search, 
+h1, h2, h3, 
+.notification, 
+.login,
+header nav a, 
+header nav span.current,
+.registered,
+.evenement-by,
+.when{
+	font-family: @fonttitre;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+/* Titres */
+h1{ font-size: 2.250em; line-height: 1; }
+h2{}
+h3{}
+
+/* Boutons */
+a.btn{
+	display: inline-block;
+
+	min-height: 1.5em;
+	margin: 10px 10px 0 0;
+	padding: 0 1em;
+
+	background: @bgrouge;
+	border-radius: 1.5em;
+	cursor: pointer;
+	box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+
+	font-size: 1.250em;
+    color: @blanc;
+    text-decoration: none;
+    line-height: 1.5em;
+    text-align: center;
+    text-shadow: 0 1px @gris;
+
+	&:hover{ 
+		color: @jaune;
+		//background: @bgjaune; 
+	}
+}
+
+a.close{
+	position: absolute;
+	display: block;
+	top: 0;
+	right: 0;
+	width: 17px;
+	height: 17px;
+	padding: 0.85em;
+	background: url("img/icones.png") -18px -498px no-repeat;
+}
+
+/* Recherche */
+input.search{
+	min-height: 1.5em;
+	padding: 0 15px;
+
+	font-size: 1.250em;
+	color: @blanc;
+	background: @rouge;
+	outline: none;
+	border: none;
+	border-radius: 1.5em;
+	width: 4em;
+	transition: width 0.5s ease;
+
+	&.field{ 
+		padding-right: 2.25em;	
+		&:focus{
+			width: 6em;
+			box-shadow: inset 0 0 4px @rougefonce;
+			transition: width 0.5s ease;
+			&+input.search.submit{
+				width: 6.25em;
+				transition: width 0.5s ease;
+			}
+		}
+	}
+	&.submit{
+		margin-left: -1.5em;
+		background: @rougefonce url("img/icones.png") -25px -425px no-repeat;
+		width: 0;
+		text-indent: 0.875em;
+		&:hover, &:active, &:focus{
+			color: @jaune;
+		}
+	}
+}
+form.search{
+	position: relative;
+	display: inline;
+}
+
+
+
+/***********************************
+ *    Header
+ *
+ **********************************/
+header{
+	position: relative;
+	width: 100%;
+	background: @nuages;
+
+	.user{ 
+		&>.center{padding: 2em 0;} 
+		background: url("img/cloud.jpg") top center no-repeat;
+	}
+
+	.logo{
+		position: relative;
+		text-align: center;
+		width: 250px;
+		margin: 0 auto;
+		img{ display: inline-block; }
+		.user-logo{
+			position: absolute;
+			bottom: 10px;
+			left: 100px;
+			color: @gris;
+			font-family: @fonttitre;
+			font-size: 1.75em;
+			line-height: 1;
+		}
+	}
+
+	.login{ 
+		position: absolute;
+		top: 1.2em;
+		right: 0;
+		padding: 0.3em 1.125em 0.2em 1.125em;
+		background: @gris;
+		border-radius: 2em;
+		color: @jaune;
+		a{
+			color: @jaune;
+			text-decoration: none;
+			&:hover, &:active, &:focus{ text-decoration: underline; }
+		}
+	}
+
+	nav{
+		width: 100%;
+		background: @gris;
+		text-align: center;
+		overflow: hidden;
+		a, span.current{
+			display: inline-block;
+			padding: 0.875em 1em;
+
+			color: @blanc; 
+			font-size: 1.125em;
+			text-decoration: none;
+			text-shadow: 0 -1px @grisfonce;
+			transition: all 0.3s ease;
+		}
+		a:hover, a:active, a:focus{
+			color: @jaune;
+			padding: 0.875em 2em;
+		}
+		span.current{ color: @jaune; }
+ 	}
+}
+
+.notification-zone{
+	position: relative;
+	background: @jaune;
+	color: @gris;
+}
+
+.notification{
+	padding: 0.75em 0;
+	&:after{
+		position: absolute;
+		display: block;
+		content: " ";
+		right: 4em;
+		bottom: 0;
+		height: 15px;
+		width: 30px;
+		margin-bottom: -15px;
+		background: url("img/icones.png") 0 -560px no-repeat; 
+	}
+}
+
+
+
+/***********************************
+ *    Accueil
+ *
+ **********************************/
+/* Evenements */
+.when{
+	padding-left: 1.5em;
+	font-size: 1.5em;
+	background: url("img/icones.png") -26px -106px no-repeat;
+}
+
+.where{
+	font-family: Courier;
+	font-weight: bold;
+	padding-left: 3em;
+	font-size: 0.75em;
+	line-height: 1.2;
+	background: url("img/icones.png") -26px -188px no-repeat;
+}
+
+.evenement-by{ 
+	border-top: solid 1px @gris; 
+	border-bottom: solid 1px @gris;
+	font-size: 0.875em;
+	padding: 0.3em 0;
+	margin: 1em 0;
+	a.more{ float: right; }
+}
+
+a.more{
+	text-decoration: none;
+	&:hover, &:active, &:focus{ text-decoration: underline; }
+	span{ 
+		display: inline-block;
+		vertical-align: middle;
+		height: 15px;
+		width: 13px;
+		background: url("img/icones.png") -33px -834px no-repeat; 
+	}
+}
+
+a.btn.register{ 
+	padding-left: 2.125em;
+	background-color: @rouge;
+	background: url("img/icones.png") -14px -266px no-repeat, url("img/bg-btn-red.jpg") top left repeat; 
+	&:hover, &:active, &:focus{ 
+		background-color: @jaune;
+		background: url("img/icones.png") -14px -346px no-repeat, url("img/bg-btn-red.jpg") top left repeat; 
+	}
+}
+
+.registered{
+	display: inline;
+	font-size: 1.250em;
+	background: url("img/icones.png") -28px -31px no-repeat; 
+	padding: 0 1em 0 1.75em;
+}
+
+/* Une */
+article.evenement{
+	/* article en pleine page */
+	&.big{
+		min-height: 25.000em; 
+		padding: 3.125em 6.250em;
+		background: url("img/bg-une.jpg") center bottom no-repeat;
+		h1{ margin: 0.333em 0; }
+		.description, .category{ font-size: 0.875em; }
+		.infos .when, .infos .where{ float: left; padding-left:10%; width: 40%; }
+		.thumbnail{
+			position: absolute;
+			top: 0;
+			right: 50%;
+			padding: 3.750em;
+			background: url("img/image-circle.png") top left no-repeat;
+			img{ border-radius: 100%; }
+		}
+	}
+}
+
+section{
+	text-align: center;
+
+	article{ text-align: left; }
+
+	&>h1{
+		position: relative;
+		display: inline-block;
+		padding: 0.65em 1em;
+		margin-top: 0;
+		top: -1.25em;
+		font-size: 1.250em;
+		color: @blanc;
+		background: url("img/bg-btn-gold.jpg") top left repeat; 
+		&:before, &:after{
+			content: " ";
+			position: absolute;
+			display: block;
+			top: 0;
+			left: 0;
+			margin-left: -7px;
+			height: 46px;
+			width: 7px;
+			background: url("img/icones.png") 0 -720px no-repeat; 
+		}
+		&:after{
+			left: auto;
+			right: 0;
+			margin-left: 0;
+			margin-right: -7px;
+			background-position: 0 -640px; 
+		}
+	}
+}
+
+.evenements{
+	float: left;
+	width: 63.5%;
+	padding: 0 2.5% 1em 0;
+}
+
+.associations{
+	position: relative;
+	float: left;
+	width: 28%;
+	padding: 0 2.5% 1em 2.5%;
+
+	color: @blanc;
+	background: @gris;
+}
+
+
+/***********************************
+ *    Footer
+ *
+ **********************************/
+footer{
+	background: @gris;
+}
+
+
+
+/***********************************
+ *    Divers
+ *
+ **********************************/
+::-moz-selection { background: @jaune; text-shadow: none; }
+::selection { background: @jaune; text-shadow: none; }
+textarea { resize: vertical; }
+
+::-webkit-input-placeholder{ color: @blanc; }
+:-moz-placeholder{ color: @blanc; }
+::-moz-placeholder{ color: @blanc; }
+:-ms-input-placeholder{ color: @blanc; }
+
+.chromeframe {
+	background: @bgjaune;
+	color: @grisfonce;
+	padding: 1em;
+	margin: 0;
+}
+
+
+/***********************************
+ *    Classes d'aides
+ *
+ **********************************/
+.center{
+	position: relative;
+	max-width: 61.250em;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto; 
+}
+.left-50{
+	margin-left: 50% !important;
+}
+
+/* Rexte de remplacement d'images */
+.ir { background-color: transparent; border: 0; overflow: hidden; }
+.lt-ie8 .ir{ text-indent: -9999em; } /* IE 6/7 fallback */
+.ir:before { content: ""; display: block; width: 0; height: 150%; }
+
+.group{
+	*zoom: 1;
+	&:before, &:after {  content: " "; display: table; }
+	&:after { clear: both; }
+}
