@@ -1,0 +1,130 @@
+/***********************************
+ *    Géneral
+ *
+ **********************************/
+html, button, input, select, textarea {
+	color: @grisfonce;
+}
+
+body {
+	font-size: 1em;
+	line-height: 1.4;
+	background: @gris;
+}
+
+img{ max-width: 100%; }
+
+a{  
+	color: @rouge;
+	&:hover, &:active, &:focus{
+
+	}
+}
+
+/* Fonts */
+a.btn, 
+input.search, 
+h1, h2, h3, 
+.notification, 
+.login,
+header nav a, 
+header nav span.current,
+.registered,
+.evenement-by,
+.when,
+.more{
+	font-family: @fonttitre;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+/* Titres */
+h1{ font-size: 2.250em; line-height: 1; }
+h2{ font-size: 1.625em; line-height: 1; }
+h3{}
+
+/* Boutons */
+a.btn{
+	display: inline-block;
+
+	min-height: 1.5em;
+	margin: 10px 10px 0 0;
+	padding: 0 1em;
+
+	background: @bgrouge;
+	border-radius: 1.5em;
+	cursor: pointer;
+	box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+
+	font-size: 1.250em;
+    color: @blanc;
+    text-decoration: none;
+    line-height: 1.5em;
+    text-align: center;
+    text-shadow: 0 1px @gris;
+
+	&:hover{ 
+		color: @jaune;
+		//background: @bgjaune; 
+	}
+}
+
+a.close{
+	position: absolute;
+	display: block;
+	top: 0;
+	right: 0;
+	width: 17px;
+	height: 17px;
+	padding: 0.85em;
+	background: url("img/icones.png") -18px -498px no-repeat;
+}
+
+/* Recherche */
+input.search{
+	min-height: 1.5em;
+	padding: 0 15px;
+
+	font-size: 1.250em;
+	color: @blanc;
+	background: @rouge;
+	outline: none;
+	border: none;
+	border-radius: 1.5em;
+	width: 4em;
+	transition: width 0.5s ease;
+
+	&.field{ 
+		padding-right: 2.25em;	
+		&:focus{
+			width: 6em;
+			box-shadow: inset 0 0 4px @rougefonce;
+			transition: width 0.5s ease;
+			&+input.search.submit{
+				width: 6.25em;
+				transition: width 0.5s ease;
+			}
+			&::-webkit-input-placeholder{ color:@rouge; }
+			&:-moz-placeholder{ color:@rouge; }
+			&::-moz-placeholder{ color:@rouge; }
+			&:-ms-input-placeholder{ color:@rouge; }
+		}
+	}
+	&.submit{
+		margin-left: -1.5em;
+		background: @rougefonce url("img/icones.png") -25px -425px no-repeat;
+		width: 0;
+		text-indent: 0.875em;
+		&:hover, &:active, &:focus{
+			color: @jaune;
+		}
+	}
+	&::-webkit-input-placeholder{ color: mix(@blanc, @rouge, 50%); }
+	&:-moz-placeholder{ color: mix(@blanc, @rouge, 50%); }
+	&::-moz-placeholder{ color: mix(@blanc, @rouge, 50%); }
+	&:-ms-input-placeholder{ color: mix(@blanc, @rouge, 50%); }
+}
+form.search{
+	position: relative;
+	display: inline;
+}

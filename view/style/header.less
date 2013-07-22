@@ -1,0 +1,90 @@
+/***********************************
+ *    Header
+ *
+ **********************************/
+header{
+	position: relative;
+	width: 100%;
+	background: @nuages;
+
+	.user{ 
+		&>.center{padding: 2em 0;} 
+		background: url("img/cloud.jpg") top center no-repeat;
+	}
+
+	.logo{
+		position: relative;
+		text-align: center;
+		width: 250px;
+		margin: 0 auto;
+		img{ display: inline-block; }
+		.user-logo{
+			position: absolute;
+			bottom: 10px;
+			left: 100px;
+			color: @gris;
+			font-family: @fonttitre;
+			font-size: 1.75em;
+			line-height: 1;
+		}
+	}
+
+	.login{ 
+		position: absolute;
+		top: 1.2em;
+		right: 0;
+		padding: 0.3em 1.125em 0.2em 1.125em;
+		background: @gris;
+		border-radius: 2em;
+		color: @jaune;
+		a{
+			color: @jaune;
+			text-decoration: none;
+			&:hover, &:active, &:focus{ text-decoration: underline; }
+		}
+	}
+
+	nav{
+		width: 100%;
+		background: @gris;
+		text-align: center;
+		overflow: hidden;
+		a, span.current{
+			display: inline-block;
+			padding: 0.875em 1em;
+
+			color: @blanc; 
+			font-size: 1.125em;
+			text-decoration: none;
+			text-shadow: 0 -1px @grisfonce;
+			transition: all 0.3s ease;
+		}
+		a:hover, a:active, a:focus{
+			color: @jaune;
+			padding: 0.875em 2em;
+		}
+		span.current{ color: @jaune; }
+ 	}
+}
+
+.notification-zone{
+	position: relative;
+	background: @jaune;
+	color: @gris;
+}
+
+.notification{
+	padding: 0.75em 0;
+	&:after{
+		position: absolute;
+		display: block;
+		content: " ";
+		right: 4em;
+		bottom: 0;
+		height: 15px;
+		width: 30px;
+		margin-bottom: -15px;
+		background: url("img/icones.png") 0 -560px no-repeat; 
+	}
+}
+
