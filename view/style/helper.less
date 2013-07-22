@@ -1,0 +1,46 @@
+/***********************************
+ *    Divers
+ *
+ **********************************/
+::-moz-selection { background: @jaune; text-shadow: none; }
+::selection { background: @jaune; text-shadow: none; }
+textarea { resize: vertical; }
+
+::-webkit-input-placeholder{ color: mixin(@blanc, @rouge); }
+:-moz-placeholder{ color: @blanc; }
+::-moz-placeholder{ color: @blanc; }
+:-ms-input-placeholder{ color: @blanc; }
+
+.chromeframe {
+	background: @bgjaune;
+	color: @grisfonce;
+	padding: 1em;
+	margin: 0;
+}
+
+
+/***********************************
+ *    Classes d'aides
+ *
+ **********************************/
+.center{
+	position: relative;
+	max-width: 61.250em;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto; 
+}
+.left-50{
+	margin-left: 50% !important;
+}
+
+/* Rexte de remplacement d'images */
+.ir { background-color: transparent; border: 0; overflow: hidden; }
+.lt-ie8 .ir{ text-indent: -9999em; } /* IE 6/7 fallback */
+.ir:before { content: ""; display: block; width: 0; height: 150%; }
+
+.group{
+	*zoom: 1;
+	&:before, &:after {  content: " "; display: table; }
+	&:after { clear: both; }
+}
