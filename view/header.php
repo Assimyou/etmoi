@@ -10,8 +10,8 @@
 		<meta name="description" content="Mon site des assoctiations et évenements de Montrouge">
 		<meta name="viewport" content="width=device-width">
 
-		<link rel="stylesheet" href="style/normalize.css">
-		<link rel="stylesheet" href="style/biere.css">
+		<link rel="stylesheet" href="view/style/normalize.css">
+		<link rel="stylesheet" href="view/style/biere.css">
 		<!--[if lt IE 9]>
 			<script src="js/lib/html5shiv.js"></script>
 		<![endif]-->
@@ -31,7 +31,7 @@
 			</section>
 			<section class="user">
 				<div class="center">
-					<div class="logo"><img src="images/logo.png" alt="Montrouge" /><div class="user-logo">& Loïc</div></div>
+					<div class="logo"><img src="view/images/logo.png" alt="Montrouge" /><div class="user-logo">& Loïc</div></div>
 					<div class="login">
 						<a href="#">Inscription</a> | <a href="#">Connexion</a>
 					</div>
