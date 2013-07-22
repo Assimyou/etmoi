@@ -10,8 +10,8 @@
 		<meta name="description" content="Mon site des assoctiations et évenements de Montrouge">
 		<meta name="viewport" content="width=device-width">
 
-		<link rel="stylesheet" href="view/style/normalize.css">
-		<link rel="stylesheet" href="view/style/biere.css">
+		<link rel="stylesheet" href="style/normalize.css">
+		<link rel="stylesheet" href="style/biere.css">
 		<!--[if lt IE 9]>
 			<script src="js/lib/html5shiv.js"></script>
 		<![endif]-->
@@ -31,7 +31,7 @@
 			</section>
 			<section class="user">
 				<div class="center">
-					<div class="logo"><img src="view/images/logo.png" alt="Montrouge" /><div class="user-logo">& <?php if (!empty($_SESSION['firstname'])) : echo $_SESSION['firstname']; else : echo 'Moi'; endif; ?></div></div>
+					<div class="logo"><img src="images/logo.png" alt="Montrouge" /><div class="user-logo">& Loïc</div></div>
 					<div class="login">
 						<a href="#">Inscription</a> | <a href="#">Connexion</a>
 					</div>
@@ -41,14 +41,13 @@
 				<span class="current">Accueil</span>
 				<a href="evenements.html">Évènements</a>
 				<a href="associations.html">Associations</a>
-				<?php if (!empty($_SESSION['user'])) : ?><a href="#"><?php if (!empty($_SESSION['firstname'])) : echo $_SESSION['firstname']; else : echo 'Moi'; endif; ?></a><?php endif; ?>
 				<form name="search" class="search" action="/evenements.php" method="get"><input type="text" class="search field" placeholder="Rechercher" /><input type="submit" class="search submit" value="Rechercher"></form>
 			</nav>
 		</header>
 		<!-- Fin du header -->
 
 		<!-- Debut du corps du site -->
-		<div class="content center group">
+		<div class="content group">
 
 			<!-- Debut Évènement à la Une -->
 			<section class="une">
@@ -62,7 +61,7 @@
 						<div class="when">10.06.2013</div>
 						<div class="where">Place Victor Hugo, Impasse des citrons</div>
 					</div>
-					<div class="thumbnail"><img src="view/images/barbecue-eleves-montrouge.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
+					<div class="thumbnail"><img src="images/barbecue-eleves-montrouge.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
 					<div class="description left-50 group">
 						<p>The regret on our side is., they used to say years ago, we are reading about you in science class.</p>
 						<p>We are all connected; To each other, biologically. To the earth, chemically. To the rest of the universe atomically....</p>
@@ -79,89 +78,113 @@
 			<!-- Debut Section Derniers Évènement -->
 			<section class="evenements">
 				<h1>Derniers évènements</h1>
-				<article class="evenement small">
-					<h1>Barbecue des anciens élèves de Montrouge</h1>
-					<div class="when">10.06.2013</div>
-					<div class="where">Place Victor Hugo, Impasse des citrons</div>
-					<div class="thumbnail"><img src="view/images/barbucue-montrouge.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
-					<div class="evenement-by">
-						Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
-						<div class="more"><span class="plus">Plus</span> de détails</div>
-					</div>
-				</article>
-				<article class="evenement small">
-					<h1>Barbecue des anciens élèves de Montrouge</h1>
-					<div class="when">10.06.2013</div>
-					<div class="where">Place Victor Hugo, Impasse des citrons</div>
-					<div class="thumbnail"><img src="images/barbucue-montrouge.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
-					<div class="evenement-by">
-						Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
-						<div class="more"><span class="plus">Plus</span> de détails</div>
-					</div>
-				</article>
-				<article class="evenement small">
-					<h1>Barbecue des anciens élèves de Montrouge</h1>
-					<div class="when">10.06.2013</div>
-					<div class="where">Place Victor Hugo, Impasse des citrons</div>
-					<div class="thumbnail"><img src="images/barbucue-montrouge.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
-					<div class="evenement-by">
-						Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
-						<div class="more"><span class="plus">Plus</span> de détails</div>
-					</div>
-				</article>
-				<article class="evenement small">
-					<h1>Barbecue des anciens élèves de Montrouge</h1>
-					<div class="when">10.06.2013</div>
-					<div class="where">Place Victor Hugo, Impasse des citrons</div>
-					<div class="thumbnail"><img src="images/barbucue-montrouge.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
-					<div class="evenement-by">
-						Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
-						<div class="more"><span class="plus">Plus</span> de détails</div>
-					</div>
-				</article>
-				<article class="evenement small">
-					<h1>Barbecue des anciens élèves de Montrouge</h1>
-					<div class="when">10.06.2013</div>
-					<div class="where">Place Victor Hugo, Impasse des citrons</div>
-					<div class="thumbnail"><img src="images/barbucue-montrouge.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
-					<div class="evenement-by">
-						Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
-						<div class="more"><span class="plus">Plus</span> de détails</div>
-					</div>
-				</article>
+				<div class="wrapper">
+					<article class="evenement small">
+						<h2>Barbecue des anciens élèves de Montrouge</h2>
+						<div class="group">
+							<div class="infos">
+								<div class="when">10.06.2013</div>
+								<div class="where">Place Victor Hugo, Impasse des citrons</div>
+							</div>
+							<div class="thumbnail"><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
+						</div>
+						<div class="evenement-by">
+							Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
+							<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+						</div>
+					</article>
+					<article class="evenement small">
+						<h2>Barbecue des anciens élèves de Montrouge</h2>
+						<div class="group">
+							<div class="infos">
+								<div class="when">10.06.2013</div>
+								<div class="where">Place Victor Hugo, Impasse des citrons</div>
+							</div>
+							<div class="thumbnail"><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
+						</div>
+						<div class="evenement-by">
+							Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
+							<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+						</div>
+					</article>
+					<article class="evenement small">
+						<h2>Barbecue des anciens</h2>
+						<div class="group">
+							<div class="infos">
+								<div class="when">10.06.2013</div>
+								<div class="where">Place Victor Hugo, Impasse des citrons</div>
+							</div>
+							<div class="thumbnail"><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
+						</div>
+						<div class="evenement-by">
+							Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
+							<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+						</div>
+					</article>
+					<article class="evenement small">
+						<h2>Barbecue des anciens élèves de Montrouge</h2>
+						<div class="group">
+							<div class="infos">
+								<div class="when">10.06.2013</div>
+								<div class="where">Place Victor Hugo, Impasse des citrons</div>
+							</div>
+							<div class="thumbnail"><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
+						</div>
+						<div class="evenement-by">
+							Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
+							<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+						</div>
+					</article>
+					<article class="evenement small">
+						<h2>Barbecue des anciens élèves de Montrouge</h2>
+						<div class="group">
+							<div class="infos">
+								<div class="when">10.06.2013</div>
+								<div class="where">Place Victor Hugo, Impasse des citrons</div>
+							</div>
+							<div class="thumbnail"><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
+						</div>
+						<div class="evenement-by">
+							Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
+							<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+						</div>
+					</article>
+				</div>
 			</section>
 			<!-- Fin Derniers Évènement -->
 
 			<!-- Debut Section les associations -->
 			<section class="associations">
 				<h1>Les associations</h1>
-				<article class="association">
-					<h2>Le Club du parc</h2>
-					<div class="thumbnail"><img src="images/le-club-du-parc.jpg" alt="Logo du club du parc" /></div>
-					<div class="more"><span class="plus">Plus</span> de détails</div>
-				</article>
-				<article class="association">
-					<h2>Le Club du parc</h2>
-					<div class="thumbnail"><img src="images/le-club-du-parc.jpg" alt="Logo du club du parc" /></div>
-					<div class="more"><span class="plus">Plus</span> de détails</div>
-				</article>
-				<article class="association">
-					<h2>Le Club du parc</h2>
-					<div class="thumbnail"><img src="images/le-club-du-parc.jpg" alt="Logo du club du parc" /></div>
-					<div class="more"><span class="plus">Plus</span> de détails</div>
-				</article>
-				<article class="association">
-					<h2>Le Club du parc</h2>
-					<div class="thumbnail"><img src="images/le-club-du-parc.jpg" alt="Logo du club du parc" /></div>
-					<div class="more"><span class="plus">Plus</span> de détails</div>
-				</article>
+				<div class="wrapper">
+					<article class="association">
+						<h2>Le Club du parc</h2>
+						<div class="thumbnail"><img src="images/commerces.jpg" alt="Logo du club du parc" /></div>
+						<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+					</article>
+					<article class="association">
+						<h2>Le Club du parc</h2>
+						<div class="thumbnail"><img src="images/commerces.jpg" alt="Logo du club du parc" /></div>
+						<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+					</article>
+					<article class="association">
+						<h2>Le Club du parc</h2>
+						<div class="thumbnail"><img src="images/commerces.jpg" alt="Logo du club du parc" /></div>
+						<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+					</article>
+					<article class="association">
+						<h2>Le Club du parc</h2>
+						<div class="thumbnail"><img src="images/commerces.jpg" alt="Logo du club du parc" /></div>
+						<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+					</article>
+				</div>
 			</section>
 			<!-- Fin Section les associations -->
 		</div>
 		<!-- Fin du corps du site -->
 
 		<!-- Debut du footer -->
-		<footer>
+		<footer class="group">
 			<div class="center">
 				<div class="sitemap">
 					<h3>Montrouge et moi</h3>
@@ -179,18 +202,10 @@
 					</ul>
 				</div>
 
-
 				<div class="login">
 					<h3>Login</h3>
-					<form action="" method="Post" >
-					<?php if (empty($_SESSION)) : ?>
-						<input type="mail" name="mail" />
-						<input type="password" name="password" />
-						<input type="submit" name="submit" value="Se connecter" />
-					<?php else : ?>
-						<input type="submit" name="submit" value="Se deconnecter" />
-					<?php endif; ?>
-					</form>
+					<input type="text" />
+					<input type="password" />
 				</div>
 			</div>
 		</footer>
