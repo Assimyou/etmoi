@@ -6,5 +6,11 @@ $(document).ready(function() { // initialisation du DOM
 		$('.notification-zone').toggleClass('folded');
 	});
 
+	// Header parallax
+
+	jQuery('#parallax .parallax-layer')
+	    .parallax({
+	      mouseport: jQuery('#parallax')
+    });
 
 });

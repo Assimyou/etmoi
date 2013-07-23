@@ -12,10 +12,12 @@
 
 		<link rel="stylesheet" href="style/normalize.css">
 		<link rel="stylesheet" href="style/biere.css">
+		<link rel="stylesheet" href="style/jquery.parallax.css">
 		<!--[if lt IE 9]>
 			<script src="js/lib/html5shiv.js"></script>
 		<![endif]-->
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+		<script src="js/jquery.parallax.js"></script>
 		<script src="js/main.js" type="text/javascript"></script>
 
 	</head>
@@ -33,6 +35,23 @@
 				</div>
 			</section>
 			<section class="user">
+				   <!-- parallax header -->
+
+				  <div class="parallax-viewport" id="parallax">
+					    <div class="parallax-layer dn" style="width:860px; height:273px;">
+					        <img src="images/0_sun.png" alt="" style="position:absolute; left:300px; top:-12px;"/>
+					    </div>
+					    <div class="parallax-layer dn" style="width:920px; height:274px;">
+					        <img src="images/1_mountains.png" alt="" />
+					    </div>
+					    <div class="parallax-layer" style="width:1100px; height:284px;">
+					        <img src="images/cloud_front.png" alt="" style="position:absolute; top:10px; left:-20%;" />
+					    </div>
+					    <div class="parallax-layer " style="width:1360px; height:320px;">
+					        <img src="images/cloud_back.png" alt="" style="position:absolute; top:46px; left:0;"/>
+					    </div>
+				</div>
+
 				<div class="center">
 					<div class="logo"><img src="images/logo.png" alt="Montrouge" /><div class="user-logo">& Loïc</div></div>
 					<div class="login">

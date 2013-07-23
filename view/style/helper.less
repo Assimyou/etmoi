@@ -34,6 +34,8 @@ textarea { resize: vertical; }
 	margin-left: 50% !important;
 }
 
+.dn {display :none;}
+
 /* Rexte de remplacement d'images */
 .ir { background-color: transparent; border: 0; overflow: hidden; }
 .lt-ie8 .ir{ text-indent: -9999em; } /* IE 6/7 fallback */
@@ -43,4 +45,10 @@ textarea { resize: vertical; }
 	*zoom: 1;
 	&:before, &:after {  content: " "; display: table; }
 	&:after { clear: both; }
+}
+
+.transition(@transition) {
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  transition: @transition;
 }
