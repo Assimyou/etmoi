@@ -16,6 +16,8 @@
 			<script src="js/lib/html5shiv.js"></script>
 		<![endif]-->
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+		<script src="js/main.js" type="text/javascript"></script>
+
 	</head>
 	<body class="home">
 		<!--[if lt IE 8]>
@@ -27,7 +29,7 @@
 			<section class="notification-zone">
 				<div class="notification center">
 					Montrouge & Moi est votre espace dans votre ville. Créer votre espace personnalisé en vous inscrivant :)
-					<a href="#" class="close ir">Fermer</a>
+					<a href="#" class="close ir" id="close-notification">Fermer</a>
 				</div>
 			</section>
 			<section class="user">

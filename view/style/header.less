@@ -71,6 +71,12 @@ header{
 	position: relative;
 	background: @jaune;
 	color: @gris;
+	
+	.transition(margin-top .3s ease);	
+
+	&.folded {
+		margin-top: -3em;
+	}
 }
 
 .notification{
