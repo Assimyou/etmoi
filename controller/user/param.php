@@ -9,11 +9,11 @@
 
 include_once 'model/classes/user.php';
 
-if (!empty($_GET['id']))
+if (!empty($id))
 {
 	$user = new user($dbh);
 
-	$user->setId($_GET['id']);
+	$user->setId($id);
 	$user->selectuser();
 
 	$user->setRight($user->getResult()['right']);
@@ -165,7 +165,7 @@ if (!empty($_POST) && $_POST['valider'] == "enregistrer")
 
 	$user = new user($dbh);
 
-	if (empty($_GET['id']))
+	if (empty($id))
 	{
 		unset($init);
 
@@ -209,9 +209,9 @@ if (!empty($_POST) && $_POST['valider'] == "enregistrer")
 
 	if(!empty($form))
 	{
-		if (!empty($_GET['id'])) 
+		if (!empty($id)) 
 		{
-			$user->setId($_GET['id']);
+			$user->setId($id);
 			$user->selectuser();
 		}
 		else
