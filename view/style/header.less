@@ -8,7 +8,11 @@ header{
 	background: @nuages;
 
 	.user{ 
-		&>.center{padding: 2em 0;} 
+		&>.center{
+			padding: 2em 0;
+			margin-top: -150px;
+			pointer-events: none;
+		} 
 		background: url("img/cloud.jpg") top center no-repeat;
 	}
 
@@ -29,6 +33,11 @@ header{
 		}
 	}
 
+	.parallax-viewport {
+		height: 162px;
+		background: #d3dfdb;
+	}
+
 	.login{ 
 		position: absolute;
 		top: 1.2em;
@@ -37,6 +46,7 @@ header{
 		background: @gris;
 		border-radius: 2em;
 		color: @jaune;
+		pointer-events: auto;
 		a{
 			color: @jaune;
 			text-decoration: none;
@@ -71,6 +81,12 @@ header{
 	position: relative;
 	background: @jaune;
 	color: @gris;
+	
+	.transition(margin-top .3s ease);	
+
+	&.folded {
+		margin-top: -3em;
+	}
 }
 
 .notification{
