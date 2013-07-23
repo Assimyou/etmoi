@@ -23,7 +23,7 @@
 					<div class="category left-50">Catégories : <a href="evenements?category=vide-grenier">Vide grenier</a> <a href="evenements?category=public">public</a></div>
 					<div class="registering left-50 group">
 						<div class="registered">61 inscrits</div>
-						<a href="#register" class="btn register">J'y vais ?</a>
+						<a href="#register" class="btn register">J'y vais </a>
 					</div>
 				</article>
 			</section>

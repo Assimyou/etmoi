@@ -39,10 +39,18 @@ a.more{
 a.btn.register{ 
 	padding-left: 2.125em;
 	background-color: @rouge;
-	background: url("img/icones.png") -14px -266px no-repeat, url("../img/bg-btn-red.jpg") top left repeat; 
+	background: url("img/icones.png") -14px -266px no-repeat, url("img/bg-btn-red.jpg") top left repeat;
+	.transition(all .3s ease);
+	&:after {
+		content:"?";
+	}
 	&:hover, &:active, &:focus{ 
-		background-color: @jaune;
+		color: @blanc;
 		background: url("img/icones.png") -14px -346px no-repeat, url("img/bg-btn-red.jpg") top left repeat; 
+
+		&:hover:after {
+			content:"!";
+		}
 	}
 }
 

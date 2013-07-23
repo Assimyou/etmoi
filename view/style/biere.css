@@ -319,13 +319,24 @@ a.more span {
 a.btn.register {
   padding-left: 2.125em;
   background-color: #ac272d;
-  background: url("img/icones.png") -14px -266px no-repeat, url("../img/bg-btn-red.jpg") top left repeat;
+  background: url("img/icones.png") -14px -266px no-repeat, url("img/bg-btn-red.jpg") top left repeat;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+a.btn.register:after {
+  content: "?";
 }
 a.btn.register:hover,
 a.btn.register:active,
 a.btn.register:focus {
-  background-color: #f7bb11;
+  color: #ffffff;
   background: url("img/icones.png") -14px -346px no-repeat, url("img/bg-btn-red.jpg") top left repeat;
+}
+a.btn.register:hover:hover:after,
+a.btn.register:active:hover:after,
+a.btn.register:focus:hover:after {
+  content: "!";
 }
 .registered {
   display: inline;
