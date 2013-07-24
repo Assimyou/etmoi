@@ -10,9 +10,9 @@
 		<meta name="description" content="Mon site des assoctiations et évenements de Montrouge">
 		<meta name="viewport" content="width=device-width">
 
-		<link rel="stylesheet" href="view/style/normalize.css">
-		<link rel="stylesheet" href="view/style/biere.css">
-		<link rel="stylesheet" href="view/style/jquery.parallax.css">
+		<link rel="stylesheet" href="style/normalize.css">
+		<link rel="stylesheet" href="style/biere.css">
+		<link rel="stylesheet" href="style/jquery.parallax.css">
 		<!--[if lt IE 9]
 			<script src="js/lib/html5shiv.js"></script>
 		<![endif]-->
@@ -39,21 +39,21 @@
 
 				  <div class="parallax-viewport" id="parallax">
 					    <div class="parallax-layer dn" style="width:860px; height:273px;">
-					        <img src="view/images/0_sun.png" alt="" style="position:absolute; left:300px; top:-12px;"/>
+					        <img src="images/0_sun.png" alt="" style="position:absolute; left:300px; top:-12px;"/>
 					    </div>
 					    <div class="parallax-layer dn" style="width:920px; height:274px;">
-					        <img src="view/images/1_mountains.png" alt="" />
+					        <img src="images/1_mountains.png" alt="" />
 					    </div>
 					    <div class="parallax-layer" style="width:1100px; height:284px;">
-					        <img src="view/images/cloud_front.png" alt="" style="position:absolute; top:10px; left:-20%;" />
+					        <img src="images/cloud_front.png" alt="" style="position:absolute; top:10px; left:-20%;" />
 					    </div>
 					    <div class="parallax-layer " style="width:1360px; height:320px;">
-					        <img src="view/images/cloud_back.png" alt="" style="position:absolute; top:46px; left:0;"/>
+					        <img src="images/cloud_back.png" alt="" style="position:absolute; top:46px; left:0;"/>
 					    </div>
 				</div>
 
 				<div class="center">
-					<div class="logo"><img src="view/images/logo.png" alt="Montrouge" /><div class="user-logo">& <?php if (!empty($_SESSION['firstname'])) : echo $_SESSION['firstname']; else : echo 'Moi'; endif; ?></div></div>
+					<div class="logo"><img src="images/logo.png" alt="Montrouge" /><div class="user-logo">& <?php if (!empty($_SESSION['firstname'])) : echo $_SESSION['firstname']; else : echo 'Moi'; endif; ?></div></div>
 					<div class="login">
 						<a href="#">Inscription</a> | <a href="#">Connexion</a>
 					</div>
