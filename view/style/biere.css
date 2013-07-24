@@ -255,6 +255,7 @@ header nav span.current {
   position: relative;
   background: #f7bb11;
   color: #4c4c4c;
+  -webkit-animation-duration: 2s;
   -webkit-transition: margin-top 0.3s ease;
   -moz-transition: margin-top 0.3s ease;
   transition: margin-top 0.3s ease;

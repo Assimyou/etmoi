@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width">
 
 		<link rel="stylesheet" href="style/normalize.css">
+		<link rel="stylesheet" href="style/animate.min.css">
 		<link rel="stylesheet" href="style/biere.css">
 		<link rel="stylesheet" href="style/jquery.parallax.css">
 		<!--[if lt IE 9]
