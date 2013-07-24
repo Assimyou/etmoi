@@ -16,13 +16,10 @@
 		<!--[if lt IE 9]
 			<script src="js/lib/html5shiv.js"></script>
 		<![endif]-->
-<<<<<<< HEAD
-=======
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
 		<script src="view/js/jquery.parallax.js"></script>
 		<script src="view/js/main.js" type="text/javascript"></script>
 
->>>>>>> 75f69ffdff1377e32737ce48320c6d3615378e38
 	</head>
 	<body class="home">
 		<!--[if lt IE 8]>
