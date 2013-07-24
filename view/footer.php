@@ -27,9 +27,13 @@
 		<!-- Fin du footer -->
 
 
-		<!-- Debut des scripts. 
-		<script src="js/main.js"></script>
 
+		<script src="js/main.js"></script>
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+		<script src="js/jquery.parallax.js"></script>
+		<script src="js/main.js" type="text/javascript"></script>
+		
+		<!-- Debut des scripts. 
 		Google Analytics: ne pas oublier de mettre l'ID Correcte. 
 		<script>
 			var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
