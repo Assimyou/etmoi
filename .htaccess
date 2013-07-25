@@ -1,0 +1,6 @@
+RewriteEngine On
+    RewriteBase /etmoi/
+
+Redirect permanent /etmoi/images/ /etmoi/view/images/
+Redirect permanent /etmoi/js/ /etmoi/view/js/
+Redirect permanent /etmoi/style/ /etmoi/view/style/
