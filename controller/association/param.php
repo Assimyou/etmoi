@@ -7,7 +7,7 @@
 *	@version    2013-07-13
 */
 
-include_once 'model/classes/association.php';
+include_once 'classes/association.php';
 
 if (!empty($_GET['id']))
 {

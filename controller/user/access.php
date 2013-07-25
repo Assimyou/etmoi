@@ -7,7 +7,7 @@
 *	@version    2013-07-13
 */
 
-include_once 'model/classes/passport.php';
+include_once 'classes/passport.php';
 
 if (!empty($_SESSION['passport'])) 
 {
