@@ -17,10 +17,6 @@
 		<!--[if lt IE 9]
 			<script src="js/lib/html5shiv.js"></script>
 		<![endif]-->
-		<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
-		<script src="js/jquery.parallax.js"></script>
-		<script src="js/main.js" type="text/javascript"></script>
-
 	</head>
 	<body class="home">
 		<!--[if lt IE 8]>
