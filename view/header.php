@@ -54,7 +54,7 @@
 				</div>
 
 				<div class="center">
-					<div class="logo"><img src="images/logo.png" alt="Montrouge" /><div class="user-logo">& <?php if (!empty($_SESSION['firstname'])) : echo $_SESSION['firstname']; else : echo 'Moi'; endif; ?></div></div>
+					<div class="logo"><img src="images/logo.png" alt="Montrouge" /><div class="user-logo">& <?php if (!empty($param['firstname'])) : echo $param['firstname']; else : echo 'Moi'; endif; ?></div></div>
 					<div class="login">
 						<a href="#">Inscription</a> | <a href="#">Connexion</a>
 					</div>
@@ -62,10 +62,10 @@
 			</section>
 			<nav class="main-menu">
 				<span class="current">Accueil</span>
-				<a href="evenements.html">Évènements</a>
+				<a href="evenements.php">Évènements</a>
 				<a href="associations.html">Associations</a>
-				<?php if (!empty($_SESSION['user'])) : ?><a href="#"><?php if (!empty($_SESSION['firstname'])) : echo $_SESSION['firstname']; else : echo 'Moi'; endif; ?></a><?php endif; ?>
-				<form name="search" class="search" action="/evenements.php" method="get"><input type="text" class="search field" placeholder="Rechercher" /><input type="submit" class="search submit" value="Rechercher"></form>
+				<?php if (!empty($_SESSION['id'])) : ?><a href="profil.php"><?php if (!empty($param['firstname'])) : echo $param['firstname']; else : echo 'Moi'; endif; ?></a><?php endif; ?>
+				<form name="search" class="search" action="evenements.php" method="get"><input type="text" name="q" class="search field" placeholder="Rechercher" /><input type="submit" class="search submit" value="Rechercher"></form>
 			</nav>
 		</header>
 		<!-- Fin du header -->
