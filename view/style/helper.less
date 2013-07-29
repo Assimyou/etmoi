@@ -52,3 +52,10 @@ textarea { resize: vertical; }
   -moz-transition: @transition;
   transition: @transition;
 }
+
+.box-sizing(@type: border-box) {
+	-moz-box-sizing: @type;
+	-webkit-box-sizing: @type;
+	-ms-box-sizing: @type;
+	box-sizing: @type;
+}
