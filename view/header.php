@@ -44,7 +44,7 @@
 					    <div class="parallax-layer" style="width:1100px; height:284px;">
 					        <img src="images/cloud_front.png" alt="" style="position:absolute; top:10px; left:-20%;" />
 					    </div>
-					    <div class="parallax-layer " style="width:1360px; height:320px;">
+					    <div class="parallax-layer " style="width:2600px; height:320px;">
 					        <img src="images/cloud_back.png" alt="" style="position:absolute; top:46px; left:0;"/>
 					    </div>
 				</div>
