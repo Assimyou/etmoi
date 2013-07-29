@@ -19,8 +19,15 @@
 
 				<div class="login">
 					<h3>Login</h3>
-					<input type="text" />
-					<input type="password" />
+					<form action="" method="post" >
+					<?php if (empty($_SESSION['id'])) : ?>
+						<input type="text" name="mail" />
+						<input type="password" name="password" />
+						<input type="submit" name="submit" value="Se connecter" />
+					<?php else : ?>
+						<input type="submit" name="submit" value="Se deconnecter" />
+					<?php endif; ?>
+					</form>
 				</div>
 			</div>
 		</footer>
