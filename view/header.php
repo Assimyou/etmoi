@@ -18,7 +18,7 @@
 			<script src="js/lib/html5shiv.js"></script>
 		<![endif]-->
 	</head>
-	<body class="home">
+	<body>
 		<!--[if lt IE 8]>
 			<p class="chromeframe">Votre navigateur internet est <strong>obsolet</strong>. S'il vous plait veuillez <a href="http://browsehappy.com/">mettre à jour votre navigateur</a> ou <a href="http://www.google.com/chromeframe/?redirect=true">activez Google Chrome Frame</a> pour améliorer votre expérence.</p>
 		<![endif]-->

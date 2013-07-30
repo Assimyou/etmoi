@@ -30,8 +30,8 @@
 			<!-- Fin Évènement à la Une -->
 
 			<!-- Debut Section Derniers Évènement -->
-			<section class="evenements">
-				<h1>Derniers évènements</h1>
+			<section class="evenements col-3-2">
+				<h1 class="banner">Derniers évènements</h1>
 				<div class="wrapper">
 					<article class="evenement small">
 						<h2>Barbecue des anciens élèves de Montrouge</h2>
@@ -108,8 +108,8 @@
 			<!-- Fin Derniers Évènement -->
 
 			<!-- Debut Section les associations -->
-			<section class="associations">
-				<h1>Les associations</h1>
+			<section class="associations col-3">
+				<h1 class="banner">Les associations</h1>
 				<div class="wrapper">
 					<article class="association">
 						<h2>Le Club du parc</h2>
@@ -137,9 +137,9 @@
 		</div>
 
 		<!-- Début Push badge -->
-		<section class="pushbadges bodyw group">
-			<div class="wrapper">
-				<div class="intro">
+		<section class="pushbadges group">
+			<div class="center">
+				<div class="intro col-3">
 					<h3>Décuplez le <span class="fun animated">fun</span> grâce au badges !</h3>
 					<p>
 						Faites par de votre activité à vos amis :)<br>

@@ -130,35 +130,6 @@ section{
 	text-align: center;
 
 	article{ text-align: left; }
-
-	&>h1{
-		position: relative;
-		display: inline-block;
-		padding: 0.65em 1em;
-		margin-top: 0;
-		top: -1.25em;
-		font-size: 1.250em;
-		color: @blanc;
-		background: url("img/bg-btn-gold.jpg") top left repeat; 
-		&:before, &:after{
-			content: " ";
-			position: absolute;
-			display: block;
-			top: 0;
-			left: 0;
-			margin-left: -7px;
-			height: 46px;
-			width: 7px;
-			background: url("img/icones.png") 0 -720px no-repeat; 
-		}
-		&:after{
-			left: auto;
-			right: 0;
-			margin-left: 0;
-			margin-right: -7px;
-			background-position: 0 -640px; 
-		}
-	}
 }
 
 .evenements{
@@ -214,20 +185,14 @@ article.association{
 /* Push badges */
 .pushbadges {
 	background: #eee;
-	display: inline-block;
-	width: 100%;
-	text-align: center;
 
-	.wrapper {
-		margin: 0 auto;
-		display: inline-block;
-	}
 	.intro {
-		width: 33%;
+		float: none;
 		display: inline-block;
 		vertical-align: middle;
 		text-align: left;
 		font-family: @fontbase;
+
 		h3 {
 			text-transform: none;
 			font-family: @fontbase;
@@ -253,12 +218,12 @@ article.association{
 	}
 
 	.badges {
-		width: 66%;
-		display: inline-block;
 		vertical-align: middle;
+		display: inline-block;
+		width: 66%;
 
 		article {
-			float: left;
+			display: inline-block;
 			margin: 1em;
 			animation-iteration-count: infinite;
 			-webkit-animation-iteration-count: infinite;
