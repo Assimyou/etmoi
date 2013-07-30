@@ -71,6 +71,8 @@ a.btn.register{
 	background: @nuages url("img/bg-une.jpg") bottom center no-repeat;
 	&:after{ 
 		content: " ";
+		position: absolute;
+		bottom: 0;
 		width: 100%;
 		display: block; 
 		border-top: 1px solid #eed584;
@@ -128,13 +130,10 @@ article.evenement{
 
 section{
 	text-align: center;
-
 	article{ text-align: left; }
 }
 
 .evenements{
-	float: left;
-	width: 66%;
 	background: @blanc;
 	padding-bottom: 2em;
 	.wrapper{
@@ -146,8 +145,6 @@ section{
 
 .associations{
 	position: relative;
-	float: left;
-	width: 34%;
 	color: @blanc;
 	background: @gris;
 	padding-bottom: 2em;
@@ -195,6 +192,8 @@ article.association{
 
 		h3 {
 			text-transform: none;
+			font-weight: bold;
+			font-style: italic;
 			font-family: @fontbase;
 		}
 
@@ -222,7 +221,7 @@ article.association{
 		display: inline-block;
 		width: 66%;
 
-		article {
+		figure {
 			display: inline-block;
 			margin: 1em;
 			animation-iteration-count: infinite;

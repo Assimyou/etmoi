@@ -30,7 +30,7 @@ a{
 /* Fonts */
 a.btn, 
 input.search, 
-h1, h2, h3, 
+h1, h2, h3,
 .notification, 
 .login,
 header nav a, 
@@ -161,4 +161,43 @@ input.search{
 form.search{
 	position: relative;
 	display: inline;
+}
+
+/* Grille */
+.col-3{
+	width: 29.333%;
+	margin-left: 2%;
+	margin-right: 2%;
+	float: left;
+}
+
+.col-3-2{
+	width: 62.333%;
+	margin-left: 2%;
+	margin-right: 2%;
+	float: left;
+}
+
+@media screen and (max-width: 768px){
+	.col-3{
+		width: 45%;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+	}
+
+	.col-3-2{
+		width: 45%;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+	}
+}
+
+@media screen and (max-width: 520px){
+	.col-3{
+		width: 95%;
+	}
+
+	.col-3-2{
+		width: 95%;
+	}
 }

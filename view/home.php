@@ -147,24 +147,24 @@
 					</p>
 				</div>
 				<div class="badges group">
-					<article class="wobble">
+					<figure class="wobble">
 						<img src="images/badge.png" alt="badge machin">
-					</article>
-					<article class="flip">
+					</figure>
+					<figure class="flip">
 						<img src="images/badge.png" alt="badge machin">
-					</article>
-					<article class="pulse">
+					</figure>
+					<figure class="pulse">
 						<img src="images/badge.png" alt="badge machin">
-					</article>
-					<article class="swing">
+					</figure>
+					<figure class="swing">
 						<img src="images/badge.png" alt="badge machin">
-					</article>
-					<article class="wiggle">
+					</figure>
+					<figure class="wiggle">
 						<img src="images/badge.png" alt="badge machin">
-					</article>
-					<article class="bounce">
+					</figure>
+					<figure class="bounce">
 						<img src="images/badge.png" alt="badge machin">
-					</article>
+					</figure>
 				</div>
 			</div>
 		</section>
