@@ -19,6 +19,7 @@
 
  **********************************/
 
+/* */
 @import "fonts.less";
 
 ///////////////////////////////
@@ -38,24 +39,34 @@
 
 //fonts
 @fontlogo: Arial, sans-serif;
-@fontbase: asap, Arial, sans-serif;
+@fontbase: 'asap', Arial, sans-serif;
 @fonttitre: 'Bebas', Arial, sans-serif;
 
 //backgrounds
 @bgrouge: @rouge url("img/bg-btn-red.jpg");
 @bgjaune: @jaune url("img/bg-btn-gold.jpg");
 
-//largeur
-@bodyw: 990px;
-.bodyw {
-  width: @bodyw;
-}
-
-
 
 ///////////////////////////////
 ///////    Mixins       ///////
 ///////////////////////////////
+.transition(@transition){
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  transition: @transition;
+}
+
+.box-sizing(@type: border-box){
+  -moz-box-sizing: @type;
+  -webkit-box-sizing: @type;
+  -ms-box-sizing: @type;
+  box-sizing: @type;
+}
+
+.columnize(@width: 15em, @gap: 2em){
+  -webkit-column-width: @width;
+  -webkit-column-gap: @gap;
+}
 
 
 
@@ -63,8 +74,7 @@
 
 @import "header.less";
 @import "accueil.less";
+@import "event.less";
 @import "footer.less";
 
 @import "helper.less";
-
-
