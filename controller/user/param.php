@@ -102,27 +102,39 @@ if (!empty($_POST) && $_POST['valider'] == "enregistrer")
 			}
 		}
 	}
-	if (!empty($illustration))
+	if (!empty($_FILES["illustration"]))
 	{
-		foreach ($illustration as $key => $value)
+		move_uploaded_file($_FILES["illustration"]["tmp_name"], str_replace('controller\user\param.php', 'view\images\\'.$_FILES["illustration"]["name"], __FILE__));
+		
+		if (empty($users['illustration'])) 
 		{
-			if (!empty($value))
+			foreach ($users['illustration'] as $key => $value)
 			{
-				move_uploaded_file($_FILES["import"]["tmp_name"], '/view/images/'.$_FILES["import"]["name"]);
+				if (!empty($value))
+				{
+					$index = $key;
+				}
+			}
+		}
 
-				$form['illustration'][$key] = 'images/'.$_FILES["import"]["name"];
-			}
-		}
+		$form['illustration'][$index] = 'images/'.$_FILES["illustration"]["name"];
 	}
-	if (!empty($cover)) 
+	if (!empty($_FILES['cover'])) 
 	{
-		foreach ($cover as $key => $value)
+		move_uploaded_file($_FILES["cover"]["tmp_name"], str_replace('controller\user\param.php', 'view\images\\'.$_FILES["cover"]["name"], __FILE__));
+		
+		if (empty($users['cover'])) 
 		{
-			if (!empty($value)) 
+			foreach ($users['cover'] as $key => $value)
 			{
-				$form['cover'][$key] = $value;
+				if (!empty($value))
+				{
+					$index = $key;
+				}
 			}
 		}
+
+		$form['cover'][$index] = 'images/'.$_FILES["cover"]["name"];
 	}
 	if (!empty($address)) 
 	{

@@ -82,17 +82,22 @@ if (!empty($_POST) && $_POST['valider'] == "enregistrer")
 			}
 		}
 	}
-	if (!empty($illustration))
+		if (!empty($_FILES["illustration"]))
 	{
-		foreach ($illustration as $key => $value)
+		move_uploaded_file($_FILES["illustration"]["tmp_name"], str_replace('controller\event\param.php', 'view\images\\'.$_FILES["illustration"]["name"], __FILE__));
+		
+		if (empty($users['illustration'])) 
 		{
-			if (!empty($value))
+			foreach ($users['illustration'] as $key => $value)
 			{
-				move_uploaded_file($_FILES["import"]["tmp_name"], '/view/images/'.$_FILES["import"]["name"]);
-
-				$form['illustration'][$key] = 'images/'.$_FILES["import"]["name"];
+				if (!empty($value))
+				{
+					$index = $key;
+				}
 			}
 		}
+
+		$form['illustration'][$index] = 'images/'.$_FILES["illustration"]["name"];
 	}
 	if (!empty($address))
 	{

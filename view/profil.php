@@ -7,7 +7,7 @@
 			<?php if (!empty($error)) : ?>
 				<output for="" form="" ><?php echo $error; ?></output>
 			<?php endif; ?>
-			<form action="" method="post" />
+			<form action="" enctype="multipart/form-data" method="post" />
 				<?php if (!empty($users['mail'])) : ?>
 				<?php foreach ($users['mail'] as $key => $value) : ?>
 				<input type="text" name="mail[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="mail" />
@@ -48,13 +48,9 @@
 				<textarea name="description[]" placeholder="description" ></textarea>
 				<?php endif; ?>
 
-				<?php if (!empty($events['illustation'])) : ?>
-				<?php foreach ($events['illustation'] as $key => $value) : ?>
-				<input type="file" name="illustation[<?php echo $key; ?>]" accept="image/jpeg" />
-				<?php endforeach; ?>
-				<?php else : ?>
-				<input type="file" name="illustation[]" accept="image/jpeg" />
-				<?php endif; ?>
+				<input type="file" name="illustration" accept="image/jpeg" />
+
+				<input type="file" name="cover" accept="image/jpeg" />
 
 				<?php if (!empty($users['zip'])) : ?>
 				<?php foreach ($users['zip'] as $key => $value) : ?>

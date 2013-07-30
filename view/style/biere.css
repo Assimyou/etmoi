@@ -1,3 +1,4 @@
+/* */
 /***********************************
              _, . '__ . 
           '_(_0o),(__)o().
@@ -18,15 +19,41 @@
         `"""""""""""""""""`
 
  **********************************/
+/* */
 @font-face {
   font-family: 'Bebas';
   src: url('fonts/BebasNeue-webfont.eot');
-  src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/BebasNeue-webfont.woff') format('woff'), url('fonts/BebasNeue-webfont.ttf') format('truetype'), url('fonts/BebasNeue-webfont.svg#bebas_neueregular') format('svg');
+  src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/BebasNeue-webfont.woff') format('woff'), url('fonts/BebasNeue-webfont.ttf') format('truetype'), url('fonts/BebasNeue-webfont.svg#Bebas') format('svg');
   font-weight: normal;
   font-style: normal;
 }
-.bodyw {
-  width: 990px;
+@font-face {
+  font-family: 'asap';
+  src: url('fonts/asap-bold-webfont.eot');
+  src: url('fonts/asap-bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/asap-bold-webfont.woff') format('woff'), url('fonts/asap-bold-webfont.ttf') format('truetype'), url('fonts/asap-bold-webfont.svg#asap') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'asap';
+  src: url('fonts/asap-bolditalic-webfont.eot');
+  src: url('fonts/asap-bolditalic-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/asap-bolditalic-webfont.woff') format('woff'), url('fonts/asap-bolditalic-webfont.ttf') format('truetype'), url('fonts/asap-bolditalic-webfont.svg#asap') format('svg');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'asap';
+  src: url('fonts/asap-italic-webfont.eot');
+  src: url('fonts/asap-italic-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/asap-italic-webfont.woff') format('woff'), url('fonts/asap-italic-webfont.ttf') format('truetype'), url('fonts/asap-italic-webfont.svg#asap') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'asap';
+  src: url('fonts/asap-regular-webfont.eot');
+  src: url('fonts/asap-regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/asap-regular-webfont.woff') format('woff'), url('fonts/asap-regular-webfont.ttf') format('truetype'), url('fonts/asap-regular-webfont.svg#asap') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 /***********************************
  *    Géneral
@@ -43,6 +70,7 @@ body {
   font-size: 1em;
   line-height: 1.4;
   background: #4c4c4c;
+  font-family: 'asap', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 img {
@@ -50,6 +78,9 @@ img {
 }
 a {
   color: #ac272d;
+}
+.content {
+  text-align: left;
 }
 /* Fonts */
 a.btn,
@@ -77,6 +108,35 @@ h1 {
 h2 {
   font-size: 1.625em;
   line-height: 1;
+}
+h1.banner {
+  position: relative;
+  display: inline-block;
+  padding: 0.65em 1em;
+  margin-top: 0;
+  top: -1.25em;
+  font-size: 1.250em;
+  color: #ffffff;
+  background: url("img/bg-btn-gold.jpg") top left repeat;
+}
+h1.banner:before,
+h1.banner:after {
+  content: " ";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  margin-left: -7px;
+  height: 46px;
+  width: 7px;
+  background: url("img/icones.png") 0 -720px no-repeat;
+}
+h1.banner:after {
+  left: auto;
+  right: 0;
+  margin-left: 0;
+  margin-right: -7px;
+  background-position: 0 -640px;
 }
 /* Boutons */
 a.btn {
@@ -383,7 +443,7 @@ article.evenement.big h1 {
 article.evenement.big .description,
 article.evenement.big .category {
   font-size: 0.875em;
-  font-family: asap, Arial, sans-serif;
+  font-family: 'asap', Arial, sans-serif;
 }
 article.evenement.big .infos .when,
 article.evenement.big .infos .where {
@@ -430,35 +490,6 @@ section {
 }
 section article {
   text-align: left;
-}
-section > h1 {
-  position: relative;
-  display: inline-block;
-  padding: 0.65em 1em;
-  margin-top: 0;
-  top: -1.25em;
-  font-size: 1.250em;
-  color: #ffffff;
-  background: url("img/bg-btn-gold.jpg") top left repeat;
-}
-section > h1:before,
-section > h1:after {
-  content: " ";
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  margin-left: -7px;
-  height: 46px;
-  width: 7px;
-  background: url("img/icones.png") 0 -720px no-repeat;
-}
-section > h1:after {
-  left: auto;
-  right: 0;
-  margin-left: 0;
-  margin-right: -7px;
-  background-position: 0 -640px;
 }
 .evenements {
   float: left;
@@ -511,24 +542,17 @@ article.association a.more {
 /* Push badges */
 .pushbadges {
   background: #eee;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-}
-.pushbadges .wrapper {
-  margin: 0 auto;
-  display: inline-block;
 }
 .pushbadges .intro {
-  width: 33%;
+  float: none;
   display: inline-block;
   vertical-align: middle;
   text-align: left;
-  font-family: asap, Arial, sans-serif;
+  font-family: 'asap', Arial, sans-serif;
 }
 .pushbadges .intro h3 {
   text-transform: none;
-  font-family: asap, Arial, sans-serif;
+  font-family: 'asap', Arial, sans-serif;
 }
 .pushbadges .intro p {
   font-size: .85em;
@@ -547,15 +571,32 @@ article.association a.more {
   font-size: 2em;
 }
 .pushbadges .badges {
-  width: 66%;
-  display: inline-block;
   vertical-align: middle;
+  display: inline-block;
+  width: 66%;
 }
 .pushbadges .badges article {
-  float: left;
+  display: inline-block;
   margin: 1em;
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
+}
+div.content.event {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background: #e6eae0;
+}
+div.content.event .map {
+  width: 63%;
+  float: right;
+  height: 300px;
+  background: #4c4c4c;
+  margin: 1em 0 1em 1em;
+}
+section.description {
+  text-align: left;
+  -webkit-column-width: 15em;
+  -webkit-column-gap: 2em;
 }
 /***********************************
  *    Footer
@@ -566,11 +607,6 @@ footer {
 }
 footer h3 {
   color: #ffffff;
-}
-footer .center > div {
-  width: 28.333%;
-  margin: 1em 2.5%;
-  float: left;
 }
 footer .sitemap,
 footer .top-associations {
@@ -631,7 +667,7 @@ footer .login form input {
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: asap, Arial, sans-serif;
+  font-family: 'asap', Arial, sans-serif;
 }
 footer .login form input[type="submit"] {
   background: #ac272d;
@@ -685,6 +721,18 @@ textarea {
 }
 .left-50 {
   margin-left: 50% !important;
+}
+.col-3 {
+  width: 29.333%;
+  margin-left: 2%;
+  margin-right: 2%;
+  float: left;
+}
+.col-3-2 {
+  width: 62.333%;
+  margin-left: 2%;
+  margin-right: 2%;
+  float: left;
 }
 .dn {
   display: none;

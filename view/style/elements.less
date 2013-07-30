@@ -10,8 +10,8 @@ body {
 	font-size: 1em;
 	line-height: 1.4;
 	background: @gris;
+	font-family: @fontbase;
 	-webkit-font-smoothing: antialiased;
-
 }
 
 img{ max-width: 100%; }
@@ -21,6 +21,10 @@ a{
 	&:hover, &:active, &:focus{
 
 	}
+}
+
+.content{
+	text-align: left;
 }
 
 /* Fonts */
@@ -45,6 +49,35 @@ h1{ font-size: 2.250em; line-height: 1; }
 h2{ font-size: 1.625em; line-height: 1; }
 h3{}
 
+h1.banner{
+	position: relative;
+	display: inline-block;
+	padding: 0.65em 1em;
+	margin-top: 0;
+	top: -1.25em;
+	font-size: 1.250em;
+	color: @blanc;
+	background: url("img/bg-btn-gold.jpg") top left repeat; 
+	&:before, &:after{
+		content: " ";
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		margin-left: -7px;
+		height: 46px;
+		width: 7px;
+		background: url("img/icones.png") 0 -720px no-repeat; 
+	}
+	&:after{
+		left: auto;
+		right: 0;
+		margin-left: 0;
+		margin-right: -7px;
+		background-position: 0 -640px; 
+	}
+}
+
 /* Boutons */
 a.btn{
 	display: inline-block;
@@ -67,7 +100,6 @@ a.btn{
 
 	&:hover{ 
 		color: @jaune;
-		//background: @bgjaune; 
 	}
 }
 

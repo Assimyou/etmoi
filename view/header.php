@@ -18,7 +18,7 @@
 			<script src="js/lib/html5shiv.js"></script>
 		<![endif]-->
 	</head>
-	<body class="home">
+	<body>
 		<!--[if lt IE 8]>
 			<p class="chromeframe">Votre navigateur internet est <strong>obsolet</strong>. S'il vous plait veuillez <a href="http://browsehappy.com/">mettre à jour votre navigateur</a> ou <a href="http://www.google.com/chromeframe/?redirect=true">activez Google Chrome Frame</a> pour améliorer votre expérence.</p>
 		<![endif]-->
@@ -44,7 +44,7 @@
 					    <div class="parallax-layer" style="width:1100px; height:284px;">
 					        <img src="images/cloud_front.png" alt="" style="position:absolute; top:10px; left:-20%;" />
 					    </div>
-					    <div class="parallax-layer " style="width:1360px; height:320px;">
+					    <div class="parallax-layer " style="width:2600px; height:320px;">
 					        <img src="images/cloud_back.png" alt="" style="position:absolute; top:46px; left:0;"/>
 					    </div>
 				</div>

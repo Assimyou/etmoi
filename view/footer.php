@@ -1,7 +1,7 @@
 		<!-- Debut du footer -->
 		<footer class="group">
 			<div class="center">
-				<div class="sitemap">
+				<div class="sitemap col-3">
 					<h3>Montrouge et moi</h3>
 					<nav class="footer-menu">
 						<a href="#">Accueil</a>
@@ -14,7 +14,7 @@
 					</nav>
 				</div>
 
-				<div class="top-associations">
+				<div class="top-associations col-3">
 					<h3>Top associations</h3>
 					<nav>
 						<a href="#">Bièrestorming<span>999</span></a>
@@ -24,8 +24,8 @@
 						<a href="#">Green Peace<span>999</span></a>
 					</nav>
 				</div>
-
-				<div class="login">
+				
+				<div class="login col-3">
 					<h3>Pas encore connecté ?</h3>
 					<form action="" method="post" >
 					<?php if (empty($_SESSION['id'])) : ?>
@@ -35,7 +35,6 @@
 					<?php else : ?>
 						<input type="submit" name="submit" value="Se deconnecter" />
 					<?php endif; ?>
-					</form>
 				</div>
 			</div>
 		</footer>
