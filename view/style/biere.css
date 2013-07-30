@@ -232,6 +232,39 @@ form.search {
   position: relative;
   display: inline;
 }
+/* Grille */
+.col-3 {
+  width: 29.333%;
+  margin-left: 2%;
+  margin-right: 2%;
+  float: left;
+}
+.col-3-2 {
+  width: 62.333%;
+  margin-left: 2%;
+  margin-right: 2%;
+  float: left;
+}
+@media screen and (max-width: 768px) {
+  .col-3 {
+    width: 45%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+  .col-3-2 {
+    width: 45%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+}
+@media screen and (max-width: 520px) {
+  .col-3 {
+    width: 95%;
+  }
+  .col-3-2 {
+    width: 95%;
+  }
+}
 /***********************************
  *    Header
  *
@@ -418,6 +451,8 @@ a.btn.register:focus:hover:after {
 }
 .une:after {
   content: " ";
+  position: absolute;
+  bottom: 0;
   width: 100%;
   display: block;
   border-top: 1px solid #eed584;
@@ -492,8 +527,6 @@ section article {
   text-align: left;
 }
 .evenements {
-  float: left;
-  width: 66%;
   background: #ffffff;
   padding-bottom: 2em;
 }
@@ -504,8 +537,6 @@ section article {
 }
 .associations {
   position: relative;
-  float: left;
-  width: 34%;
   color: #ffffff;
   background: #4c4c4c;
   padding-bottom: 2em;
@@ -552,6 +583,8 @@ article.association a.more {
 }
 .pushbadges .intro h3 {
   text-transform: none;
+  font-weight: bold;
+  font-style: italic;
   font-family: 'asap', Arial, sans-serif;
 }
 .pushbadges .intro p {
@@ -575,7 +608,7 @@ article.association a.more {
   display: inline-block;
   width: 66%;
 }
-.pushbadges .badges article {
+.pushbadges .badges figure {
   display: inline-block;
   margin: 1em;
   animation-iteration-count: infinite;
@@ -586,17 +619,19 @@ div.content.event {
   padding-bottom: 1em;
   background: #e6eae0;
 }
-div.content.event .map {
-  width: 63%;
-  float: right;
-  height: 300px;
-  background: #4c4c4c;
-  margin: 1em 0 1em 1em;
+div.content.event section {
+  padding-bottom: 6em;
 }
-section.description {
-  text-align: left;
-  -webkit-column-width: 15em;
-  -webkit-column-gap: 2em;
+section.description .map {
+  float: right;
+  padding: 3.750em;
+  background: url("img/image-circle.png") top left no-repeat;
+}
+section.description .map .google {
+  width: 330px;
+  height: 330px;
+  background: #f7bb11;
+  border-radius: 100%;
 }
 /***********************************
  *    Footer
@@ -604,6 +639,7 @@ section.description {
  **********************************/
 footer {
   background: #4c4c4c;
+  padding: 1em 0;
 }
 footer h3 {
   color: #ffffff;
@@ -721,18 +757,6 @@ textarea {
 }
 .left-50 {
   margin-left: 50% !important;
-}
-.col-3 {
-  width: 29.333%;
-  margin-left: 2%;
-  margin-right: 2%;
-  float: left;
-}
-.col-3-2 {
-  width: 62.333%;
-  margin-left: 2%;
-  margin-right: 2%;
-  float: left;
 }
 .dn {
   display: none;
