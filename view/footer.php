@@ -4,21 +4,29 @@
 				<div class="sitemap">
 					<h3>Montrouge et moi</h3>
 					<nav class="footer-menu">
-						<ul>
-							<li></li>
-						</ul>
+						<a href="#">Accueil</a>
+						<a href="#">Événements</a>
+						<a href="#">Associations</a>
+						<a href="#">Badges</a>
+						<a href="#">Profil de Loïc</a>
+						<a href="http://www.endoftheinternet.com/" target="_blank">Mentions légales</a>
+						
 					</nav>
 				</div>
 
 				<div class="top-associations">
 					<h3>Top associations</h3>
-					<ul>
-						<li></li>
-					</ul>
+					<nav>
+						<a href="#">Bièrestorming<span>999</span></a>
+						<a href="#">Le club du Parc <span>999</span></a>
+						<a href="#">L'Amicale des Pompiers<span>999</span></a>
+						<a href="#">Femen<span>999</span></a>
+						<a href="#">Green Peace<span>999</span></a>
+					</nav>
 				</div>
 
 				<div class="login">
-					<h3>Login</h3>
+					<h3>Pas encore connecté ?</h3>
 					<form action="" method="post" >
 					<?php if (empty($_SESSION['id'])) : ?>
 						<input type="text" name="mail" />
@@ -35,7 +43,7 @@
 
 
 
-		<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+		<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
 		<script src="js/jquery.parallax.js"></script>
 		<script src="js/main.js" type="text/javascript"></script>
 

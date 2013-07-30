@@ -9,11 +9,11 @@
 
 include_once 'classes/association.php';
 
-if (!empty($_GET['id']))
+if (!empty($_GET['q']))
 {
 	$association = new association($dbh);
 
-	$association->setId($_GET['id']);
+	$association->setId($_GET['q']);
 	$association->selectAsso();
 
 	$association->setRight($association->getResult()['right']);
@@ -78,7 +78,9 @@ if (!empty($_POST) && $_POST['valider'] == "enregistrer")
 		{
 			if (!empty($value)) 
 			{
-				$form['illustration'][$key] = $value;
+				move_uploaded_file($_FILES["import"]["tmp_name"], '/view/images/'.$_FILES["import"]["name"]);
+
+				$form['illustration'][$key] = 'images/'.$_FILES["import"]["name"];
 			}
 		}
 	}
@@ -174,9 +176,9 @@ if (!empty($_POST) && $_POST['valider'] == "enregistrer")
 
 	if(!empty($form))
 	{
-		if (!empty($_GET['id'])) 
+		if (!empty($_GET['q'])) 
 		{
-			$association->setId($_GET['id']);
+			$association->setId($_GET['q']);
 			$association->selectAsso();
 		}
 		else

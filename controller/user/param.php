@@ -102,13 +102,15 @@ if (!empty($_POST) && $_POST['valider'] == "enregistrer")
 			}
 		}
 	}
-	if (!empty($illustration)) 
+	if (!empty($illustration))
 	{
 		foreach ($illustration as $key => $value)
 		{
-			if (!empty($value)) 
+			if (!empty($value))
 			{
-				$form['illustration'][$key] = $value;
+				move_uploaded_file($_FILES["import"]["tmp_name"], '/view/images/'.$_FILES["import"]["name"]);
+
+				$form['illustration'][$key] = 'images/'.$_FILES["import"]["name"];
 			}
 		}
 	}
@@ -326,6 +328,9 @@ if (!empty($_POST) && $_POST['valider'] == "enregistrer")
 			}
 		}
 	}
+	
+	header( "Location: ".$_SERVER['REQUEST_URI']);
+	exit();
 }
 
 ?>

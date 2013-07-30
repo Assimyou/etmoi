@@ -1,24 +1,42 @@
 <?php
-/**
-*	@category   model
-*	@package    user
-*	@copyright  Copyright (c) 2013 BiereStorming 
-*	@license    BiereStroming
-*	@version    2013-07-13
-*/
 
 include_once 'mother.php';
 
 class user extends mother
 {
+	/**
+	 * user wording
+	 *
+	 * @var string
+	 */
 	private $_wording;
 
+	/**
+	 * user left
+	 *
+	 * @var int
+	 */
 	private $_left;
 
+	/**
+	 * user right
+	 *
+	 * @var int
+	 */
 	private	$_right;
 
+	/**
+	 * user gap
+	 *
+	 * @var int
+	 */
 	private $_gap;
 
+	/**
+	 * user users
+	 *
+	 * @var users[]
+	 */
 	private $_users;
 
 	const GAP = 2;
@@ -148,10 +166,6 @@ class user extends mother
 		$this->getQuery()->closeCursor();
 	}
 
-	/**
-	*	Select user by wording
-	*	@param string wording
-	*/
 	public function search($wording)	
 	{
 		$this->setWording('%'.$wording.'%');
@@ -175,41 +189,81 @@ class user extends mother
 		$this->getQuery()->closeCursor();
 	}
 
+	/**
+	 * Get user wording
+	 *
+	 * @return user_wording
+	 */
 	public function getWording()
 	{
 		return $this->_wording;
 	}
 
+	/**
+	 * Set user wording
+	 *
+	 * @param user_wording
+	 */
 	public function setWording($wording)
 	{
 		$this->_wording = $wording;
 	}
 
+	/**
+	 * Get user left
+	 *
+	 * @return user_left
+	 */
 	public function getLeft()
 	{
 		return $this->_left;
 	}
 
+	/**
+	 * Set user left
+	 *
+	 * @param user_left
+	 */
 	public function setLeft($left)
 	{
 		$this->_left = $left;
 	}
 
+	/**
+	 * Get user right
+	 *
+	 * @return user_riht
+	 */
 	public function getRight()
 	{
 		return $this->_right;
 	}
 
+	/**
+	 * Set user right
+	 *
+	 * @param user_right
+	 */
 	public function setRight($right)
 	{
 		$this->_right = $right;
 	}
 
+	/**
+	 * Get user gap
+	 *
+	 * @return user_gap
+	 */
 	public function getGap()
 	{
 		return $this->_gap;
 	}
 
+	/**
+	 * Set user gap
+	 *
+	 * @param user_gap
+	 */
 	public function setGap($gap)
 	{
 		$this->_gap = $gap;

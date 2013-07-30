@@ -25,6 +25,9 @@
   font-weight: normal;
   font-style: normal;
 }
+.bodyw {
+  width: 990px;
+}
 /***********************************
  *    Géneral
  *
@@ -40,6 +43,7 @@ body {
   font-size: 1em;
   line-height: 1.4;
   background: #4c4c4c;
+  -webkit-font-smoothing: antialiased;
 }
 img {
   max-width: 100%;
@@ -255,6 +259,7 @@ header nav span.current {
   position: relative;
   background: #f7bb11;
   color: #4c4c4c;
+  animation-duration: 2s;
   -webkit-animation-duration: 2s;
   -webkit-transition: margin-top 0.3s ease;
   -moz-transition: margin-top 0.3s ease;
@@ -378,6 +383,7 @@ article.evenement.big h1 {
 article.evenement.big .description,
 article.evenement.big .category {
   font-size: 0.875em;
+  font-family: asap, Arial, sans-serif;
 }
 article.evenement.big .infos .when,
 article.evenement.big .infos .where {
@@ -502,6 +508,55 @@ article.association .thumbnail {
 article.association a.more {
   margin-left: 40%;
 }
+/* Push badges */
+.pushbadges {
+  background: #eee;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.pushbadges .wrapper {
+  margin: 0 auto;
+  display: inline-block;
+}
+.pushbadges .intro {
+  width: 33%;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  font-family: asap, Arial, sans-serif;
+}
+.pushbadges .intro h3 {
+  text-transform: none;
+  font-family: asap, Arial, sans-serif;
+}
+.pushbadges .intro p {
+  font-size: .85em;
+}
+.pushbadges .intro .fun {
+  display: inline-block;
+  animation-duration: 1.2s;
+  -webkit-animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.pushbadges .intro .fun.funhover {
+  font-size: 2em;
+}
+.pushbadges .badges {
+  width: 66%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.pushbadges .badges article {
+  float: left;
+  margin: 1em;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
 /***********************************
  *    Footer
  *
@@ -509,10 +564,80 @@ article.association a.more {
 footer {
   background: #4c4c4c;
 }
+footer h3 {
+  color: #ffffff;
+}
 footer .center > div {
   width: 28.333%;
   margin: 1em 2.5%;
   float: left;
+}
+footer .sitemap,
+footer .top-associations {
+  vertical-align: top;
+}
+footer .sitemap a,
+footer .top-associations a {
+  display: block;
+  color: #e3e9e1;
+  text-decoration: none;
+  font-family: 'Bebas', Arial, sans-serif;
+  font-size: 1em;
+  -webkit-transition: color 0.4s ease;
+  -moz-transition: color 0.4s ease;
+  transition: color 0.4s ease;
+}
+footer .sitemap a:hover,
+footer .top-associations a:hover {
+  color: #f7bb11;
+}
+footer .sitemap a span,
+footer .top-associations a span {
+  float: right;
+}
+footer .top-associations {
+  vertical-align: top;
+}
+footer .top-associations ul {
+  list-style-type: none;
+}
+footer .login {
+  vertical-align: top;
+}
+footer .login h3 {
+  color: #333333;
+}
+footer .login form {
+  background: #f7bb11;
+  padding: 1px 1em 1em 1em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  border: none;
+  border-radius: 4px;
+}
+footer .login form input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  height: 2em;
+  border-radius: 4px;
+  margin: .2em 0;
+  padding-left: 1em;
+  padding-right: 1em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: asap, Arial, sans-serif;
+}
+footer .login form input[type="submit"] {
+  background: #ac272d;
+  color: #ffffff;
+  font-family: 'Bebas', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 /***********************************
  *    Divers

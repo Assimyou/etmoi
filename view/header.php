@@ -17,10 +17,6 @@
 		<!--[if lt IE 9]
 			<script src="js/lib/html5shiv.js"></script>
 		<![endif]-->
-		<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
-		<script src="js/jquery.parallax.js"></script>
-		<script src="js/main.js" type="text/javascript"></script>
-
 	</head>
 	<body class="home">
 		<!--[if lt IE 8]>
@@ -54,7 +50,7 @@
 				</div>
 
 				<div class="center">
-					<div class="logo"><img src="images/logo.png" alt="Montrouge" /><div class="user-logo">& <?php if (!empty($param['firstname'])) : echo $param['firstname']; else : echo 'Moi'; endif; ?></div></div>
+					<div class="logo"><img src="images/logo.png" alt="Montrouge" /><div class="user-logo">& <?php if (!empty($profil['firstname'])) : echo $profil['firstname']; else : echo 'Moi'; endif; ?></div></div>
 					<div class="login">
 						<a href="#">Inscription</a> | <a href="#">Connexion</a>
 					</div>
@@ -63,8 +59,8 @@
 			<nav class="main-menu">
 				<span class="current">Accueil</span>
 				<a href="evenements.php">Évènements</a>
-				<a href="associations.html">Associations</a>
-				<?php if (!empty($_SESSION['id'])) : ?><a href="profil.php"><?php if (!empty($param['firstname'])) : echo $param['firstname']; else : echo 'Moi'; endif; ?></a><?php endif; ?>
+				<a href="associations.php">Associations</a>
+				<?php if (!empty($_SESSION['id'])) : ?><a href="profil.php"><?php if (!empty($profil['firstname'])) : echo $profil['firstname']; else : echo 'Moi'; endif; ?></a><?php endif; ?>
 				<form name="search" class="search" action="evenements.php" method="get"><input type="text" name="q" class="search field" placeholder="Rechercher" /><input type="submit" class="search submit" value="Rechercher"></form>
 			</nav>
 		</header>

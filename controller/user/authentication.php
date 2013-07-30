@@ -9,12 +9,14 @@
 
 include_once 'classes/user.php';
 
-if (!empty($_POST) && $_POST['submit'] == "Se deconnecter") 
+if (!empty($_POST['submit']) && $_POST['submit'] == "Se deconnecter") 
 {
 	session_destroy();
+	header( "Location: ".$_SERVER['REQUEST_URI']);
+	exit();
 }
 
-if (!empty($_POST) && $_POST['submit'] == "Se connecter") 
+if (!empty($_POST['submit']) && $_POST['submit'] == "Se connecter") 
 {
 	extract($_POST);
 
@@ -22,10 +24,12 @@ if (!empty($_POST) && $_POST['submit'] == "Se connecter")
 	{
 		$form['mail'] = $mail;
 	}
-	if (!empty($password)) 
+	if (!empty($password))
 	{
 		$form['password'] = md5($password);
 	}
+
+	$form['passport'] = 7;
 
 	if(!empty($form))
 	{
@@ -113,7 +117,7 @@ if (!empty($_POST) && $_POST['submit'] == "Se connecter")
 
 			$user->selectLastuser();
 
-			$_SESSION['user'] = $user->getResult()['id'];
+			$_SESSION['id'] = $user->getResult()['id'];
 		}
 		else
 		{
@@ -146,31 +150,7 @@ if (!empty($_POST) && $_POST['submit'] == "Se connecter")
 										{
 											if ($kid['wording'] == $form['password'])
 											{
-												$_SESSION['user'] = $parent['id'];
-											}
-										}
-									}
-								}
-							}
-							if (!empty($_SESSION['user']) && $_SESSION['user'] == $parent['id'])
-							{
-								foreach ($user->getResult() as $children => $child) 
-								{
-									if ($child['right'] - $child['left'] > 1)
-									{
-										$multiple = array();
-
-										foreach ($user->getResult() as $kids => $kid)
-										{
-											if ($child['left'] < $kid['left'] && $child['right'] > $kid['right'])
-											{
-												if ($kid['right'] - $kid['left'] == 1)
-												{
-													if ($child['wording'] != 'user') 
-													{
-														$_SESSION[$child['wording']] = $kid['wording'];
-													}
-												}
+												$_SESSION['id'] = $parent['id'];
 											}
 										}
 									}
@@ -182,6 +162,38 @@ if (!empty($_POST) && $_POST['submit'] == "Se connecter")
 			}
 		}
 	}
+
+	header( "Location: ".$_SERVER['REQUEST_URI']);
+	exit();
 }
 
+if (!empty($_SESSION['id']))
+{
+	$user = new user($dbh);
+
+	$user->setId($_SESSION['id']);
+	$user->selectuser();
+
+	$user->setRight($user->getResult()['right']);
+	$user->setLeft($user->getResult()['left']);
+
+	$user->selectChild();
+
+	foreach ($user->getResult() as $children => $child) 
+	{
+		if ($child['right'] - $child['left'] > 1)
+		{
+			foreach ($user->getResult() as $kids => $kid)
+			{
+				if ($child['left'] < $kid['left'] && $child['right'] > $kid['right'])
+				{
+					if ($kid['right'] - $kid['left'] == 1)
+					{
+						$profil[$child['wording']] = $kid['wording'];
+					}
+				}
+			}
+		}
+	}
+}
 ?>

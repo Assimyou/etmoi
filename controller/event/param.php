@@ -9,11 +9,11 @@
 
 include_once 'classes/event.php';
 
-if (!empty($_GET['id']))
+if (!empty($_GET['q']))
 {
 	$event = new event($dbh);
 
-	$event->setId($_GET['id']);
+	$event->setId($_GET['q']);
 	$event->selectEvent();
 
 	$event->setRight($event->getResult()['right']);
@@ -88,7 +88,9 @@ if (!empty($_POST) && $_POST['valider'] == "enregistrer")
 		{
 			if (!empty($value))
 			{
-				$form['illustration'][$key] = $value;
+				move_uploaded_file($_FILES["import"]["tmp_name"], '/view/images/'.$_FILES["import"]["name"]);
+
+				$form['illustration'][$key] = 'images/'.$_FILES["import"]["name"];
 			}
 		}
 	}
@@ -165,7 +167,7 @@ if (!empty($_POST) && $_POST['valider'] == "enregistrer")
 
 	$event = new event($dbh);
 
-	if (empty($_GET['id']))
+	if (empty($_GET['q']))
 	{
 		unset($init);
 
@@ -209,9 +211,9 @@ if (!empty($_POST) && $_POST['valider'] == "enregistrer")
 
 	if(!empty($form))
 	{
-		if (!empty($_GET['id'])) 
+		if (!empty($_GET['q'])) 
 		{
-			$event->setId($_GET['id']);
+			$event->setId($_GET['q']);
 			$event->selectEvent();
 		}
 		else

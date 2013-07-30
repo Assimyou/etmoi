@@ -9,13 +9,11 @@
 
 include_once 'classes/event.php';
 
-if (!empty($_POST) && $_POST['research'] == "rechercher") 
+if (!empty($_GET['q'])) 
 {
-	extract($_POST);
-
 	$event = new event($dbh);
 
-	$event->search($tags);
+	$event->search($_GET['q']);
 
 	foreach ($event->getResult() as $index => $result)
 	{

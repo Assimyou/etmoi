@@ -3,6 +3,8 @@
  *
  **********************************/
 /* General */
+
+
 .when{
 	padding-left: 1.5em;
 	font-size: 1.5em;
@@ -87,7 +89,7 @@ article.evenement{
 		margin: 0 auto;
 		padding: 3.125em 6.250em;
 		h1{ margin: 0.333em 0; }
-		.description, .category{ font-size: 0.875em; }
+		.description, .category{ font-size: 0.875em; font-family: @fontbase }
 		.infos .when, .infos .where{ float: left; padding-left:10%; width: 40%; }
 		.thumbnail{
 			position: absolute;
@@ -209,4 +211,58 @@ article.association{
 	a.more{ margin-left: 40%; }
 }
 
+/* Push badges */
+.pushbadges {
+	background: #eee;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+
+	.wrapper {
+		margin: 0 auto;
+		display: inline-block;
+	}
+	.intro {
+		width: 33%;
+		display: inline-block;
+		vertical-align: middle;
+		text-align: left;
+		font-family: @fontbase;
+		h3 {
+			text-transform: none;
+			font-family: @fontbase;
+		}
+
+		p {
+			font-size: .85em;
+		}
+
+		.fun {
+			display: inline-block;
+			animation-duration: 1.2s;
+			-webkit-animation-duration: 1.2s;
+			animation-iteration-count: infinite;
+			-webkit-animation-iteration-count: infinite;
+
+			.transition(all .3s ease);
+
+			&.funhover {
+				font-size: 2em;
+			}
+		}
+	}
+
+	.badges {
+		width: 66%;
+		display: inline-block;
+		vertical-align: middle;
+
+		article {
+			float: left;
+			margin: 1em;
+			animation-iteration-count: infinite;
+			-webkit-animation-iteration-count: infinite;
+		}
+	}
+}
 

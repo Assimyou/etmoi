@@ -4,34 +4,30 @@ session_start();
 ini_set('include_path', ini_get('include_path').';./model/;./view/;./controller/');
 
 include_once 'dbh.php';
+include_once 'user/authentication.php';
 include_once 'user/access.php';
 
-$access = FALSE;
-
-foreach ($visa as $key => $value) 
+if (!empty($_SESSION['id']))
 {
-	if ($value == '') 
+	$id = $_SESSION['id'];
+
+	if (!empty($_GET['id'])) 
 	{
-		$id = $_GET['id'];
-		$access = TRUE;
-	}
-	else
-	{
-		if (!empty($_SESSION['id'])) 
+		foreach ($visa as $key => $value)
 		{
-			$id = $_SESSION['id'];
-			$access = TRUE;
+			if ($value == 'webmaster')
+			{
+				$id = $_GET['id'];
+			}
 		}
 	}
-}
-if ($access == TRUE) 
-{
+
 	include_once 'user/param.php';
-	include_once 'profil.php';
+	include_once 'view/profil.php';
 }
 else
 {
-	header('Location: index.php');
+	header('Location: .');
 	exit();
 }
 ?>

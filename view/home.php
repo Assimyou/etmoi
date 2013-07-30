@@ -135,6 +135,39 @@
 			</section>
 			<!-- Fin Section les associations -->
 		</div>
+
+		<!-- Début Push badge -->
+		<section class="pushbadges bodyw group">
+			<div class="wrapper">
+				<div class="intro">
+					<h3>Décuplez le <span class="fun animated">fun</span> grâce au badges !</h3>
+					<p>
+						Faites par de votre activité à vos amis :)<br>
+						Gagnez des badges en fonction des événéments où vous allez. Sans compter les badges secrets ;)
+					</p>
+				</div>
+				<div class="badges group">
+					<article class="wobble">
+						<img src="images/badge.png" alt="badge machin">
+					</article>
+					<article class="flip">
+						<img src="images/badge.png" alt="badge machin">
+					</article>
+					<article class="pulse">
+						<img src="images/badge.png" alt="badge machin">
+					</article>
+					<article class="swing">
+						<img src="images/badge.png" alt="badge machin">
+					</article>
+					<article class="wiggle">
+						<img src="images/badge.png" alt="badge machin">
+					</article>
+					<article class="bounce">
+						<img src="images/badge.png" alt="badge machin">
+					</article>
+				</div>
+			</div>
+		</section>
 		<!-- Fin du corps du site -->
 
 <?php include_once "footer.php"; ?>

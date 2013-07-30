@@ -83,7 +83,7 @@ class passport extends mother
 
 	public function selectChild()
 	{
-		$this->setQuery($this->getDbh()->prepare("SELECT * FROM passport WHERE `left` > :left AND `right` < :right;"));
+		$this->setQuery($this->getDbh()->prepare("SELECT * FROM passport WHERE `left` >= :left AND `right` <= :right;"));
 		$this->getQuery()->bindParam(':left', $this->_left, PDO::PARAM_INT);
 		$this->getQuery()->bindParam(':right', $this->_right, PDO::PARAM_INT);
 		$this->getQuery()->execute();
@@ -148,10 +148,6 @@ class passport extends mother
 		$this->getQuery()->closeCursor();
 	}
 
-	/**
-	*	Select passport by wording
-	*	@param string wording
-	*/
 	public function search($wording)	
 	{
 		$this->setWording('%'.$wording.'%');

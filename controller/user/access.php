@@ -9,10 +9,11 @@
 
 include_once 'classes/passport.php';
 
-if (!empty($_SESSION['passport'])) 
+if (!empty($param['passport']))
 {
 	$passport = new passport($dbh);
 
+	$passport->setId($param['passport']);
 	$passport->selectpassport();
 
 	$passport->setRight($passport->getResult()['right']);

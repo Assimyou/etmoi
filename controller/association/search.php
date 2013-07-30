@@ -9,13 +9,13 @@
 
 include_once 'classes/association.php';
 
-if (!empty($_POST) && $_POST['research'] == "rechercher") 
+if (!empty($_GET['q'])) 
 {
 	extract($_POST);
 
 	$association = new association($dbh);
 
-	$association->search($word);
+	$association->search($_GET['q']);
 
 	foreach ($association->getResult() as $index => $result)
 	{
