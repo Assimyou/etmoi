@@ -12,7 +12,7 @@ include_once 'classes/user.php';
 if (!empty($_POST['submit']) && $_POST['submit'] == "Se deconnecter") 
 {
 	session_destroy();
-	header( "Location: ".$_SERVER['REQUEST_URI']);
+	header("Location: ".$_SERVER['REQUEST_URI']);
 	exit();
 }
 
