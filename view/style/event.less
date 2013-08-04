@@ -5,6 +5,17 @@ div.content.event{
 
 	section{
 		padding-bottom: 6em;
+		position: relative;
+
+		&:after{
+			content: " ";
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			display: block;
+			border-top: 1px solid #eed584;
+			border-bottom: 1px solid @jaune;
+		}
 	}
 }
 
@@ -19,6 +30,96 @@ section.description{
 			height: 330px;
 			background: @jaune;
 			border-radius: 100%;
+		}
+	}
+}
+
+section.comments{
+	label{
+		display: block;
+		font-family: @fonttitre;
+		font-size: 1.625em;
+		line-height: 1;
+	}
+
+	textarea{
+		display: block;
+		padding: 1em 5%;
+		margin-top: 0.5em;
+		width: 90%;
+		height: 10em;
+		outline: none;
+		background: @nuages;
+		border: 1px dashed @rougefonce;
+		border-radius: 0.75em;
+		resize: none;
+		.transition();
+
+		&:focus{
+			background: @blanc;
+			border-color: @gris;
+			.transition();
+		}
+	}
+}
+
+.comment{
+	margin-bottom: 2em;
+	&.answer{ margin-left: 12.5%; }
+
+	h2{
+		margin: 0;
+	}
+
+	figure{
+		float: left;
+		width: 10%;
+		margin-right: 2.5%;
+		overflow: hidden;
+		border-radius: 100%;
+	}
+
+	article{
+		float: left;
+		width: 87.5%;
+	}
+
+	.date{
+		float: right;
+		margin-left: 1em;
+		color: @gris;
+		font-size: 0.875em;
+	}
+
+	.text{
+		font-size: 0.875em;
+	}
+}
+
+section.share{
+	.image{
+		float: left;
+		width: 50%;
+	}
+
+	.instagram{
+		float: left;
+		background-color: @rougefonce;
+		line-height: 0;
+		img{
+			width: 100%;
+		}
+
+		&.big{
+			width: 90%;
+			margin: 2.5%;
+			padding: 2.5%;
+		}
+
+		&.small{
+			width: 40%;
+			margin: 2.5%;
+			padding: 2.5%;
 		}
 	}
 }

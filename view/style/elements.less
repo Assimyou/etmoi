@@ -18,9 +18,7 @@ img{ max-width: 100%; }
 
 a{  
 	color: @rouge;
-	&:hover, &:active, &:focus{
-
-	}
+	text-decoration: underline;
 }
 
 .content{
@@ -29,7 +27,8 @@ a{
 
 /* Fonts */
 a.btn, 
-input.search, 
+input.btn,
+input.search,
 h1, h2, h3,
 .notification, 
 .login,
@@ -48,6 +47,16 @@ header nav span.current,
 h1{ font-size: 2.250em; line-height: 1; }
 h2{ font-size: 1.625em; line-height: 1; }
 h3{}
+
+h1, h2, h3, h4{
+	a{
+		color: inherit;
+		text-decoration: none;
+		&:hover, &:active, &:focus{
+			text-decoration: underline;
+		}
+	}
+}
 
 h1.banner{
 	position: relative;
@@ -79,7 +88,7 @@ h1.banner{
 }
 
 /* Boutons */
-a.btn{
+a.btn, input.btn{
 	display: inline-block;
 
 	min-height: 1.5em;
@@ -90,6 +99,8 @@ a.btn{
 	border-radius: 1.5em;
 	cursor: pointer;
 	box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+    outline: none;
+    border: none;
 
 	font-size: 1.250em;
     color: @blanc;

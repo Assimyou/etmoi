@@ -203,17 +203,10 @@ article.association{
 
 		.fun {
 			display: inline-block;
-			animation-duration: 1.2s;
-			-webkit-animation-duration: 1.2s;
-			animation-iteration-count: infinite;
-			-webkit-animation-iteration-count: infinite;
-
+			.animation-duration(1.2s);
+			.animation-iteration-count(infinite);
 			.transition(all .3s ease);
-
-			&.funhover {
-				font-size: 2em;
-			}
-		}
+	    }
 	}
 
 	.badges {
@@ -224,8 +217,13 @@ article.association{
 		figure {
 			display: inline-block;
 			margin: 1em;
-			animation-iteration-count: infinite;
-			-webkit-animation-iteration-count: infinite;
+			.animation-iteration-count(infinite);
+		}
+	}
+
+	&:hover{
+		.fun{
+			font-size: 2em;
 		}
 	}
 }

@@ -140,7 +140,7 @@
 		<section class="pushbadges group">
 			<div class="center">
 				<div class="intro col-3">
-					<h3>Décuplez le <span class="fun animated">fun</span> grâce au badges !</h3>
+					<h3>Décuplez le <span class="fun tada">fun</span> grâce au badges !</h3>
 					<p>
 						Faites par de votre activité à vos amis :)<br>
 						Gagnez des badges en fonction des événéments où vous allez. Sans compter les badges secrets ;)
