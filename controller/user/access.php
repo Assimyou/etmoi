@@ -8,6 +8,8 @@
 */
 
 include_once 'classes/passport.php';
+include_once 'generateToken.php';
+include_once 'checkToken.php';
 
 if (!empty($profil['passport']))
 {
