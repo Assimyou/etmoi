@@ -4,9 +4,6 @@
 		<div class="content center group">
 
 		<section>
-			<?php if (!empty($error)) : ?>
-				<output for="" form="" ><?php echo $error; ?></output>
-			<?php endif; ?>
 			<form action="" enctype="multipart/form-data" method="post" />
 				<?php if (!empty($users['mail'])) : ?>
 				<?php foreach ($users['mail'] as $key => $value) : ?>
@@ -84,7 +81,7 @@
 				<input type="text" name="date[]" placeholder="date" />
 				<?php endif; ?>
 
-				<input type="submit" name="valider" value="enregistrer" />
+				<input type="submit" name="<?php echo generateToken($_SERVER['REQUEST_URI']); ?>" value="enregistrer" />
 			</form>
 		</section>
 	</div>
