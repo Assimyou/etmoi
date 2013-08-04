@@ -56,6 +56,20 @@
   transition: @transition;
 }
 
+.animation-iteration-count(@param: infinite){
+  -o-animation-iteration-count: @param;
+  -moz-animation-iteration-count: @param;
+  -webkit-animation-iteration-count: @param;
+  animation-iteration-count: @param;
+}
+
+.animation-duration(@param: 1s){
+	-o-animation-duration: @param;
+  -moz-animation-duration: @param;
+  -webkit-animation-duration: @param;
+  animation-duration: @param;
+}
+
 .box-sizing(@type: border-box){
   -moz-box-sizing: @type;
   -webkit-box-sizing: @type;

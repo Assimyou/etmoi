@@ -592,16 +592,17 @@ article.association a.more {
 }
 .pushbadges .intro .fun {
   display: inline-block;
-  animation-duration: 1.2s;
+  -o-animation-duration: 1.2s;
+  -moz-animation-duration: 1.2s;
   -webkit-animation-duration: 1.2s;
-  animation-iteration-count: infinite;
+  animation-duration: 1.2s;
+  -o-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
-}
-.pushbadges .intro .fun.funhover {
-  font-size: 2em;
 }
 .pushbadges .badges {
   vertical-align: middle;
@@ -611,8 +612,13 @@ article.association a.more {
 .pushbadges .badges figure {
   display: inline-block;
   margin: 1em;
-  animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.pushbadges:hover .fun {
+  font-size: 2em;
 }
 div.content.event {
   padding-top: 1em;

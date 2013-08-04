@@ -14,8 +14,8 @@ $(document).ready(function() { // initialisation du DOM
 	// FUUUUUUUN
 
 	$('.pushbadges').hover(function() {
-		$('.fun').toggleClass('tada funhover');
-		$('.badges article').toggleClass('animated');
+		$('.fun').toggleClass('animated');
+		$('.badges figure').toggleClass('animated');
 	});
 
 	// Header parallax
