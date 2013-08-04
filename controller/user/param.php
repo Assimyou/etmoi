@@ -48,7 +48,7 @@ if (!empty($id))
 	}
 }
 
-if (!empty($_POST) && $_POST['valider'] == "enregistrer") 
+if (!empty($token) && !empty($_POST[$_SESSION[$token]['token']]) && $_POST[$_SESSION[$token]['token']] == "enregistrer") 
 {
 	extract($_POST);
 
@@ -102,39 +102,57 @@ if (!empty($_POST) && $_POST['valider'] == "enregistrer")
 			}
 		}
 	}
-	if (!empty($_FILES["illustration"]))
+	if (!empty($_FILES["illustration"]) && $_FILES['cover']['error'] == 0)
 	{
-		move_uploaded_file($_FILES["illustration"]["tmp_name"], str_replace('controller\user\param.php', 'view\images\\'.$_FILES["illustration"]["name"], __FILE__));
-		
-		if (empty($users['illustration'])) 
+		if ($_FILES['illustration']['size'] <= 1000000) 
 		{
-			foreach ($users['illustration'] as $key => $value)
+			$accept = array('jpg', 'jpeg', 'gif', 'png');
+			$info = pathinfo($_FILES['illustration']['name']);
+
+			if (in_array($info['extension'], $accept)) 
 			{
-				if (!empty($value))
+				move_uploaded_file($_FILES["illustration"]["tmp_name"], str_replace('controller\user\param.php', 'view\images\\'.$_FILES["illustration"]["name"], __FILE__));
+				
+				if (!empty($users['illustration'])) 
 				{
-					$index = $key;
+					foreach ($users['illustration'] as $key => $value)
+					{
+						if (!empty($value))
+						{
+							$index = $key;
+						}
+					}
 				}
+
+				$form['illustration'][$index] = 'images/'.$_FILES["illustration"]["name"];
 			}
 		}
-
-		$form['illustration'][$index] = 'images/'.$_FILES["illustration"]["name"];
 	}
-	if (!empty($_FILES['cover'])) 
+	if (!empty($_FILES['cover']) && $_FILES['cover']['error'] == 0)
 	{
-		move_uploaded_file($_FILES["cover"]["tmp_name"], str_replace('controller\user\param.php', 'view\images\\'.$_FILES["cover"]["name"], __FILE__));
-		
-		if (empty($users['cover'])) 
+		if ($_FILES['cover']['size'] <= 1000000) 
 		{
-			foreach ($users['cover'] as $key => $value)
+			$accept = array('jpg', 'jpeg', 'gif', 'png');
+			$info = pathinfo($_FILES['cover']['size']);
+
+			if (in_array($info['extension'], $accept)) 
 			{
-				if (!empty($value))
+				move_uploaded_file($_FILES["cover"]["tmp_name"], str_replace('controller\user\param.php', 'view\images\\'.$_FILES["cover"]["name"], __FILE__));
+		
+				if (!empty($users['cover'])) 
 				{
-					$index = $key;
+					foreach ($users['cover'] as $key => $value)
+					{
+						if (!empty($value))
+						{
+							$index = $key;
+						}
+					}
 				}
+
+				$form['cover'][$index] = 'images/'.$_FILES["cover"]["name"];
 			}
 		}
-
-		$form['cover'][$index] = 'images/'.$_FILES["cover"]["name"];
 	}
 	if (!empty($address)) 
 	{
@@ -344,5 +362,4 @@ if (!empty($_POST) && $_POST['valider'] == "enregistrer")
 	header( "Location: ".$_SERVER['REQUEST_URI']);
 	exit();
 }
-
 ?>
