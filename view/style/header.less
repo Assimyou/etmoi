@@ -54,7 +54,7 @@ header{
 		}
 	}
 
-	nav{
+	nav.main-menu{
 		width: 100%;
 		background: @gris;
 		text-align: center;
@@ -74,6 +74,12 @@ header{
 			padding: 0.875em 2em;
 		}
 		span.current{ color: @jaune; }
+
+		&.fixed{
+			top: 0;
+			position: fixed;
+			z-index: 1000;
+		}
  	}
 }
 
@@ -106,6 +112,3 @@ header{
 		background: url("img/icones.png") 0 -560px no-repeat; 
 	}
 }
-
-
-
