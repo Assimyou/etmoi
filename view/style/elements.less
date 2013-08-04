@@ -175,40 +175,40 @@ form.search{
 }
 
 /* Grille */
-.col-3{
-	width: 29.333%;
+.col-3, 
+.col3-2, 
+.col-6{
 	margin-left: 2%;
 	margin-right: 2%;
 	float: left;
 }
 
-.col-3-2{
-	width: 62.333%;
-	margin-left: 2%;
-	margin-right: 2%;
-	float: left;
-}
+.col-3{	width: 29.333%; }
+
+.col-3-2{ width: 62.333%; }
+
+.col-6{	width: 12.666%; }
 
 @media screen and (max-width: 768px){
-	.col-3{
-		width: 45%;
+	.col-3, 
+	.col3-2, 
+	.col-6{
 		margin-left: 2.5%;
 		margin-right: 2.5%;
 	}
 
-	.col-3-2{
-		width: 45%;
-		margin-left: 2.5%;
-		margin-right: 2.5%;
-	}
+	.col-3{	width: 45%;	}
+
+	.col-3-2{ width: 45%; }
+
+	.col-6{	width: 20%;	}
 }
 
 @media screen and (max-width: 520px){
-	.col-3{
-		width: 95%;
-	}
+	
+	.col-3{	width: 95%;	}
 
-	.col-3-2{
-		width: 95%;
-	}
+	.col-3-2{ width: 95%; }
+
+	.col-6{	width: 45%;	}
 }

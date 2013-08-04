@@ -22,7 +22,7 @@
 				</article>
 			</section>
 
-			<section class="comments group center">
+			<section class="comments center">
 				<h1 class="banner">Commentaires</h1>
 				<article class="group">
 					<div class="col-3-2">
@@ -77,7 +77,7 @@
 				</article>
 			</section>
 
-			<section class="share group center">
+			<section class="share center">
 				<h1 class="banner">Partageons avec #GrenierMntRge</h1>
 				<article class="group">
 					<div class="col-3-2">
@@ -127,10 +127,97 @@
 				</article>
 			</section>
 
-			<section class="participants">
+			<section class="participants center">
 				<h1 class="banner">Qui participe ?</h1>
 				<article class="group">
-					
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Giselle Michou</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Giselle Michou</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Bernard Martin</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Giselle Michou</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Steven Triangle</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Giselle Michou</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Bernard Martin</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Giselle Michou</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Michel</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Giselle Michou</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Bernard Martin</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Giselle Michou</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Bernard Martin</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Giselle Michou</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Steven Triangle</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Michel</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Giselle Michou</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Giselle Michou</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Steven Triangle</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Steven Triangle</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Michel</a></h3>
+					</div>
+					<div class="participant col-6">
+						<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+						<h3><a href="#">Giselle Michou</a></h3>
+					</div>
 				</article>
 			</section>
 		</div>

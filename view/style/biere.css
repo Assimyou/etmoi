@@ -260,28 +260,37 @@ form.search {
   display: inline;
 }
 /* Grille */
-.col-3 {
-  width: 29.333%;
+.col-3,
+.col3-2,
+.col-6 {
   margin-left: 2%;
   margin-right: 2%;
   float: left;
+}
+.col-3 {
+  width: 29.333%;
 }
 .col-3-2 {
   width: 62.333%;
-  margin-left: 2%;
-  margin-right: 2%;
-  float: left;
+}
+.col-6 {
+  width: 12.666%;
 }
 @media screen and (max-width: 768px) {
-  .col-3 {
-    width: 45%;
+  .col-3,
+  .col3-2,
+  .col-6 {
     margin-left: 2.5%;
     margin-right: 2.5%;
   }
+  .col-3 {
+    width: 45%;
+  }
   .col-3-2 {
     width: 45%;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
+  }
+  .col-6 {
+    width: 20%;
   }
 }
 @media screen and (max-width: 520px) {
@@ -290,6 +299,9 @@ form.search {
   }
   .col-3-2 {
     width: 95%;
+  }
+  .col-6 {
+    width: 45%;
   }
 }
 /***********************************
@@ -654,7 +666,6 @@ article.association a.more {
 }
 div.content.event {
   padding-top: 1em;
-  padding-bottom: 1em;
   background: #e6eae0;
 }
 div.content.event section {
@@ -759,6 +770,20 @@ section.share .instagram.small {
   width: 40%;
   margin: 2.5%;
   padding: 2.5%;
+}
+section.participants .participant {
+  margin-bottom: 1em;
+}
+section.participants .participant figure {
+  width: 30%;
+  margin-right: 10%;
+  float: left;
+}
+section.participants .participant h3 {
+  width: 60%;
+  margin: 0;
+  line-height: 1;
+  float: left;
 }
 /***********************************
  *    Footer
