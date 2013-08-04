@@ -3,7 +3,7 @@
 		<div class="content event group">
 			<section class="description group center">
 				<div class="map"><div class="google"></div></div>
-				<article>
+				<article class="group">
 					<h1>Barbecue des anciens élèves de Montrouge</h1>
 					<div class="registering">
 						<div class="registered">61 inscrits</div>
@@ -19,7 +19,7 @@
 
 			<section class="comments group center">
 				<h1 class="banner">Commentaires</h1>
-				<article>
+				<article class="group">
 					<div class="col-3-2">
 						<div class="comment group">
 							<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
@@ -74,23 +74,57 @@
 
 			<section class="share group center">
 				<h1 class="banner">Partageons avec #GrenierMntRge</h1>
-				<article>
+				<article class="group">
 					<div class="col-3-2">
-						Durant la Révolution, on prête aux carrières de Montrouge d'avoir servi de cachette pour Condorcet, qui y aurait passé sa dernière nuit de liberté.
-						Le premier maire de Montrouge fut François Ory (1790) qui était maître carrier de profession.
-						En 1814, les jésuites revinrent à Montrouge.
-						C'est dans la plaine qui forme le territoire de cette commune que les troupes françaises, échappées au désastre du Mont Saint Jean, étaient, en 1815 rangées en bataille. Les élèves de l'École polytechnique, persuadés qu'on allait livrer bataille sous les murs de Paris, avaient abandonné leur position sur la butte de Saint Chaumont pour se réunir avec leurs canons. Cette armée, cette troupes brûlaient d'en venir aux mains, mais elles apprirent la convention de Saint Cloud et elles quittèrent Montrouge, le lendemain, pour aller au delà de la Loire.
-						En 1843, un géographe M. Sanis, crée près de la mairie de Montrouge une attraction éducative figurant la France en miniature : le Géorama7.
+						<div class="image">
+							<figure class="instagram big"><img src="images/barbecue-eleves-montrouge.jpg" alt="" /></figure>
+							<figure class="instagram small"><img src="images/barbecue-eleves-montrouge.jpg" alt="" /></figure>
+							<figure class="instagram small"><img src="images/chanter.jpg" alt="" /></figure>
+						</div>
+						<div class="image">
+							<figure class="instagram small"><img src="images/barbecue-eleves-montrouge.jpg" alt="" /></figure>
+							<figure class="instagram small"><img src="images/chanter.jpg" alt="" /></figure>
+							<figure class="instagram big"><img src="images/barbecue-eleves-montrouge.jpg" alt="" /></figure>
+						</div>
 					</div>
 					<div class="col-3">
-						Sous le Second Empire, les « ateliers catholiques » de Montrouge, dirigés par l'abbé Migne et employant de nombreux jeunes artistes, fournissent les églises de France en matériels de décoration, notamment en peintures à l'huile sur toile. Trois des plus intéressants spécimens de cette production, dans le style de Delacroix, se trouvent encore dans le chœur de l'église Saint Jean Baptiste d'Audresselles (Pas-de-Calais).
+						<div class="comment group">
+							<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+							<article>
+								<div class="date">10h32 - 10/06/13</div>
+								<h2><a href="#">Bernard Martin</a></h2>
+								<div class="text">J'ouvrirais mon bar ce dimanche sur le chemin du vide grenier, n'hésitez pas a venir vous rafraichir entre deux achats autour d'une bière pour cette journée ensoleillé</div>
+								<a class="reply">Répondre</a>
+								<a class="report">Signaler</a>
+							</article>
+						</div>
+						<div class="comment group">
+							<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+							<article>
+								<div class="date">10h32 - 10/06/13</div>
+								<h2><a href="#">Michel Gerard</a></h2>
+								<div class="text">Pour les féru de vielles consoles mon stand sera à coté de l'église ! N'hésitez pas à venir me voir pour trouver votre donheur ou simplement discuter rétro-gaming</div>
+								<a class="reply">Répondre</a>
+								<a class="report">Signaler</a>
+							</article>
+						</div>
+						<div class="comment group">
+							<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
+							<article>
+								<div class="date">10h32 - 10/06/13</div>
+								<h2><a href="#">Giselle Michou</a></h2>
+								<div class="text">Le club de lecture organise un truc de livres au centre de la plance ! Venez avec votre ouvrage et repartez avec une noucelle aventure. Restez parler lecture, échangez vos conseils et vos livres.</div>
+								<a class="reply">Répondre</a>
+								<a class="report">Signaler</a>
+							</article>
+						</div>
 					</div>
 				</article>
 			</section>
 
 			<section class="participants">
 				<h1 class="banner">Qui participe ?</h1>
-				<article>
+				<article class="group">
 					
 				</article>
 			</section>

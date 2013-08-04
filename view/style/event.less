@@ -5,6 +5,17 @@ div.content.event{
 
 	section{
 		padding-bottom: 6em;
+		position: relative;
+
+		&:after{ 
+			content: " ";
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			display: block; 
+			border-top: 1px solid #eed584;
+			border-bottom: 1px solid @jaune;
+		}
 	}
 }
 
@@ -39,11 +50,15 @@ section.comments{
 		height: 10em;
 		outline: none;
 		background: @nuages;
-		border: 1px dashed @gris;
-		//border-radius: 0.75em;
+		border: 1px dashed @rougefonce;
+		border-radius: 0.75em;
+		resize: none;
+		.transition();
+
 		&:focus{
 			background: @blanc;
-			border: 1px solid @gris;
+			border-color: @gris;
+			.transition();
 		}
 	}
 }
@@ -73,7 +88,39 @@ section.comments{
 		float: right;
 		margin-left: 1em;
 		color: @gris;
-		font-family: @fonttitre;
-		font-size: 0.75em;
+		//font-family: @fonttitre;
+		font-size: 0.875em;
+	}
+
+	.text{
+		font-size: 0.875em;
+	}
+}
+
+section.share{
+	.image{ 
+		float: left;
+		width: 50%;
+	}
+
+	.instagram{
+		float: left;
+		background-color: @rougefonce;
+		line-height: 0;
+		img{
+			width: 100%;
+		}
+
+		&.big{
+			width: 90%;
+			margin: 2.5%;
+			padding: 2.5%;
+		}
+
+		&.small{
+			width: 40%;
+			margin: 2.5%;
+			padding: 2.5%;
+		}
 	}
 }

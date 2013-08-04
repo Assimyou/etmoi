@@ -659,6 +659,16 @@ div.content.event {
 }
 div.content.event section {
   padding-bottom: 6em;
+  position: relative;
+}
+div.content.event section:after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: block;
+  border-top: 1px solid #eed584;
+  border-bottom: 1px solid #f7bb11;
 }
 section.description .map {
   float: right;
@@ -685,11 +695,19 @@ section.comments textarea {
   height: 10em;
   outline: none;
   background: #e6eae0;
-  border: 1px dashed #4c4c4c;
+  border: 1px dashed #5b0000;
+  border-radius: 0.75em;
+  resize: none;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 section.comments textarea:focus {
   background: #ffffff;
-  border: 1px solid #4c4c4c;
+  border-color: #4c4c4c;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 .comment {
   margin-bottom: 2em;
@@ -715,8 +733,32 @@ section.comments textarea:focus {
   float: right;
   margin-left: 1em;
   color: #4c4c4c;
-  font-family: 'Bebas', Arial, sans-serif;
-  font-size: 0.75em;
+  font-size: 0.875em;
+}
+.comment .text {
+  font-size: 0.875em;
+}
+section.share .image {
+  float: left;
+  width: 50%;
+}
+section.share .instagram {
+  float: left;
+  background-color: #5b0000;
+  line-height: 0;
+}
+section.share .instagram img {
+  width: 100%;
+}
+section.share .instagram.big {
+  width: 90%;
+  margin: 2.5%;
+  padding: 2.5%;
+}
+section.share .instagram.small {
+  width: 40%;
+  margin: 2.5%;
+  padding: 2.5%;
 }
 /***********************************
  *    Footer
