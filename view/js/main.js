@@ -30,24 +30,29 @@ $(document).ready(function() { // initialisation du DOM
 	var menufixed = false;
 	var header = $("header");
 	var menu = header.find('nav.main-menu');
-	var clonemenu = 0;
+	var menudumy = 0;
+	var navtop = menu.offset().top;
 
 	$(window).scroll(function(){
 		scrolltop = $(window).scrollTop();
-		var navtop = menu.offset().top;
+		if(menudumy == 0){
+			navtop = menu.offset().top;
+		} else {
+			navtop = menudumy.offset().top;
+		}
 
 		if(menufixed == true && scrolltop < navtop){
-			if(clonemenu != 0){
-				clonemenu.remove();
-				clonemenu = 0;
+			if(menudumy != 0){
+				menudumy.remove();
+				menudumy = 0;
 			}
+			menu.removeClass('fixed');
 			menufixed = false;
 		} else if(menufixed == false && scrolltop > navtop){
-			if(clonemenu == 0){
-				clonemenu = menu.clone()
-					.addClass('fixed')
-					.appendTo(header);
+			if(menudumy == 0){
+				menudumy = $('<nav class="placeholder" style="width: 100%; height:'+menu.height()+'px"></nav>').appendTo(header);
 			}
+			menu.addClass('fixed');
 			menufixed = true;
 		}
 	});
