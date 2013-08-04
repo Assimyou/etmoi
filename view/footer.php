@@ -25,8 +25,8 @@
 				</div>
 
 				<div class="login col-3">
-					<h3>Pas encore connecté ?</h3>
 					<form action="" method="post" >
+						<h3>Pas encore connecté ?</h3>
 					<?php if (empty($_SESSION['id'])) : ?>	<input type="text" name="mail" />
 						<input type="password" name="password" />
 						<input type="submit" name="submit" value="Se connecter" />

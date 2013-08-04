@@ -78,12 +78,14 @@ img {
 }
 a {
   color: #ac272d;
+  text-decoration: underline;
 }
 .content {
   text-align: left;
 }
 /* Fonts */
 a.btn,
+input.btn,
 input.search,
 h1,
 h2,
@@ -108,6 +110,27 @@ h1 {
 h2 {
   font-size: 1.625em;
   line-height: 1;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a {
+  color: inherit;
+  text-decoration: none;
+}
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h1 a:active,
+h2 a:active,
+h3 a:active,
+h4 a:active,
+h1 a:focus,
+h2 a:focus,
+h3 a:focus,
+h4 a:focus {
+  text-decoration: underline;
 }
 h1.banner {
   position: relative;
@@ -139,7 +162,8 @@ h1.banner:after {
   background-position: 0 -640px;
 }
 /* Boutons */
-a.btn {
+a.btn,
+input.btn {
   display: inline-block;
   min-height: 1.5em;
   margin: 10px 10px 0 0;
@@ -148,6 +172,8 @@ a.btn {
   border-radius: 1.5em;
   cursor: pointer;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  outline: none;
+  border: none;
   font-size: 1.250em;
   color: #ffffff;
   text-decoration: none;
@@ -155,7 +181,8 @@ a.btn {
   text-align: center;
   text-shadow: 0 1px #4c4c4c;
 }
-a.btn:hover {
+a.btn:hover,
+input.btn:hover {
   color: #f7bb11;
 }
 a.close {
@@ -275,7 +302,7 @@ header {
   background: #e6eae0;
 }
 header .user {
-  background: url("img/cloud-old.jpg") top center no-repeat;
+  background: url("img/cloud.jpg") top center no-repeat;
 }
 header .user > .center {
   padding: 2em 0;
@@ -323,14 +350,14 @@ header .login a:active,
 header .login a:focus {
   text-decoration: underline;
 }
-header nav {
+header nav.main-menu {
   width: 100%;
   background: #4c4c4c;
   text-align: center;
   overflow: hidden;
 }
-header nav a,
-header nav span.current {
+header nav.main-menu a,
+header nav.main-menu span.current {
   display: inline-block;
   padding: 0.875em 1em;
   color: #ffffff;
@@ -339,14 +366,19 @@ header nav span.current {
   text-shadow: 0 -1px #333333;
   transition: all 0.3s ease;
 }
-header nav a:hover,
-header nav a:active,
-header nav a:focus {
+header nav.main-menu a:hover,
+header nav.main-menu a:active,
+header nav.main-menu a:focus {
   color: #f7bb11;
   padding: 0.875em 2em;
 }
-header nav span.current {
+header nav.main-menu span.current {
   color: #f7bb11;
+}
+header nav.main-menu.fixed {
+  top: 0;
+  position: fixed;
+  z-index: 1000;
 }
 .notification-zone {
   position: relative;
@@ -592,16 +624,17 @@ article.association a.more {
 }
 .pushbadges .intro .fun {
   display: inline-block;
-  animation-duration: 1.2s;
+  -o-animation-duration: 1.2s;
+  -moz-animation-duration: 1.2s;
   -webkit-animation-duration: 1.2s;
-  animation-iteration-count: infinite;
+  animation-duration: 1.2s;
+  -o-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
-}
-.pushbadges .intro .fun.funhover {
-  font-size: 2em;
 }
 .pushbadges .badges {
   vertical-align: middle;
@@ -611,8 +644,13 @@ article.association a.more {
 .pushbadges .badges figure {
   display: inline-block;
   margin: 1em;
-  animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.pushbadges:hover .fun {
+  font-size: 2em;
 }
 div.content.event {
   padding-top: 1em;
@@ -621,6 +659,16 @@ div.content.event {
 }
 div.content.event section {
   padding-bottom: 6em;
+  position: relative;
+}
+div.content.event section:after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: block;
+  border-top: 1px solid #eed584;
+  border-bottom: 1px solid #f7bb11;
 }
 section.description .map {
   float: right;
@@ -632,6 +680,85 @@ section.description .map .google {
   height: 330px;
   background: #f7bb11;
   border-radius: 100%;
+}
+section.comments label {
+  display: block;
+  font-family: 'Bebas', Arial, sans-serif;
+  font-size: 1.625em;
+  line-height: 1;
+}
+section.comments textarea {
+  display: block;
+  padding: 1em 5%;
+  margin-top: 0.5em;
+  width: 90%;
+  height: 10em;
+  outline: none;
+  background: #e6eae0;
+  border: 1px dashed #5b0000;
+  border-radius: 0.75em;
+  resize: none;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+section.comments textarea:focus {
+  background: #ffffff;
+  border-color: #4c4c4c;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.comment {
+  margin-bottom: 2em;
+}
+.comment.answer {
+  margin-left: 12.5%;
+}
+.comment h2 {
+  margin: 0;
+}
+.comment figure {
+  float: left;
+  width: 10%;
+  margin-right: 2.5%;
+  overflow: hidden;
+  border-radius: 100%;
+}
+.comment article {
+  float: left;
+  width: 87.5%;
+}
+.comment .date {
+  float: right;
+  margin-left: 1em;
+  color: #4c4c4c;
+  font-size: 0.875em;
+}
+.comment .text {
+  font-size: 0.875em;
+}
+section.share .image {
+  float: left;
+  width: 50%;
+}
+section.share .instagram {
+  float: left;
+  background-color: #5b0000;
+  line-height: 0;
+}
+section.share .instagram img {
+  width: 100%;
+}
+section.share .instagram.big {
+  width: 90%;
+  margin: 2.5%;
+  padding: 2.5%;
+}
+section.share .instagram.small {
+  width: 40%;
+  margin: 2.5%;
+  padding: 2.5%;
 }
 /***********************************
  *    Footer
@@ -724,7 +851,7 @@ footer .login form input[type="submit"] {
   text-shadow: none;
 }
 textarea {
-  resize: vertical;
+  resize: none;
 }
 ::-webkit-input-placeholder {
   color: mixin(#ffffff, #ac272d);
