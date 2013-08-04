@@ -1,33 +1,71 @@
 <?php
 session_start();
 
+header("Cache-Control: no-cache, must-revalidate");
+header("Pragma: no-cache");
+
 ini_set('include_path', ini_get('include_path').';./model/;./view/;./controller/');
 
 include_once 'dbh.php';
 include_once 'user/authentication.php';
+session_write_close();
+
 include_once 'user/access.php';
 
-if (!empty($_SESSION['id']))
-{
-	$id = $_SESSION['id'];
+$allow = FALSE;
 
-	if (!empty($_GET['id'])) 
+if (!empty($_GET['act']) && $_GET['act'] == 'edit') 
+{
+	if (!empty($_SESSION['id']))
 	{
-		foreach ($visa as $key => $value)
+		$id = $_SESSION['id'];
+	
+		if (!empty($_GET['q'])) 
 		{
-			if ($value == 'webmaster')
+			foreach ($visa as $key => $value)
 			{
-				$id = $_GET['id'];
+				if ($value == 'webmaster')
+				{
+					$id = $_GET['q'];
+				}
 			}
 		}
-	}
 
-	include_once 'user/param.php';
-	include_once 'view/profil.php';
+		if (checkToken(10, $_SERVER['REQUEST_URI']))
+		{
+			$token = $_SERVER['REQUEST_URI'];
+		}
+		else
+		{
+			$token = "";
+		}
+
+		$allow = TRUE;
+		include_once 'user/param.php';
+		include_once 'view/profile-form.php';
+	}
 }
-else
+
+if ($allow == FALSE) 
 {
-	header('Location: .');
-	exit();
+	if (!empty($_GET['q'])) 
+	{
+		$id = $_GET['q'];
+
+		include_once 'user/param.php';
+		include_once 'view/profile.php';
+	}
+	elseif (!empty($_SESSION['id'])) 
+	{
+		$id = $_SESSION['id'];
+
+		include_once 'user/param.php';
+		include_once 'view/profile.php';
+	}
+	else
+	{
+		header('Location: .');
+		exit();
+	}
 }
 ?>
