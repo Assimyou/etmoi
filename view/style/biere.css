@@ -275,7 +275,7 @@ header {
   background: #e6eae0;
 }
 header .user {
-  background: url("img/cloud.jpg") top center no-repeat;
+  background: url("img/cloud-old.jpg") top center no-repeat;
 }
 header .user > .center {
   padding: 2em 0;
