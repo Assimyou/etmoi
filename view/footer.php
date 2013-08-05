@@ -26,11 +26,13 @@
 
 				<div class="login col-3">
 					<form action="" method="post" >
+						<?php if (empty($_SESSION['id'])) : ?>
 						<h3>Pas encore connecté ?</h3>
-					<?php if (empty($_SESSION['id'])) : ?>	<input type="text" name="mail" />
+						<input type="text" name="mail" />
 						<input type="password" name="password" />
 						<input type="submit" name="submit" value="Se connecter" />
-					<?php else : ?>	<input type="submit" name="submit" value="Se deconnecter" />
+					<?php else : ?><h3>Vous ne restez pas ?</h3>
+					<input type="submit" name="submit" value="Se deconnecter" />
 					<?php endif; ?></form>
 				</div>
 			</div>
