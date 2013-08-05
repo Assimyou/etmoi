@@ -276,7 +276,7 @@ form.search {
 .col-6 {
   width: 12.666%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48em) {
   .col-3,
   .col-3-2,
   .col-6 {
@@ -293,7 +293,7 @@ form.search {
     width: 20%;
   }
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 32.5em) {
   .col-3 {
     width: 95%;
   }
@@ -482,10 +482,11 @@ a.btn.register:focus:hover:after {
   content: "!";
 }
 .registered {
-  display: inline;
+  display: inline-block;
   font-size: 1.250em;
   background: url("img/icones.png") -28px -31px no-repeat;
   padding: 0 1em 0 1.75em;
+  margin-top: 10px;
 }
 /* Une */
 .une {
@@ -672,14 +673,15 @@ div.content.event section {
   padding-bottom: 6em;
   position: relative;
 }
-div.content.event section:after {
+div.content.event section:before {
   content: " ";
   position: absolute;
-  bottom: 0;
+  top: -3px;
   width: 100%;
   display: block;
   border-top: 1px solid #eed584;
   border-bottom: 1px solid #f7bb11;
+  z-index: 0;
 }
 section.description .map {
   float: right;
@@ -691,6 +693,9 @@ section.description .map .google {
   height: 330px;
   background: #f7bb11;
   border-radius: 100%;
+}
+section.description:before {
+  display: none !important;
 }
 section.comments label {
   display: block;
@@ -784,6 +789,69 @@ section.participants .participant h3 {
   margin: 0;
   line-height: 1;
   float: left;
+}
+section.promoters .association {
+  margin-bottom: 3em;
+}
+section.promoters .association figure {
+  width: 15%;
+  margin-right: 2.5%;
+  float: left;
+}
+section.promoters .association figure img {
+  border-radius: 100%;
+}
+section.promoters .association article {
+  width: 82.5%;
+  margin: 0;
+  line-height: 1;
+  float: left;
+}
+section.promoters .association h2 {
+  margin: 0;
+}
+section.promoters .association .text {
+  font-size: 0.875em;
+}
+section.promoters .association a.more {
+  float: right;
+  margin: 0.25em 0 0.25em 1em;
+}
+section.badges .badge {
+  margin-bottom: 3em;
+}
+section.badges .badge figure {
+  width: 25%;
+  margin-right: 2.5%;
+  float: left;
+}
+section.badges .badge figure img {
+  border-radius: 100%;
+}
+section.badges .badge article {
+  width: 72.5%;
+  margin: 0;
+  line-height: 1;
+  float: left;
+}
+section.badges .badge h2 {
+  margin: 0;
+}
+section.badges .badge .text {
+  font-size: 0.875em;
+}
+section.badges .badge a.more {
+  float: right;
+  margin: 0.25em 0 0.25em 1em;
+}
+@media screen and (max-width: 48em) {
+  section.share .image {
+    float: none;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 32.5em) {
+  
 }
 /***********************************
  *    Footer

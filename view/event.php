@@ -2,7 +2,9 @@
 		<!-- Debut page evenement -->
 		<div class="content event group">
 			<section class="description group center">
-				<div class="map"><div class="google"></div></div>
+				<div class="map">
+					<div id="map-canvas" class="google"></div>
+				</div>
 				<article>
 					<?php if (!empty($events['headline'])) : ?>
 					<?php foreach ($events['headline'] as $key => $value) : ?>
@@ -220,6 +222,96 @@
 					</div>
 				</article>
 			</section>
+
+			<div class="center">
+				<section class="promoters col-3-2">
+					<h1 class="banner">Qui organise ?</h1>
+					<article class="group">
+						<div class="association group">
+							<figure><img src="images/commerces.jpg" alt="Logo du club du parc" /></figure>
+							<article>
+								<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+								<h2>Le Club du parc</h2>
+								<div class="text">
+									Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod
+								</div>
+								<div class="registering group">
+									<div class="registered">61 membres</div>
+									<a href="#register" class="btn register">J'adhère </a>
+								</div>
+							</article>
+						</div>
+						<div class="association group">
+							<figure><img src="images/commerces.jpg" alt="Logo du club du parc" /></figure>
+							<article>
+								<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+								<h2>Le Club du parc</h2>
+								<div class="text">
+									Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod
+								</div>
+								<div class="registering group">
+									<div class="registered">61 membres</div>
+									<a href="#register" class="btn register">J'adhère </a>
+								</div>
+							</article>
+						</div>
+						<div class="association group">
+							<figure><img src="images/commerces.jpg" alt="Logo du club du parc" /></figure>
+							<article>
+								<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+								<h2>Le Club du parc</h2>
+								<div class="text">
+									Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod
+								</div>
+								<div class="registering group">
+									<div class="registered">61 membres</div>
+									<a href="#register" class="btn register">J'adhère </a>
+								</div>
+							</article>
+						</div>
+						<div class="association group">
+							<figure><img src="images/commerces.jpg" alt="Logo du club du parc" /></figure>
+							<article>
+								<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+								<h2>Le Club du parc</h2>
+								<div class="text">
+									Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod
+								</div>
+								<div class="registering group">
+									<div class="registered">61 membres</div>
+									<a href="#register" class="btn register">J'adhère </a>
+								</div>
+							</article>
+						</div>
+					</article>
+				</section>
+				<section class="badges col-3">
+					<h1 class="banner">Les badges ?</h1>
+					<article class="group">
+						<div class="badge group">
+							<figure><img src="images/badge.png" alt="Bernard Martin" /></figure>
+							<article>
+								<h2><a href="#">Steven Triangle</a></h2>
+								<div class="text">Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod</div>
+							</article>
+						</div>
+						<div class="badge group">
+							<figure><img src="images/badge.png" alt="Bernard Martin" /></figure>
+							<article>
+								<h2><a href="#">Steven Triangle</a></h2>
+								<div class="text">Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod</div>
+							</article>
+						</div>
+						<div class="badge group">
+							<figure><img src="images/badge.png" alt="Bernard Martin" /></figure>
+							<article>
+								<h2><a href="#">Steven Triangle</a></h2>
+								<div class="text">Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod</div>
+							</article>
+						</div>
+					</article>
+				</section>
+			</div>
 		</div>
 		<!-- Fin page evenement -->
 <?php include_once "footer.php"; ?>
