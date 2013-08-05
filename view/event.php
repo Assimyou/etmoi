@@ -1,14 +1,55 @@
 <?php include_once "header.php"; ?>
 		<!-- Debut page evenement -->
-		<div class="content event group">
-			<section class="description group center">
-				<div class="map">
+		<div class="content event">
+			<section class="description group">
+				<div class="map">	
+					<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCSGWvl82q9C_nnbjfprJOL6jXdr_xPMHo&sensor=true"></script>
+					<script>
+					  var geocoder;
+					  var map;
+
+					  function initialize() {
+					    geocoder = new google.maps.Geocoder();
+					    var latlng = new google.maps.LatLng(48.816363, 2.3173839999999473);
+					    var mapOptions = {
+					      zoom: 14,
+					      center: latlng,
+					      scrollwheel: false,
+					      navigationControl: false,
+					      mapTypeControl: false,
+					      scaleControl: false,
+					      draggable: true,
+					      disableDefaultUI: false,
+					      mapTypeId: google.maps.MapTypeId.ROADMAP
+					    }
+					    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+					    codeAddress();
+					  }
+
+					  function codeAddress() {
+					    var address = "Montrouge, France";
+					    geocoder.geocode( { 'address': address}, function(results, status) {
+					      if (status == google.maps.GeocoderStatus.OK) {
+					        map.setCenter(results[0].geometry.location);
+					        var marker = new google.maps.Marker({
+					            map: map,
+					            position: results[0].geometry.location
+					        });
+					      } else {
+					        alert("Geocode was not successful for the following reason: " + status);
+					      }
+					    });
+					  }
+
+					  window.onload = initialize;
+					</script>
 					<div id="map-canvas" class="google"></div>
 				</div>
-				<article>
+				<article class="center">
+					<figure><img src="images/barbecue-eleves-montrouge.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
 					<?php if (!empty($events['headline'])) : ?>
 					<?php foreach ($events['headline'] as $key => $value) : ?>
-					<h1><?php echo $value; ?></h1>
+						<h1><?php echo $value; ?></h1>
 					<?php endforeach; ?>
 					<?php endif; ?>
 					<div class="registering">

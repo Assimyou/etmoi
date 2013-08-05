@@ -666,7 +666,6 @@ article.association a.more {
   font-size: 2em;
 }
 div.content.event {
-  padding-top: 1em;
   background: #e6eae0;
 }
 div.content.event section {
@@ -683,19 +682,35 @@ div.content.event section:before {
   border-bottom: 1px solid #f7bb11;
   z-index: 0;
 }
-section.description .map {
-  float: right;
-  padding: 3.750em;
-  background: url("img/image-circle.png") top left no-repeat;
-}
 section.description .map .google {
-  width: 330px;
-  height: 330px;
+  width: 100%;
+  height: 350px;
   background: #f7bb11;
-  border-radius: 100%;
+}
+section.description .map .google a img {
+  display: none;
+}
+section.description .map .google .gmnoprint[style="z-index: 1000001; position: absolute; right: 95px; bottom: 0px;"] {
+  display: none;
+}
+section.description .map .google .gmnoprint[style~="font-size"] {
+  display: none;
 }
 section.description:before {
   display: none !important;
+}
+section.description article {
+  margin-top: 1em;
+  -webkit-column-width: 15em;
+  -webkit-column-gap: 3em;
+}
+section.description figure {
+  margin-top: -155px;
+  position: relative;
+}
+section.description figure img {
+  border-radius: 100%;
+  border: 5px solid #f7bb11;
 }
 section.comments label {
   display: block;
