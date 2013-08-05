@@ -707,6 +707,8 @@ section.description article {
 section.description figure {
   margin-top: -155px;
   position: relative;
+  float: left;
+  margin-right: 2em;
 }
 section.description figure img {
   border-radius: 100%;
