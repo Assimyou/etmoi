@@ -8,7 +8,7 @@ function checkToken($timeOut, $name)
 		$date = new DateTime('now');
 
 		$diff = $_SESSION[$name]['time-tokens']->diff($date);
-		$timing = $diff->format('%s');
+		$timing = $diff->format('%i');
 
 		if($timing < $timeOut)
 		{
