@@ -43,12 +43,12 @@
 				<input type="text" name="address[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="adresse" />
 				<?php endforeach; ?>
 				<?php else : ?>
-				<input type="text" name="address[]" placeholder="location" />
+				<input type="text" name="address[]" placeholder="adresse" />
 				<?php endif; ?>
 
 				<?php if (!empty($events['data-location'])) : ?>
 				<?php foreach ($events['data-location'] as $key => $value) : ?>
-				<input type="text" name="location[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="adresse" />
+				<input type="text" name="location[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="location" />
 				<?php endforeach; ?>
 				<?php else : ?>
 				<input type="text" name="location[]" placeholder="location" />
