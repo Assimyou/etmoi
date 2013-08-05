@@ -1,6 +1,6 @@
 <?php include_once "header.php"; ?>
 		<!-- Debut page evenement -->
-		<div class="content event">
+		<div class="content event group">
 			<section class="description group">
 				<div class="map">	
 					<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCSGWvl82q9C_nnbjfprJOL6jXdr_xPMHo&sensor=true"></script>
@@ -326,6 +326,7 @@
 						</div>
 					</article>
 				</section>
+
 				<section class="badges col-3">
 					<h1 class="banner">Les badges ?</h1>
 					<article class="group">
