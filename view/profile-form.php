@@ -1,7 +1,7 @@
 <?php include_once "header.php"; ?>
 
 		<!-- Debut du corps du site -->
-		<div class="content center group">
+		<div>
 
 		<section>
 			<form action="" enctype="multipart/form-data" method="post" />
@@ -67,10 +67,18 @@
 
 				<?php if (!empty($users['address'])) : ?>
 				<?php foreach ($users['address'] as $key => $value) : ?>
-				<input type="text" name="address[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="location" />
+				<input type="text" name="address[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="adresse" />
 				<?php endforeach; ?>
 				<?php else : ?>
-				<input type="text" name="address[]" placeholder="location" />
+				<input type="text" name="address[]" placeholder="adresse" />
+				<?php endif; ?>
+
+				<?php if (!empty($users['data-location'])) : ?>
+				<?php foreach ($users['data-location'] as $key => $value) : ?>
+				<input type="text" name="location[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="location" />
+				<?php endforeach; ?>
+				<?php else : ?>
+				<input type="text" name="location[]" placeholder="location" />
 				<?php endif; ?>
 
 				<?php if (!empty($users['date'])) : ?>
