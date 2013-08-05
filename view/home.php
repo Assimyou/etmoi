@@ -1,7 +1,7 @@
 <?php include_once "header.php"; ?>
 
 		<!-- Debut du corps du site -->
-		<div class="content group">
+		<div class="content home group">
 
 			<!-- Debut Évènement à la Une -->
 			<section class="une">
@@ -15,7 +15,7 @@
 						<div class="when">10.06.2013</div>
 						<div class="where">Place Victor Hugo, Impasse des citrons</div>
 					</div>
-					<div class="thumbnail"><img src="images/barbecue-eleves-montrouge.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
+					<figure><img src="images/barbecue-eleves-montrouge.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
 					<div class="description left-50 group">
 						<p>The regret on our side is., they used to say years ago, we are reading about you in science class.</p>
 						<p>We are all connected; To each other, biologically. To the earth, chemically. To the rest of the universe atomically....</p>
@@ -40,7 +40,7 @@
 								<div class="when">10.06.2013</div>
 								<div class="where">Place Victor Hugo, Impasse des citrons</div>
 							</div>
-							<div class="thumbnail"><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
+							<figure><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
 						</div>
 						<div class="evenement-by">
 							Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
@@ -54,7 +54,7 @@
 								<div class="when">10.06.2013</div>
 								<div class="where">Place Victor Hugo, Impasse des citrons</div>
 							</div>
-							<div class="thumbnail"><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
+							<figure><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
 						</div>
 						<div class="evenement-by">
 							Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
@@ -68,7 +68,7 @@
 								<div class="when">10.06.2013</div>
 								<div class="where">Place Victor Hugo, Impasse des citrons</div>
 							</div>
-							<div class="thumbnail"><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
+							<figure><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
 						</div>
 						<div class="evenement-by">
 							Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
@@ -82,7 +82,7 @@
 								<div class="when">10.06.2013</div>
 								<div class="where">Place Victor Hugo, Impasse des citrons</div>
 							</div>
-							<div class="thumbnail"><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
+							<figure><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
 						</div>
 						<div class="evenement-by">
 							Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
@@ -96,7 +96,7 @@
 								<div class="when">10.06.2013</div>
 								<div class="where">Place Victor Hugo, Impasse des citrons</div>
 							</div>
-							<div class="thumbnail"><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
+							<figure><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
 						</div>
 						<div class="evenement-by">
 							Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
@@ -113,22 +113,22 @@
 				<div class="wrapper">
 					<article class="association">
 						<h2>Le Club du parc</h2>
-						<div class="thumbnail"><img src="images/commerces.jpg" alt="Logo du club du parc" /></div>
+						<figure><img src="images/commerces.jpg" alt="Logo du club du parc" /></figure>
 						<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
 					</article>
 					<article class="association">
 						<h2>Le Club du parc</h2>
-						<div class="thumbnail"><img src="images/commerces.jpg" alt="Logo du club du parc" /></div>
+						<figure><img src="images/commerces.jpg" alt="Logo du club du parc" /></figure>
 						<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
 					</article>
 					<article class="association">
 						<h2>Le Club du parc</h2>
-						<div class="thumbnail"><img src="images/commerces.jpg" alt="Logo du club du parc" /></div>
+						<figure><img src="images/commerces.jpg" alt="Logo du club du parc" /></figure>
 						<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
 					</article>
 					<article class="association">
 						<h2>Le Club du parc</h2>
-						<div class="thumbnail"><img src="images/commerces.jpg" alt="Logo du club du parc" /></div>
+						<figure><img src="images/commerces.jpg" alt="Logo du club du parc" /></figure>
 						<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
 					</article>
 				</div>

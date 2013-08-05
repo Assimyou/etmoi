@@ -424,6 +424,9 @@ header nav.main-menu.fixed {
  *
  **********************************/
 /* General */
+div.content.home figure img {
+  border-radius: 100%;
+}
 .when {
   padding-left: 1.5em;
   font-size: 1.5em;
@@ -531,7 +534,7 @@ article.evenement.big .infos .where {
   padding-left: 10%;
   width: 40%;
 }
-article.evenement.big .thumbnail {
+article.evenement.big figure {
   position: absolute;
   top: 0;
   right: 50%;
@@ -554,16 +557,13 @@ article.evenement.small h2 {
   border-bottom: 3px solid #e5eae0;
   padding-bottom: 0.615em;
 }
-article.evenement.small .thumbnail {
+article.evenement.small figure {
   float: right;
   width: 40%;
 }
 article.evenement.small .infos {
   float: right;
   width: 60%;
-}
-.thumbnail img {
-  border-radius: 100%;
 }
 section {
   text-align: center;
@@ -607,7 +607,7 @@ article.association h2 {
   padding-bottom: 0.25em;
   border-bottom: 3px solid #ac272d;
 }
-article.association .thumbnail {
+article.association figure {
   position: absolute;
   top: 0;
   left: 0;

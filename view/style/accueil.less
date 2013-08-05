@@ -3,7 +3,9 @@
  *
  **********************************/
 /* General */
-
+div.content.home{
+	figure img{ border-radius: 100%; }
+}
 
 .when{
 	padding-left: 1.5em;
@@ -94,7 +96,7 @@ article.evenement{
 		h1{ margin: 0.333em 0; }
 		.description, .category{ font-size: 0.875em; font-family: @fontbase }
 		.infos .when, .infos .where{ float: left; padding-left:10%; width: 40%; }
-		.thumbnail{
+		figure{
 			position: absolute;
 			top: 0;
 			right: 50%;
@@ -116,7 +118,7 @@ article.evenement{
 		float: left;
 		margin: 1em 5%;
 		h2{ border-bottom: 3px solid #e5eae0; padding-bottom: 0.615em; }
-		.thumbnail{
+		figure{
 			float: right;
 			width: 40%; 
 		}
@@ -126,8 +128,6 @@ article.evenement{
 		}
 	}
 }
-
-.thumbnail img{ border-radius: 100%; }
 
 section{
 	text-align: center;
@@ -172,7 +172,7 @@ article.association{
 		padding-bottom: 0.25em;
 		border-bottom: 3px solid @rouge; 
 	}
-	.thumbnail{
+	figure{
 		position: absolute;
 		top: 0;
 		left: 0;
