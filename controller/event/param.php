@@ -138,6 +138,16 @@ if (!empty($token) && !empty($_POST[$_SESSION[$token]['token']]) && $_POST[$_SES
 			}
 		}
 	}
+	if (!empty($location))
+	{
+		foreach ($location as $key => $value)
+		{
+			if (!empty($value))
+			{
+				$form['data-location'][$key] = $value;
+			}
+		}
+	}
 	if (!empty($hashtag))
 	{
 		foreach ($hashtag as $key => $value)
@@ -195,6 +205,7 @@ if (!empty($token) && !empty($_POST[$_SESSION[$token]['token']]) && $_POST[$_SES
 		$init[] = 'address';
 		$init[] = 'zip';
 		$init[] = 'city';
+		$init[] = "data-location";
 		$init[] = 'hashtag';
 		$init[] = 'tag';
 		$init[] = 'publish';

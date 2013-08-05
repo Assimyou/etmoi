@@ -46,6 +46,14 @@
 				<input type="text" name="address[]" placeholder="location" />
 				<?php endif; ?>
 
+				<?php if (!empty($events['data-location'])) : ?>
+				<?php foreach ($events['data-location'] as $key => $value) : ?>
+				<input type="text" name="location[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="adresse" />
+				<?php endforeach; ?>
+				<?php else : ?>
+				<input type="text" name="location[]" placeholder="location" />
+				<?php endif; ?>
+
 				<?php if (!empty($events['hashtag'])) : ?>
 				<?php foreach ($events['hashtag'] as $key => $value) : ?>
 				<input type="text" name="hashtag[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="hashtag" />
