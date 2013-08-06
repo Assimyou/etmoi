@@ -1,0 +1,56 @@
+div.content.association{
+	background: @nuages;
+
+	section{
+		padding-bottom: 6em;
+		position: relative;
+
+		&:before{
+			content: " ";
+			position: absolute;
+			top: -3px;
+			width: 100%;
+			display: block;
+			border-top: 1px solid #eed584;
+			border-bottom: 1px solid @jaune;
+			z-index: 0;
+		}
+	}
+}
+
+.cover{
+	position: relative;
+	overflow: hidden;
+	height: 350px;
+	background-position: center center;
+	background-size: 100%; //fallback
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-clip: cover;
+
+	.center{ height: 100%; }
+
+	h1{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		margin: 0.3em 0;
+		color: #fff;
+		text-align: right;
+		z-index: 10;
+	}
+
+	img{
+		width: 100%;
+	}
+
+	&:after{
+		content: " ";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 100px;
+		width: 100%;
+		background: url("img/bg-grad.png") bottom left repeat-x;
+	}
+}
