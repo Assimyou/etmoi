@@ -10,12 +10,14 @@
 
 					  function initialize() {
 					    geocoder = new google.maps.Geocoder();
-					    var latlng = new google.maps.LatLng(<?php 
+					    var latlng = new google.maps.LatLng(<?php
+
 					    	if (!empty($events['data-location'])) : 
 					    		foreach ($events['data-location'] as $key => $value) : 
 					    			echo $value;
-					 			endforeach; 
-							endif; 
+					 			endforeach;
+							endif;
+							
 							?>);
 					    var mapOptions = {
 					      zoom: 14,
