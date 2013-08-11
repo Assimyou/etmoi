@@ -8,6 +8,8 @@
 */
 
 include_once 'classes/event.php';
+include_once 'classes/association.php';
+
 
 if (!empty($_GET['q']))
 {
@@ -44,6 +46,34 @@ if (!empty($_GET['q']))
 			}
 
 			$events[$child['wording']] = $multiple;
+		}
+	}
+}
+
+if (!empty($_POST['submit']) && $_POST['submit'] == 'supprimer') 
+{
+	if (!empty($_GET['q'])) 
+	{
+		$event->setId($_GET['q']);
+		$event->selectEvent();
+
+		$event->setRight($event->getResult()['right']);
+		$event->setLeft($event->getResult()['left']);
+
+		$diff = $event->getResult()['right'] - $event->getResult()['left'];
+
+		$event->selectChild();
+
+		for ($i=0; $i <= $diff; $i++)
+		{
+			foreach ($event->getResult() as $children => $child)
+			{
+				if ($child['right'] - $child['left'] == $i)
+				{
+					$event->setId($child['id']);
+					$event->remove();
+				}
+			}
 		}
 	}
 }
@@ -92,7 +122,7 @@ if (!empty($token) && !empty($_POST[$_SESSION[$token]['token']]) && $_POST[$_SES
 			if (in_array($info['extension'], $accept)) 
 			{
 				move_uploaded_file($_FILES["illustration"]["tmp_name"], str_replace('controller\event\param.php', 'view\images\\'.$_FILES["illustration"]["name"], __FILE__));
-				
+
 				if (!empty($events['illustration'])) 
 				{
 					foreach ($events['illustration'] as $key => $value)

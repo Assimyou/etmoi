@@ -48,6 +48,34 @@ if (!empty($_GET['q']))
 	}
 }
 
+if (!empty($_POST['submit']) && $_POST['submit'] == 'supprimer') 
+{
+	if (!empty($_GET['q'])) 
+	{
+		$association->setId($_GET['q']);
+		$association->selectAsso();
+
+		$association->setRight($association->getResult()['right']);
+		$association->setLeft($association->getResult()['left']);
+
+		$diff = $association->getResult()['right'] - $association->getResult()['left'];
+
+		$association->selectChild();
+
+		for ($i=0; $i <= $diff; $i++)
+		{
+			foreach ($association->getResult() as $children => $child)
+			{
+				if ($child['right'] - $child['left'] == $i)
+				{
+					$association->setId($child['id']);
+					$association->remove();
+				}
+			}
+		}
+	}
+}
+
 if (!empty($token) !empty($_POST[$_SESSION[$token]['token']]) && $_POST[$_SESSION[$token]['token']] == "enregistrer") 
 {
 	extract($_POST);
