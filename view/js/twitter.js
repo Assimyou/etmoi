@@ -4,7 +4,7 @@ var twitter = function(){
 	console.log(hashtag);
 
 	var call = function(){
-		$.post("http://127.0.0.1/etmoi/ajax.php?twitter="+hashtag, function(data){
+		$.post("ajax.php?twitter="+hashtag, function(data){
 	        	var output = '';
 	        	console.log(data)
 	        	for (var i=0; i<data.statuses.length; i++) {
