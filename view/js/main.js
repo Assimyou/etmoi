@@ -2,7 +2,6 @@ $(document).ready(function() { // initialisation du DOM
 	var scrolltop = $(window).scrollTop();
 
 	// Fermeture du notification center
-
 	$('#close-notification').click(function() {
 		$('.notification-zone').toggleClass('animated bounceOutUp');
 
@@ -13,14 +12,12 @@ $(document).ready(function() { // initialisation du DOM
 	});
 
 	// FUUUUUUUN
-
 	$('.pushbadges').hover(function() {
 		$('.fun').toggleClass('animated');
 		$('.badges figure').toggleClass('animated');
 	});
 
 	// Header parallax
-
 	jQuery('#parallax .parallax-layer')
 	    .parallax({
 	      mouseport: jQuery('#parallax')

@@ -758,7 +758,8 @@ section.comments textarea:focus {
   float: left;
   width: 10%;
   margin-right: 2.5%;
-  overflow: hidden;
+}
+.comment figure img {
   border-radius: 100%;
 }
 .comment article {
@@ -923,6 +924,12 @@ div.content.association section:before {
   height: 100px;
   width: 100%;
   background: url("img/bg-grad.png") bottom left repeat-x;
+}
+div.content.profil {
+  background: #e6eae0;
+}
+div.content.profil section.profil {
+  margin-top: 3em;
 }
 /***********************************
  *    Footer

@@ -1,10 +1,27 @@
 <?php include_once "header.php"; ?>
+
+		<script type="text/javascript">
+			function addLoadEvent(func) {
+			  var oldonload = window.onload;
+			  if (typeof window.onload != 'function') {
+			    window.onload = func;
+			  } else {
+			    window.onload = function() {
+			      if (oldonload) {
+			        oldonload();
+			      }
+			      func();
+			    }
+			  }
+			}
+		</script>
+
 		<!-- Debut page evenement -->
 		<div class="content event group">
 			<section class="description group">
 				<div class="map">	
 					<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCSGWvl82q9C_nnbjfprJOL6jXdr_xPMHo&sensor=true"></script>
-					<script>
+					<script type="text/javascript">
 					  var geocoder;
 					  var map;
 
@@ -52,7 +69,7 @@
 					    });
 					  }
 
-					  window.onload = initialize;
+					  addLoadEvent(initialize);
 					</script>
 					<div id="map-canvas" class="google"></div>
 				</div>
@@ -133,51 +150,28 @@
 
 			<section class="share center">
 				<h1 class="banner">Partageons avec #GrenierMntRge</h1>
+
+				<?php 
+				require_once("../model/classes/instagram.class.php");
+				$instagram = new Instagram('44a354e34a344471aed0e4df151513b4');
+				$popular = $instagram->getTagMedia("montrouge");
+				?>
+
 				<article class="group">
 					<div class="col-3-2">
 						<div class="image">
-							<figure class="instagram big"><img src="images/barbecue-eleves-montrouge.jpg" alt="" /></figure>
-							<figure class="instagram small"><img src="images/barbecue-eleves-montrouge.jpg" alt="" /></figure>
-							<figure class="instagram small"><img src="images/chanter.jpg" alt="" /></figure>
+							<figure class="instagram big"><img src="<?php echo $popular->data[0]->images->low_resolution->url ?>" alt="" /></figure>
+							<figure class="instagram small"><img src="<?php echo $popular->data[1]->images->thumbnail->url ?>" alt="" /></figure>
+							<figure class="instagram small"><img src="<?php echo $popular->data[2]->images->thumbnail->url ?>" alt="" /></figure>
 						</div>
 						<div class="image">
-							<figure class="instagram small"><img src="images/barbecue-eleves-montrouge.jpg" alt="" /></figure>
-							<figure class="instagram small"><img src="images/chanter.jpg" alt="" /></figure>
-							<figure class="instagram big"><img src="images/barbecue-eleves-montrouge.jpg" alt="" /></figure>
+							<figure class="instagram small"><img src="<?php echo $popular->data[3]->images->thumbnail->url ?>" alt="" /></figure>
+							<figure class="instagram small"><img src="<?php echo $popular->data[4]->images->thumbnail->url ?>" alt="" /></figure>
+							<figure class="instagram big"><img src="<?php echo $popular->data[5]->images->low_resolution->url ?>" alt="" /></figure>
 						</div>
 					</div>
-					<div class="col-3">
-						<div class="comment group">
-							<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
-							<article>
-								<div class="date">10h32 - 10/06/13</div>
-								<h2><a href="#">Bernard Martin</a></h2>
-								<div class="text">J'ouvrirais mon bar ce dimanche sur le chemin du vide grenier, n'hésitez pas a venir vous rafraichir entre deux achats autour d'une bière pour cette journée ensoleillé</div>
-								<a class="reply">Répondre</a>
-								<a class="report">Signaler</a>
-							</article>
-						</div>
-						<div class="comment group">
-							<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
-							<article>
-								<div class="date">10h32 - 10/06/13</div>
-								<h2><a href="#">Michel Gerard</a></h2>
-								<div class="text">Pour les féru de vielles consoles mon stand sera à coté de l'église ! N'hésitez pas à venir me voir pour trouver votre donheur ou simplement discuter rétro-gaming</div>
-								<a class="reply">Répondre</a>
-								<a class="report">Signaler</a>
-							</article>
-						</div>
-						<div class="comment group">
-							<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
-							<article>
-								<div class="date">10h32 - 10/06/13</div>
-								<h2><a href="#">Giselle Michou</a></h2>
-								<div class="text">Le club de lecture organise un truc de livres au centre de la plance ! Venez avec votre ouvrage et repartez avec une noucelle aventure. Restez parler lecture, échangez vos conseils et vos livres.</div>
-								<a class="reply">Répondre</a>
-								<a class="report">Signaler</a>
-							</article>
-						</div>
-					</div>
+					<div class="col-3" id="twitter" data-tag="daftpunk"></div>
+					<script type="text/javascript" src="js/twitter.js"></script>
 				</article>
 			</section>
 
