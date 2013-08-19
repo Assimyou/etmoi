@@ -148,15 +148,16 @@
 				</article>
 			</section>
 
+			<?php if (!empty($events['hashtag'])) : ?>
 			<section class="share center">
-				<h1 class="banner">Partageons avec #GrenierMntRge</h1>
-
 				<?php 
-				require_once("../model/classes/instagram.class.php");
-				$instagram = new Instagram('44a354e34a344471aed0e4df151513b4');
-				$popular = $instagram->getTagMedia("montrouge");
-				?>
+					foreach ($events['hashtag'] as $key => $value) : 
+				 		$hashtag = $value;
+					endforeach;
 
+					$popular = $instagram->getTagMedia($hashtag);
+				?>
+				<h1 class="banner">Partageons avec #<?php echo $hashtag; ?></h1>
 				<article class="group">
 					<div class="col-3-2">
 						<div class="image">
@@ -170,10 +171,11 @@
 							<figure class="instagram big"><img src="<?php echo $popular->data[5]->images->low_resolution->url ?>" alt="" /></figure>
 						</div>
 					</div>
-					<div class="col-3" id="twitter" data-tag="daftpunk"></div>
+					<div class="col-3" id="twitter" data-tag="<?php echo $hashtag; ?>"></div>
 					<script type="text/javascript" src="js/twitter.js"></script>
 				</article>
 			</section>
+			<?php endif; ?>
 
 			<section class="participants center">
 				<h1 class="banner">Qui participe ?</h1>
