@@ -44,6 +44,8 @@ if ($allow == FALSE)
 	if (!empty($_GET['q']))
 	{
 		include_once 'event/param.php';
+		require_once 'model/classes/instagram.class.php';
+		$instagram = new Instagram('44a354e34a344471aed0e4df151513b4');
 		include_once 'view/event.php';
 	}
 	else
