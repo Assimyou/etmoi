@@ -57,7 +57,7 @@
 				</div>
 			</section>
 			<nav class="main-menu">
-				<span class="current">Accueil</span>
+				<a class="current" href=".">Accueil</a>
 				<a href="evenements.php">Évènements</a>
 				<a href="associations.php">Associations</a>
 				<?php if (!empty($_SESSION['id'])) : ?><a href="profil.php"><?php if (!empty($profil['firstname'])) : echo $profil['firstname']; else : echo 'Moi'; endif; ?></a><?php endif; ?>
