@@ -139,7 +139,7 @@
 		<!-- Début Push badge -->
 		<section class="pushbadges group">
 			<div class="center">
-				<div class="intro col-3">
+				<div class="intro">
 					<h3>Décuplez le <span class="fun tada">fun</span> grâce au badges !</h3>
 					<p>
 						Faites par de votre activité à vos amis :)<br>
