@@ -52,7 +52,7 @@
 				<div class="center">
 					<div class="logo"><img src="images/logo.png" alt="Montrouge" /><div class="user-logo">& <?php if (!empty($profil['firstname'])) : echo $profil['firstname']; else : echo 'Moi'; endif; ?></div></div>
 					<div class="login">
-						<a href="#">Inscription</a> | <a href="#">Connexion</a>
+						<a href="#">Inscription | Connexion</a>
 					</div>
 				</div>
 			</section>
