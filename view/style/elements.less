@@ -58,7 +58,7 @@ h1, h2, h3, h4{
 	}
 }
 
-h1.banner{
+h1.banner, .banner{
 	position: relative;
 	display: inline-block;
 	padding: 0.65em 1em;
@@ -177,7 +177,6 @@ form.search{
 /* Cover */
 .cover{
 	position: relative;
-	overflow: hidden;
 	height: 350px;
 	background-position: center center;
 	background-size: 100%; //fallback
@@ -190,7 +189,7 @@ form.search{
 	h1{
 		position: absolute;
 		bottom: 0;
-		right: 0;
+		left: 5.000em;
 		margin: 0.3em 0;
 		color: #fff;
 		text-align: right;
@@ -198,8 +197,17 @@ form.search{
 		text-shadow: 2px 2px 8px black;
 	}
 
-	img{
-		width: 100%;
+	figure{
+		position: absolute;
+		bottom: -4.875em; //78px
+		padding: 0.5em;
+		border-radius: 100%;
+		background-color: @nuages;
+		line-height: 0;
+		z-index: 10;
+		img{
+			border-radius: 100%;
+		}
 	}
 
 	&:after{

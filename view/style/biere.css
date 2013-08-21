@@ -132,7 +132,8 @@ h3 a:focus,
 h4 a:focus {
   text-decoration: underline;
 }
-h1.banner {
+h1.banner,
+.banner {
   position: relative;
   display: inline-block;
   padding: 0.65em 1em;
@@ -143,7 +144,9 @@ h1.banner {
   background: url("img/bg-btn-gold.jpg") top left repeat;
 }
 h1.banner:before,
-h1.banner:after {
+.banner:before,
+h1.banner:after,
+.banner:after {
   content: " ";
   position: absolute;
   display: block;
@@ -154,7 +157,8 @@ h1.banner:after {
   width: 7px;
   background: url("img/icones.png") 0 -720px no-repeat;
 }
-h1.banner:after {
+h1.banner:after,
+.banner:after {
   left: auto;
   right: 0;
   margin-left: 0;
@@ -262,7 +266,6 @@ form.search {
 /* Cover */
 .cover {
   position: relative;
-  overflow: hidden;
   height: 350px;
   background-position: center center;
   background-size: 100%;
@@ -276,15 +279,24 @@ form.search {
 .cover h1 {
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: 5.000em;
   margin: 0.3em 0;
   color: #fff;
   text-align: right;
   z-index: 10;
   text-shadow: 2px 2px 8px black;
 }
-.cover img {
-  width: 100%;
+.cover figure {
+  position: absolute;
+  bottom: -4.875em;
+  padding: 0.5em;
+  border-radius: 100%;
+  background-color: #e6eae0;
+  line-height: 0;
+  z-index: 10;
+}
+.cover figure img {
+  border-radius: 100%;
 }
 .cover:after {
   content: " ";
@@ -979,6 +991,22 @@ section.social .col-3 span {
 }
 .menu-aside a {
   display: block;
+  font-family: 'Bebas', Arial, sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.50em;
+  margin-bottom: 0.3em;
+  line-height: 1;
+  text-align: right;
+}
+.menu-aside a.current {
+  color: #333333;
+}
+.menu-aside a:hover,
+.menu-aside a:active,
+.menu-aside a:focus {
+  color: #f7bb11;
 }
 /***********************************
  *    Footer

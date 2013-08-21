@@ -33,7 +33,17 @@ section.social{
 }
 
 .menu-aside{
-	a{
+	a{ 
 		display: block;
+		font-family: @fonttitre;
+		font-weight: normal;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-size: 1.50em;
+		margin-bottom: 0.3em; 
+		line-height: 1;
+		text-align: right;
+		&.current{ color: @grisfonce; }
+		&:hover, &:active, &:focus{ color: @jaune; }
 	}
 }
