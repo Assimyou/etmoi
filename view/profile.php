@@ -4,7 +4,20 @@
 		<div class="content profil group">
 			<section class="cover" style="background-image:url('images/cover-cat.jpg')">
 				<div class="center">
-					<h1>Loïc Huck</h1>
+					<?php if (!empty($users['name']) && !empty($users['firstname'])) : 
+
+						$monnom = "";
+						foreach ($users['firstname'] as $key => $value) :
+							$monnom .= $value." ";
+						endforeach;
+						foreach ($users['name'] as $key => $value) :
+							$monnom .= $value;
+						endforeach;
+						?>
+						<h1><?php echo $monnom; ?></h1>
+					<?php else : ?>
+						<h1>Moi</h1>
+					<?php endif; ?>
 					<figure><img src="images/avatar.png" alt="" /></figure>
 				</div>
 			</section>
@@ -19,6 +32,7 @@
 					</nav>
 				</aside>
 				<section class="col-3-2">
+					<?php if (empty($_GET['id']) || $_SESSION['id'] == $_GET['id']) : ?>
 					<section id="profil" class="profil group">
 						<h1 class="banner">Profil</h1>
 						<form>
@@ -26,6 +40,7 @@
 							<h2>Mot de sécurité</h2><label>*******</label>
 						</form>
 					</section>
+					<?php endif; ?>
 
 					<section id="identity" class="identity group">
 						<h1 class="banner">Identité</h1>
