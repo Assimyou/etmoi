@@ -3,17 +3,19 @@
 		<?php
 
 		$ISME = false;
+		
 		if(empty($_GET['id']) || $_SESSION['id'] == $_GET['id']){
 			$ISME = true;
 		}
 
 		$ISLEADER = false;
+
 		foreach ($visa as $key => $value){
+
 			if($value == 'webmaster'){
 				$ISME = true;
 			}
-
-			if ($value == 'leader' && $profil['association'] == $users['association']){
+			elseif ($value == 'leader' && $profil['association'] == $users['association']){
 				$ISLEADER = true;
 			}
 		}
@@ -24,20 +26,20 @@
 		<div class="content profil group">
 			<section class="cover" style="background-image:url('images/cover-cat.jpg')">
 				<div class="center">
-					<?php if (!empty($users['name']) && !empty($users['firstname'])) : 
-
-						$monnom = "";
-						foreach ($users['firstname'] as $key => $value) :
-							$monnom .= $value." ";
-						endforeach;
-						foreach ($users['name'] as $key => $value) :
-							$monnom .= $value;
-						endforeach;
-						?>
-						<h1><?php echo $monnom; ?></h1>
-					<?php else : ?>
-						<h1>Moi</h1>
-					<?php endif; ?>
+						<h1><?php if (!empty($users['firstname']) && !empty($users['name'])) : 
+						 			if (!empty($users['firstname'])) : 
+						 				foreach ($users['firstname'] as $key => $value) : 
+						 					echo $value; 
+						 				endforeach; 
+						 			endif;
+						 			if (!empty($users['name']) && !empty($users['name'])) : 
+						 				foreach ($users['name'] as $key => $value) : 
+						 					echo " ".$value;
+						 				endforeach; 
+						 			endif; 
+						 		 else : 
+						 		 	echo 'Moi'; 
+						 		 endif; ?></h1>
 					<figure><img src="images/avatar.png" alt="" /></figure>
 				</div>
 			</section>
