@@ -72,8 +72,9 @@ class user extends mother
 
 	public function remove()
 	{
-		$this->setQuery($this->getDbh()->prepare("DELETE FROM user WHERE `id` = :id;"));
-		$this->getQuery()->bindParam(':id', $this->id, PDO::PARAM_INT);
+		$this->setQuery($this->getDbh()->prepare("DELETE FROM user WHERE `left` >= :left AND `right` <= :right ORDER BY `right`;"));
+		$this->getQuery()->bindParam(':left', $this->_left, PDO::PARAM_INT);
+		$this->getQuery()->bindParam(':right', $this->_right, PDO::PARAM_INT);
 		$this->setResult($this->getQuery()->execute());
 		$this->getQuery()->closeCursor();
 

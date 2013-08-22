@@ -48,6 +48,22 @@ if (!empty($id))
 	}
 }
 
+if (!empty($_POST['submit']) && $_POST['submit'] == 'supprimer') 
+{
+	if (!empty($_GET['id'])) 
+	{
+		$user->setId($_GET['id']);
+		$user->selectuser();
+
+		$user->setRight($user->getResult()['right']);
+		$user->setLeft($user->getResult()['left']);
+		$user->setGap($user->getRight());
+		
+		$user->remove();
+		
+	}
+}
+
 if (!empty($token) && !empty($_POST[$_SESSION[$token]['token']]) && $_POST[$_SESSION[$token]['token']] == "enregistrer") 
 {
 	extract($_POST);
