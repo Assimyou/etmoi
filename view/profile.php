@@ -1,27 +1,5 @@
 <?php include_once "header.php"; ?>
 
-		<?php
-
-		$ISME = false;
-		
-		if(empty($_GET['id']) || $_SESSION['id'] == $_GET['id']){
-			$ISME = true;
-		}
-
-		$ISLEADER = false;
-
-		foreach ($visa as $key => $value){
-
-			if($value == 'webmaster'){
-				$ISME = true;
-			}
-			elseif ($value == 'leader' && $profil['association'] == $users['association']){
-				$ISLEADER = true;
-			}
-		}
-
-		?>
-
 		<!-- Debut du corps du site -->
 		<div class="content profil group">
 			<section class="cover" style="background-image:url('images/cover-cat.jpg')">
@@ -54,7 +32,7 @@
 					</nav>
 				</aside>
 				<section class="col-3-2">
-					<?php if($ISME) : ?>
+					<?php if($isMe) : ?>
 					<section id="profil" class="profil group">
 						<h1 class="banner">Profil</h1>
 						<form>
