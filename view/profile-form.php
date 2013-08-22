@@ -37,8 +37,8 @@
 				<input type="text" name="firstname[]" placeholder="firstname" />
 				<?php endif; ?>
 
-				<?php if (!empty($events['description'])) : ?>
-				<?php foreach ($events['description'] as $key => $value) : ?>
+				<?php if (!empty($users['description'])) : ?>
+				<?php foreach ($users['description'] as $key => $value) : ?>
 				<textarea name="description[<?php echo $key; ?>]" placeholder="description" ><?php echo $value; ?></textarea>
 				<?php endforeach; ?>
 				<?php else : ?>
