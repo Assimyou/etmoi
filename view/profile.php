@@ -1,23 +1,61 @@
 <?php include_once "header.php"; ?>
 
+		<?php
+		$ISME = false;
+		if(empty($_GET['id']) || $_SESSION['id'] == $_GET['id']){
+			$ISME = true;
+		}
+
+		$ISLEADER = false;
+		foreach ($visa as $key => $value){
+			if($value == 'webmaster'){
+				$ISME = true;
+			}
+
+			if ($value == 'leader' && $profil['association'] == $users['association']){
+				$ISLEADER = true;
+			}
+		}
+
+		function editbutton($private){
+			global $ISME;
+
+			$editbutton = "";
+			if($ISME){
+				$privacy = 'Public';
+				if($private){ $privacy = 'Privé'; }
+				
+				$editbutton = 
+					'<div class="edit">'.
+						'<div class="privacy tooltip">'.$privacy.'</div>'.
+						'<a class="btn createform" href="?act=edit">Éditer</a>'.
+						'<input type="submit" name="'.generateToken($_SERVER['REQUEST_URI']).'" value="enregistrer" class="btn editing" />'.
+					'</div>';
+			}
+
+			echo $editbutton;
+		}
+
+		?>
+
 		<!-- Debut du corps du site -->
 		<div class="content profil group">
 			<section class="cover" style="background-image:url('images/cover-cat.jpg')">
 				<div class="center">
-						<h1><?php if (!empty($users['firstname']) && !empty($users['name'])) : 
-						 			if (!empty($users['firstname'])) : 
-						 				foreach ($users['firstname'] as $key => $value) : 
-						 					echo $value; 
-						 				endforeach; 
-						 			endif;
-						 			if (!empty($users['name']) && !empty($users['name'])) : 
-						 				foreach ($users['name'] as $key => $value) : 
-						 					echo " ".$value;
-						 				endforeach; 
-						 			endif; 
-						 		 else : 
-						 		 	echo 'Moi'; 
-						 		 endif; ?></h1>
+					<?php if (!empty($users['name']) && !empty($users['firstname'])) : 
+
+						$monnom = "";
+						foreach ($users['firstname'] as $key => $value) :
+							$monnom .= $value." ";
+						endforeach;
+						foreach ($users['name'] as $key => $value) :
+							$monnom .= $value;
+						endforeach;
+						?>
+						<h1><?php echo $monnom; ?></h1>
+					<?php else : ?>
+						<h1>Moi</h1>
+					<?php endif; ?>
 					<figure><img src="images/avatar.png" alt="" /></figure>
 				</div>
 			</section>
@@ -28,45 +66,119 @@
 						<a href="#events">Évènements</a>
 						<a href="#associations">Associations</a>
 						<a href="#">Badges</a>
-						<a href="#">Notifications</a>
+						<?php if($ISME) : ?><a href="#">Notifications</a><?php endif; ?>
 					</nav>
 				</aside>
 				<section class="col-3-2">
-					<?php if($isMe) : ?>
-					<section id="profil" class="profil group">
-						<h1 class="banner">Profil</h1>
+					<?php if($ISME || $ISLEADER) : ?>
+					<!-- Début section profil -->
+					<section id="profil" class="profil showing group">
 						<form>
-							<h2>E-Mail</h2><label>contact@huckloic.fr</label>
-							<h2>Mot de sécurité</h2><label>*******</label>
+							<h1 class="banner">Profil</h1>
+							<?php 
+							editbutton(true); 
+
+							$showing = "";
+							$editing = "";
+
+							if (!empty($users['mail'])){
+								foreach ($users['mail'] as $key => $value){
+									$showing .= '<h2>E-Mail</h2><label>'.$value.'</label>';
+									$editing .= '<h2>E-Mail</h2><input type="text" name="mail['.$key.']" value="'.$value.'" placeholder="E-Mail" />';
+								}
+							} else {
+								$showing .= '';
+								$editing .= '<h2>E-Mail</h2><input type="text" name="mail[]" placeholder="E-Mail" />';
+							}
+							?>
+
+							<div class="showing">
+								<?php if($showing != "") : ?><?php echo $showing; ?><?php endif; ?>
+								<?php if($ISME) : ?><h2>Mot de sécurité</h2><label>********</label><?php endif; ?>
+							</div>
+
+							<?php if($ISME) : ?>
+							<div class="editing">
+								<?php if($editing != "") : ?><?php echo $editing; ?><?php endif; ?>
+								<h2>Mot de sécurité</h2><input type="password" name="password[]" placeholder="Mot de sécurité" />
+							</div>
+							<?php endif; ?>
 						</form>
 					</section>
+					<!-- Fin section profil -->
 					<?php endif; ?>
 
-					<section id="identity" class="identity group">
-						<h1 class="banner">Identité</h1>
-						<div class="edit">
+					<section id="identity" class="identity showing group">
 						<form>
-							<div>
-								<div class="col-2">
-									<h2>Prénom</h2><label>Loïc</label>
+							<h1 class="banner">Identité</h1>
+							<?php 
+							editbutton(false); 
+
+							$showing = "";
+							$editing = "";
+
+							if (!empty($users['firstname'])){
+								foreach ($users['firstname'] as $key => $value){
+									$showing .= '<h2>E-Mail</h2><label>'.$value.'</label>';
+									$editing .= '<h2>E-Mail</h2><input type="text" name="mail['.$key.']" value="'.$value.'" placeholder="Prénom" />';
+								}
+							} else {
+								$showing .= '';
+								$editing .= '<h2>E-Mail</h2><input type="text" name="mail[]" placeholder="Prénom" />';
+							}
+							?>
+
+							<div class="showing">
+								<div>
+									<div class="col-2">
+										<h2>Prénom</h2><label>Loïc</label>
+									</div>
+									<div class="col-2">
+										<h2>Nom</h2><label>Huck</label>
+									</div>
 								</div>
-								<div class="col-2">
-									<h2>Nom</h2><label>Huck</label>
+								<div>
+									<div class="col-2">
+										<h2>Sexe</h2><label>Homme</label>
+									</div>
+									<div class="col-2">
+										<h2>Date de naissance</h2><label>13/09/2013</label>
+									</div>
 								</div>
 							</div>
-							<div>
-								<div class="col-2">
-									<h2>Sexe</h2><label>Homme</label>
+
+							<?php if($ISME) : ?>
+							<div class="editing">
+								<div>
+									<div class="col-2">
+										<h2>Prénom</h2><input type="text" value="Loïc" />
+									</div>
+									<div class="col-2">
+										<h2>Nom</h2><input type="text" value="Huck" />
+									</div>
 								</div>
-								<div class="col-2">
-									<h2>Date de naissance</h2><label>13/09/2013</label>
+								<div>
+									<div class="col-2">
+										<h2>Sexe</h2>
+										<input type="radio" name="sexe[]" id="femme" value="Femme" /> 
+										<label for="femme">Femme</label> 
+										<input type="radio" name="sexe[]" id="homme" value="Homme" checked="true" /> 
+										<label for="homme">Homme</label> 
+										<input type="radio" name="sexe[]" id="autre" value="Autre" /> 
+										<label for="autre">Autre</label> 
+									</div>
+									<div class="col-2">
+										<h2>Date de naissance</h2><input type="date" />
+									</div>
 								</div>
 							</div>
+							<?php endif; ?>
 						</form>
 					</section>
 
-					<section id="social" class="social group">
+					<section id="social" class="social showing group">
 						<h1 class="banner">Réseaux sociaux</h1>
+						<?php editbutton(false); ?>
 						<form>
 							<div class="col-3">
 								<h2>Twitter</h2><label><span>@</span>loichuck</label>
@@ -80,16 +192,20 @@
 						</form>
 					</section>
 
-					<section id="contact" class="contact group">
+					<?php if($ISME || $ISLEADER) : ?>
+					<section id="contact" class="contact showing group">
 						<h1 class="banner">Contacts</h1>
+						<?php editbutton(true); ?>
 						<form>
 							<h2>Adresse</h2><label>42, rue Barbès 94200 Ivry-sur-Seine, France</label>
 							<h2>Téléphone</h2><label class="col-2 tel">01 52 36 45 87</label><label class="col-2 mobile">06 72 23 68 26</label>
 						</form>
 					</section>
+					<?php endif; ?>
 
-					<section id="say-more" class="say-more group">
+					<section id="say-more" class="say-more showing group">
 						<h1 class="banner">Dites en plus !</h1>
+						<?php editbutton(false); ?>
 						<form>
 							<h2>Description</h2><label>Failure is not an option. 
 							Where ignorance lurks, so too do the frontiers of discovery and imagination. 
