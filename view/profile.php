@@ -7,12 +7,12 @@
 						<h1><?php if (!empty($users['firstname']) && !empty($users['name'])) : 
 						 			if (!empty($users['firstname'])) : 
 						 				foreach ($users['firstname'] as $key => $value) : 
-						 					echo $value; 
+						 					echo htmlentities($value, ENT_QUOTES); 
 						 				endforeach; 
 						 			endif;
 						 			if (!empty($users['name']) && !empty($users['name'])) : 
 						 				foreach ($users['name'] as $key => $value) : 
-						 					echo " ".$value;
+						 					echo " ".htmlentities($value, ENT_QUOTES);
 						 				endforeach; 
 						 			endif; 
 						 		 else : 
