@@ -59,22 +59,9 @@ if (!empty($_POST['submit']) && $_POST['submit'] == 'supprimer')
 
 		$event->setRight($event->getResult()['right']);
 		$event->setLeft($event->getResult()['left']);
-
-		$diff = $event->getResult()['right'] - $event->getResult()['left'];
-
-		$event->selectChild();
-
-		for ($i=0; $i <= $diff; $i++)
-		{
-			foreach ($event->getResult() as $children => $child)
-			{
-				if ($child['right'] - $child['left'] == $i)
-				{
-					$event->setId($child['id']);
-					$event->remove();
-				}
-			}
-		}
+		$event->setGap($user->getRight());
+		
+		$event->remove();
 	}
 }
 
