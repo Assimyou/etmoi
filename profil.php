@@ -12,7 +12,8 @@ session_write_close();
 
 include_once 'user/access.php';
 
-$isMe = FALSE;
+$ISME = FALSE;
+$ISLEADER = FALSE;
 
 if (!empty($_SESSION['id']))
 {
