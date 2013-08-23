@@ -52,12 +52,13 @@ if (!empty($_SESSION['id']))
 
 include_once 'user/param.php';
 
-if (!empty($_GET['act']) && $_GET['act'] == 'edit' && $isMe == TRUE)  
+if (!empty($id))
 {
-	include_once 'view/profile-form.php';
-}
-elseif (!empty($id))
-{
+	if ($ISME) 
+	{
+		$newToken = generateToken($_SERVER['REQUEST_URI']);
+	}
+
 	include_once 'view/profile.php';
 }
 else
