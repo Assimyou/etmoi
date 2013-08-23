@@ -28,19 +28,23 @@ if (!empty($_SESSION['id']))
 
 	$id = $_SESSION['id'];
 
-	$isMe = TRUE;
+	$ISME = TRUE;
 	
 	if (!empty($_GET['q']) && $_GET['q'] != $_SESSION['id']) 
 	{
-		$isMe = FALSE;
+		$ISME = FALSE;
 
 		foreach ($visa as $key => $value)
 		{
-			if ($value == 'webmaster' || ($value == 'leader' && $profil['association'] == $users['association']))
+			if ($value == 'webmaster')
 			{
 				$id = $_GET['q'];
 
-				$isMe = TRUE;
+				$ISME = TRUE;
+			}
+			elseif ($value == 'leader' && $profil['association'] == $users['association']) 
+			{
+				$ISLEADER = TRUE;
 			}
 		}
 	}
