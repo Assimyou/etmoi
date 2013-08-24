@@ -14,8 +14,14 @@ if (!empty($_GET['q']))
 	$q = $_GET['q'];
 
 	if (!empty($_GET['cat'])) 
-	{
+	{	
 		$category = $_GET['cat'];
+
+		if ($_GET['cat'] == 'date')
+		{
+			$dateSearch = DateTime::createFromFormat('d-m-Y', $_GET['q']);
+			$q = $dateSearch->format('Y-m-d');
+		}
 	}
 }
 else
@@ -41,13 +47,21 @@ if ($event->getResult() != FALSE)
 		{
 			if ($result['left'] > $parent['left'] && $result['right'] < $parent['right']) 
 			{
-				$valid = FALSE;
+				$valid = TRUE;
 
-				foreach ($event->getResult() as $key => $value) 
+				if (!empty($category)) 
 				{
-					if ($value['wording'] == $category) 
+					$valid = FALSE;
+
+					foreach ($event->getResult() as $key => $value) 
 					{
-						$valid = TRUE;
+						if ($result['left'] > $value['left'] && $result['right'] < $value['right']) 
+						{
+							if ($value['wording'] == $category) 
+							{
+								$valid = TRUE;
+							}
+						}
 					}
 				}
 
@@ -100,7 +114,12 @@ if ($event->getResult() != FALSE)
 					
 		if (!empty($publish) && $publish > 0)
 		{
-			$listEvent[] = $events;
+			foreach ($events['date'] as $key => $value) 
+			{
+				$date = $value.$event->getId();
+			}
+
+			$listEvent[$date] = $events;
 		}
 	}
 }

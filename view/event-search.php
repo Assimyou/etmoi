@@ -27,7 +27,7 @@
 				<article class="evenement small">
 					<?php if (!empty($events['headline'])) : ?>
 					<?php foreach ($events['headline'] as $index => $headline) : ?>
-					<h2><?php echo $headline; ?></h2>
+					<h2><?php echo htmlentities($headline, ENT_QUOTES); ?></h2>
 					<?php endforeach; ?>
 					<?php endif; ?>
 					<div class="group">
@@ -40,7 +40,7 @@
 							<?php endif; ?>
 							<?php if (!empty($events['address'])) : ?>
 							<?php foreach ($events['address'] as $index => $address) : ?>
-							<div class="where"><?php echo $address; ?></div>
+							<div class="where"><?php echo htmlentities($address, ENT_QUOTES); ?></div>
 							<?php endforeach; ?>
 							<?php endif; ?>
 						</div>

@@ -153,10 +153,15 @@ class event extends mother
 	*	Select event by wording
 	*	@param string wording
 	*/
-	public function search($wording)	
+	public function search($wording = NULL, $param = array(), $return = FALSE)	
 	{
+		if (!empty($param)) 
+		{
+			extract($param);
+		}
+
 		$this->setWording('%'.$wording.'%');
-		$this->setQuery($this->getDbh()->prepare("SELECT * FROM event WHERE `wording` LIKE :wording AND `right` - `left` = 1;"));
+		$this->setQuery($this->getDbh()->prepare("SELECT * FROM event WHERE `wording` LIKE :wording AND `right` - `left` = 1 ORDER BY `wording`;"));
 		$this->getQuery()->bindParam(':wording', $this->_wording, PDO::PARAM_STR);
 		$this->getQuery()->execute();
 
@@ -174,6 +179,11 @@ class event extends mother
 		}
 
 		$this->getQuery()->closeCursor();
+
+		if ($return == TRUE) 
+		{
+			return $this->getResult();
+		}
 	}
 
 	public function getWording()
