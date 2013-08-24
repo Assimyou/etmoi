@@ -29,7 +29,7 @@ if (!empty($_SESSION['id']))
 	$id = $_SESSION['id'];
 
 	$ISME = TRUE;
-	
+
 	if (!empty($_GET['q']) && $_GET['q'] != $_SESSION['id']) 
 	{
 		$ISME = FALSE;
@@ -38,8 +38,6 @@ if (!empty($_SESSION['id']))
 		{
 			if ($value == 'webmaster')
 			{
-				$id = $_GET['q'];
-
 				$ISME = TRUE;
 			}
 			elseif ($value == 'leader' && $profil['association'] == $users['association']) 
@@ -49,8 +47,10 @@ if (!empty($_SESSION['id']))
 		}
 	}
 }
-
-include_once 'user/param.php';
+elseif (!empty($_GET['q'])) 
+{
+	$id = $_GET['q'];
+}
 
 if (!empty($id))
 {
@@ -58,7 +58,8 @@ if (!empty($id))
 	{
 		$newToken = generateToken($_SERVER['REQUEST_URI']);
 	}
-
+	
+	include_once 'user/param.php';
 	include_once 'view/profile.php';
 }
 else
