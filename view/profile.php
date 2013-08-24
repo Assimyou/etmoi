@@ -1,28 +1,5 @@
 <?php include_once "header.php"; ?>
 
-		<?php
-
-		function editbutton($token, $private){
-			global $ISME;
-
-			$editbutton = "";
-			if($ISME){
-				$privacy = 'Public';
-				if($private){ $privacy = 'Privé'; }
-				
-				$editbutton = 
-					'<div class="edit">'.
-						'<div class="privacy tooltip">'.$privacy.'</div>'.
-						'<a class="btn createform action="" method="post" " href="#">Éditer</a>'.
-						'<input type="submit" name="'.$token.'" value="enregistrer" class="btn editing" />'.
-					'</div>';
-			}
-
-			echo $editbutton;
-		}
-
-		?>
-
 		<!-- Debut du corps du site -->
 		<div class="content profil group">
 			<section class="cover" style="background-image:url('images/cover-cat.jpg')">
@@ -60,8 +37,12 @@
 					<section id="profil" class="profil showing group">
 						<form action="" method="post" >
 							<h1 class="banner">Profil</h1>
-							<?php 
-							editbutton($newToken, true); 
+							<?php 	if ($ISME) 
+									{
+										// Ajout du boutton
+										$visibility = 'Privé';
+										include "edit-button.php";
+									}
 
 							$showing = "";
 							$editing = "";
@@ -96,9 +77,12 @@
 					<section id="identity" class="identity showing group">
 						<form action="" method="post" >
 							<h1 class="banner">Identité</h1>
-							<?php 
-							editbutton($newToken, false); 
-
+							<?php 	if ($ISME) 
+									{
+										$visibility = 'Public';
+										include "edit-button.php";
+									}
+							
 							$showing = "";
 							$editing = "";
 
@@ -163,7 +147,12 @@
 
 					<section id="social" class="social showing group">
 						<h1 class="banner">Réseaux sociaux</h1>
-						<?php editbutton($newToken, false); ?>
+						<?php 	if ($ISME)
+								{
+									$visibility = 'Public';
+									include "edit-button.php";
+								}
+						?>
 						<form action="" method="post" >
 							<div class="col-3">
 								<h2>Twitter</h2><label><span>@</span>loichuck</label>
@@ -180,7 +169,12 @@
 					<?php if($ISME || $ISLEADER) : ?>
 					<section id="contact" class="contact showing group">
 						<h1 class="banner">Contacts</h1>
-						<?php editbutton(true, $newToken); ?>
+						<?php 	if ($ISME)
+								{
+									$visibility = 'Public';
+									include "edit-button.php";
+								}
+						?>
 						<form action="" method="post" >
 							<h2>Adresse</h2><label>42, rue Barbès 94200 Ivry-sur-Seine, France</label>
 							<h2>Téléphone</h2><label class="col-2 tel">01 52 36 45 87</label><label class="col-2 mobile">06 72 23 68 26</label>
@@ -190,7 +184,12 @@
 
 					<section id="say-more" class="say-more showing group">
 						<h1 class="banner">Dites en plus !</h1>
-						<?php editbutton(false, $newToken); ?>
+						<?php 	if ($ISME)
+								{
+									$visibility = 'Public';
+									include "edit-button.php";
+								}
+						?>
 						<form action="" method="post" >
 							<h2>Description</h2><label>Failure is not an option. 
 							Where ignorance lurks, so too do the frontiers of discovery and imagination. 
