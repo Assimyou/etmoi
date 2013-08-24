@@ -33,7 +33,7 @@
 						 					echo htmlentities($value, ENT_QUOTES); 
 						 				endforeach; 
 						 			endif;
-						 			if (!empty($users['name']) && !empty($users['name'])) : 
+						 			if (!empty($users['name'])) : 
 						 				foreach ($users['name'] as $key => $value) : 
 						 					echo " ".htmlentities($value, ENT_QUOTES);
 						 				endforeach; 
