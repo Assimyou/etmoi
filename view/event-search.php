@@ -6,7 +6,16 @@
 		<section>
 			<form action="" method="get" id="search" />
 				<input type="text" name="q" placeholder="rechercher un évènement" />
-				<input type="submit" id="research" value="rechercher" />
+				<input type="submit" value="rechercher" />
+				<select name="cat" >
+					<option value=""></option>
+					<optgroup label="par :" >
+						<option value="date" >date</option>
+						<option value="headline" >titre</option>
+						<option value="address" >adresse</option>
+						<option value="tag" >catégorie</option>
+					</optgroup>
+				</select>
 			</form>
 		</section>
 
@@ -43,7 +52,7 @@
 					</div>
 					<div class="evenement-by">
 						Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
-						<a class="more" href="evenement.php?q=<?php echo $id; ?>"><span class="plus ir">Plus</span> de détails</a>
+						<a class="more" href="evenement.php?q=<?php echo $events['id']; ?>"><span class="plus ir">Plus</span> de détails</a>
 					</div>
 				</article>
 				<?php endforeach; ?>
