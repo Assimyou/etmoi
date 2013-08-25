@@ -4,11 +4,11 @@
 				<div class="sitemap col-3">
 					<h3>Montrouge et moi</h3>
 					<nav class="footer-menu">
-						<a href="#">Accueil</a>
-						<a href="#">Événements</a>
-						<a href="#">Associations</a>
+						<a href=".">Accueil</a>
+						<a href="evenements.php">Événements</a>
+						<a href="associations.php">Associations</a>
 						<a href="#">Badges</a>
-						<a href="#">Profil de Loïc</a>
+						<a href="profil.php">Profil de <?php if (!empty($profil['firstname'])) : echo htmlentities($profil['firstname'], ENT_QUOTES); else : echo 'Moi'; endif; ?></a>
 						<a href="http://www.endoftheinternet.com/" target="_blank">Mentions légales</a>
 					</nav>
 				</div>
