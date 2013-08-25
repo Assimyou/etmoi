@@ -20,6 +20,14 @@
 				<input type="text" name="headline[]" placeholder="headline" />
 				<?php endif; ?>
 
+				<?php if (!empty($events['description'])) : ?>
+				<?php foreach ($events['description'] as $key => $value) : ?>
+				<textarea name="description[<?php echo $key; ?>]" placeholder="description" ><?php htmlentities($value, ENT_QUOTES); ?></textarea>
+				<?php endforeach; ?>
+				<?php else : ?>
+				<textarea name="description[]" placeholder="description" ></textarea>
+				<?php endif; ?>
+
 				<input type="file" name="illustration" accept="image/jpeg" />
 
 				<?php if (!empty($events['zip'])) : ?>
