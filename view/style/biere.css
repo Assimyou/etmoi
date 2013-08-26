@@ -772,12 +772,6 @@ section.description .map .google {
 section.description .map .google a img {
   display: none;
 }
-section.description .map .google .gmnoprint[style="z-index: 1000001; position: absolute; right: 95px; bottom: 0px;"] {
-  display: none;
-}
-section.description .map .google .gmnoprint[style~="font-size"] {
-  display: none;
-}
 section.description:before {
   display: none !important;
 }
@@ -967,6 +961,19 @@ div.content.association section:before {
   border-bottom: 1px solid #f7bb11;
   z-index: 0;
 }
+div.content input[type='text'],
+div.content input[type='password'] {
+  width: 90%;
+  padding: 0.5em 5%;
+  margin: 0.3em -1px 0 -1px;
+  outline: none;
+  border: solid 1px #aaa;
+  background: #e6eae0;
+}
+div.content input[type='text']:focus,
+div.content input[type='password']:focus {
+  background: #fff;
+}
 div.content.profil {
   background: #e6eae0;
 }
@@ -991,19 +998,6 @@ div.content.profil section.showing input.editing {
 div.content.profil section.editing div.showing,
 div.content.profil section.editing a.btn.createform {
   display: none;
-}
-div.content.profil section input[type='text'],
-div.content.profil section input[type='password'] {
-  width: 90%;
-  padding: 0.5em 5%;
-  margin: 0.3em -1px 0 -1px;
-  outline: none;
-  border: solid 1px #aaa;
-  background: #e6eae0;
-}
-div.content.profil section input[type='text']:focus,
-div.content.profil section input[type='password']:focus {
-  background: #fff;
 }
 section.social .col-3 span {
   font-size: 0.875em;
