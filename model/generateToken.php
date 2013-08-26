@@ -7,7 +7,7 @@ function generateToken($name)
 	$timeTokens = new DateTime('now');
 
 	$_SESSION[$name]['token'] = $token;
-	$_SESSION[$name]['time-tokens'] = $timeTokens;
+	$_SESSION[$name]['time-token'] = $timeTokens;
 	session_write_close();
 
 	return $token;
