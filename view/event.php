@@ -88,8 +88,8 @@
 						<?php foreach ($events['description'] as $key => $value) : ?>
 
 						<?php $paragraph = mb_split('\r\n', $value);
-						
-								foreach ($paragraph as $p) : 
+
+								foreach ($paragraph as $p) :
 								if (!empty($p)) : ?>
 					<p><?php echo htmlentities($p, ENT_QUOTES); ?></p>
 								<?php endif;

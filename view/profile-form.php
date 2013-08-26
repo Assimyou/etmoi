@@ -7,7 +7,7 @@
 			<form action="" enctype="multipart/form-data" method="post" />
 				<?php if (!empty($users['mail'])) : ?>
 				<?php foreach ($users['mail'] as $key => $value) : ?>
-				<input type="text" name="mail[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="mail" />
+				<input type="text" name="mail[<?php echo $key; ?>]" value="<?php echo htmlentities($value, ENT_QUOTES); ?>" placeholder="mail" />
 				<?php endforeach; ?>
 				<?php else : ?>
 				<input type="text" name="mail[]" placeholder="mail" />
@@ -15,7 +15,7 @@
 
 				<?php if (!empty($users['association'])) : ?>
 				<?php foreach ($users['association'] as $key => $value) : ?>
-				<input type="text" name="association[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="association" />
+				<input type="text" name="association[<?php echo $key; ?>]" value="<?php echo htmlentities($value, ENT_QUOTES); ?>" placeholder="association" />
 				<?php endforeach; ?>
 				<?php else : ?>
 				<input type="text" name="association[]" placeholder="association" />
@@ -23,7 +23,7 @@
 
 				<?php if (!empty($users['name'])) : ?>
 				<?php foreach ($users['name'] as $key => $value) : ?>
-				<input type="text" name="name[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="headline" />
+				<input type="text" name="name[<?php echo $key; ?>]" value="<?php echo htmlentities($value, ENT_QUOTES); ?>" placeholder="headline" />
 				<?php endforeach; ?>
 				<?php else : ?>
 				<input type="text" name="name[]" placeholder="name" />
@@ -31,7 +31,7 @@
 
 				<?php if (!empty($users['firstname'])) : ?>
 				<?php foreach ($users['firstname'] as $key => $value) : ?>
-				<input type="text" name="firstname[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="headline" />
+				<input type="text" name="firstname[<?php echo $key; ?>]" value="<?php echo htmlentities($value, ENT_QUOTES); ?>" placeholder="headline" />
 				<?php endforeach; ?>
 				<?php else : ?>
 				<input type="text" name="firstname[]" placeholder="firstname" />
@@ -39,7 +39,7 @@
 
 				<?php if (!empty($users['description'])) : ?>
 				<?php foreach ($users['description'] as $key => $value) : ?>
-				<textarea name="description[<?php echo $key; ?>]" placeholder="description" ><?php echo $value; ?></textarea>
+				<textarea name="description[<?php echo $key; ?>]" placeholder="description" ><?php htmlentities($value, ENT_QUOTES); ?></textarea>
 				<?php endforeach; ?>
 				<?php else : ?>
 				<textarea name="description[]" placeholder="description" ></textarea>
@@ -134,7 +134,7 @@
 
 				<?php if (!empty($users['zip'])) : ?>
 				<?php foreach ($users['zip'] as $key => $value) : ?>
-				<input type="text" name="zip[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="Code postal" />
+				<input type="text" name="zip[<?php echo $key; ?>]" value="<?php htmlentities($value, ENT_QUOTES); ?>" placeholder="Code postal" />
 				<?php endforeach; ?>
 				<?php else : ?>
 				<input type="text" name="zip[]" placeholder="Code postal" />
@@ -142,7 +142,7 @@
 
 				<?php if (!empty($users['city'])) : ?>
 				<?php foreach ($users['city'] as $key => $value) : ?>
-				<input type="text" name="city[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="Ville" />
+				<input type="text" name="city[<?php echo $key; ?>]" value="<?php htmlentities($value, ENT_QUOTES); ?>" placeholder="Ville" />
 				<?php endforeach; ?>
 				<?php else : ?>
 				<input type="text" name="city[]" placeholder="ville" />
@@ -150,7 +150,7 @@
 
 				<?php if (!empty($users['address'])) : ?>
 				<?php foreach ($users['address'] as $key => $value) : ?>
-				<input type="text" name="address[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="adresse" />
+				<input type="text" name="address[<?php echo $key; ?>]" value="<?php htmlentities($value, ENT_QUOTES); ?>" placeholder="adresse" />
 				<?php endforeach; ?>
 				<?php else : ?>
 				<input type="text" name="address[]" placeholder="adresse" />
@@ -158,7 +158,7 @@
 
 				<?php if (!empty($users['data-location'])) : ?>
 				<?php foreach ($users['data-location'] as $key => $value) : ?>
-				<input type="text" name="location[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="location" />
+				<input type="text" name="location[<?php echo $key; ?>]" value="<?php htmlentities($value, ENT_QUOTES); ?>" placeholder="location" />
 				<?php endforeach; ?>
 				<?php else : ?>
 				<input type="text" name="location[]" placeholder="location" />
@@ -166,13 +166,16 @@
 
 				<?php if (!empty($users['date'])) : ?>
 				<?php foreach ($users['date'] as $key => $value) : ?>
-				<input type="text" name="date[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="date" />
+				<input type="text" name="date[<?php echo $key; ?>]" value="<?php htmlentities($value, ENT_QUOTES); ?>" placeholder="date" />
 				<?php endforeach; ?>
 				<?php else : ?>
 				<input type="text" name="date[]" placeholder="date" />
 				<?php endif; ?>
 
 				<input type="submit" name="<?php echo generateToken($_SERVER['REQUEST_URI']); ?>" value="enregistrer" />
+			</form>
+			<form action="" enctype="multipart/form-data" method="post">
+				<input type="submit" name="submit" value="supprimer" />
 			</form>
 		</section>
 	</div>
