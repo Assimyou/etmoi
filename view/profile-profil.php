@@ -12,15 +12,15 @@
 						$mail['value'] = $value;
 					endforeach;
 				else : 
-					$mail['key'] = '';
-					$mail['value'] = '';
+					$mail['key'] = NULL;
+					$mail['value'] = NULL;
 				endif; ?>
 
 		<?php if ($showing) : ?>
 		<div class="showing">
 			<div>
 				<div class="col-2">
-					<?php if (!empty($mail)) : ?><h2>E-Mail</h2><label><?php echo htmlentities($mail['value'], ENT_QUOTES); ?></label><?php endif; ?>
+					<?php if (!empty($mail['value'])) : ?><h2>E-Mail</h2><label><?php echo htmlentities($mail['value'], ENT_QUOTES); ?></label><?php endif; ?>
 				</div>
 			</div>
 		</div>

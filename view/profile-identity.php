@@ -86,21 +86,21 @@
 				<div>
 					<div class="col-2">
 						<h2>Prénom</h2>
-						<input type="text" name="mail[<?php if (!empty($firstname['key'])) : echo $firstname['key']; endif; ?>]" value="<?php if (!empty($firstname['value'])) : echo htmlentities($firstname['value'], ENT_QUOTES); endif; ?>" placeholder="Prénom" />
+						<input type="text" name="firstname[<?php if (!empty($firstname['key'])) : echo $firstname['key']; endif; ?>]" value="<?php if (!empty($firstname['value'])) : echo htmlentities($firstname['value'], ENT_QUOTES); endif; ?>" placeholder="Prénom" />
 					</div>
 					<div class="col-2">
 						<h2>Nom</h2>
-						<input type="text" name="mail[<?php if (!empty($name['key'])) : echo $name['key']; endif; ?>]" value="<?php if (!empty($name['value'])) : echo htmlentities($name['value'], ENT_QUOTES); endif; ?>" placeholder="Nom" />
+						<input type="text" name="name[<?php if (!empty($name['key'])) : echo $name['key']; endif; ?>]" value="<?php if (!empty($name['value'])) : echo htmlentities($name['value'], ENT_QUOTES); endif; ?>" placeholder="Nom" />
 					</div>
 				</div>
 				<div>
 					<div class="col-2">
 						<h2>Sexe</h2>
-						<input type="radio" name="sexe[<?php if (!empty($sex)) : echo $sex['key']; endif; ?>]" id="femme" value="Femme" /> 
+						<input type="radio" name="sexe[<?php if (!empty($sex['key'])) : echo $sex['key']; endif; ?>]" id="femme" value="Femme" <?php if (!empty($sex['value']) && $sex['value'] == 'Femme') : ?>checked="true"<?php endif; ?> /> 
 						<label for="femme">Femme</label> 
-						<input type="radio" name="sexe[<?php if (!empty($sex)) : echo $sex['key']; endif; ?>]" id="homme" value="Homme" checked="true" /> 
+						<input type="radio" name="sexe[<?php if (!empty($sex['key'])) : echo $sex['key']; endif; ?>]" id="homme" value="Homme" <?php if (!empty($sex['value']) && $sex['value'] == 'Homme') : ?>checked="true"<?php endif; ?> /> 
 						<label for="homme">Homme</label> 
-						<input type="radio" name="sexe[<?php if (!empty($sex)) : echo $sex['key']; endif; ?>]" id="autre" value="Autre" /> 
+						<input type="radio" name="sexe[<?php if (!empty($sex['key'])) : echo $sex['key']; endif; ?>]" id="autre" value="Autre" <?php if (!empty($sex['value']) && $sex['value'] == 'Autre') : ?>checked="true"<?php endif; ?> /> 
 						<label for="autre">Autre</label> 
 					</div>
 					<div class="col-2">

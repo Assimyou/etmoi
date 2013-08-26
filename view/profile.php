@@ -33,55 +33,40 @@
 				</aside>
 				<section class="col-3-2">
 					<?php if($ISME || $ISLEADER) : 
-							if ($ISLEADER) 
-							{
+							if ($ISLEADER) :
 								$showing = TRUE;
 								$editing = FALSE;
-							}
-							if ($ISME) 
-							{
+							endif;
+							if ($ISME) :
 								$showing = TRUE;
 								$editing = TRUE;
-							}
-					 		
+							endif;
 					 		include "Profile-profil.php";
 					 	 endif; ?>
 
 					<?php if($ISME || $ISLEADER) : 
-							if ($ISLEADER) 
-							{
+							if ($ISLEADER) :
 								$showing = TRUE;
 								$editing = FALSE;
-							}
-							if ($ISME) 
-							{
+							endif;
+							if ($ISME) :
 								$showing = TRUE;
 								$editing = TRUE;
-							}
-					 		
+							endif;
 					 		include "Profile-identity.php";
 					 	 endif; ?>
 
-					<section id="social" class="social showing group">
-						<h1 class="banner">Réseaux sociaux</h1>
-						<?php 	if ($ISME)
-								{
-									$visibility = 'Public';
-									include "edit-button.php";
-								}
-						?>
-						<form action="" method="post" >
-							<div class="col-3">
-								<h2>Twitter</h2><label><span>@</span>loichuck</label>
-							</div>
-							<div class="col-3">
-								<h2>Facebook</h2><label><span>facebook.com/</span>loichuck</label>
-							</div>
-							<div class="col-3">
-								<h2>Instagram</h2><label><span>instagr.am/</span>loichuck</label>
-							</div>
-						</form action="" method="post" >
-					</section>
+					<?php if($ISME || $ISLEADER) : 
+							if ($ISLEADER) :
+								$showing = TRUE;
+								$editing = FALSE;
+							endif;
+							if ($ISME) :
+								$showing = TRUE;
+								$editing = TRUE;
+							endif;
+					 		include "Profile-network.php";
+					 	 endif; ?>
 
 					<?php if($ISME || $ISLEADER) : ?>
 					<section id="contact" class="contact showing group">
