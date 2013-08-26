@@ -32,7 +32,7 @@ if (!empty($_SESSION['id']))
 				}
 
 				$allow = TRUE;
-				include_once 'event/param.php';
+				include_once 'association/param.php';
 				include_once 'view/association-form.php';
 			}
 		}
@@ -43,7 +43,7 @@ if ($allow == FALSE)
 {
 	if (!empty($_GET['q']))
 	{
-		include_once 'event/param.php';
+		include_once 'association/param.php';
 		include_once 'view/association.php';
 	}
 	else

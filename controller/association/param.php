@@ -76,7 +76,7 @@ if (!empty($_POST['submit']) && $_POST['submit'] == 'supprimer')
 	}
 }
 
-if (!empty($token) !empty($_POST[$_SESSION[$token]['token']]) && $_POST[$_SESSION[$token]['token']] == "enregistrer") 
+if (!empty($token) && !empty($_POST[$_SESSION[$token]['token']]) && $_POST[$_SESSION[$token]['token']] == "enregistrer") 
 {
 	extract($_POST);
 
