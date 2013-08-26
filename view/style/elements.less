@@ -37,7 +37,8 @@ header nav span.current,
 .registered,
 .evenement-by,
 .when,
-.more{
+.more,
+.edit{
 	font-family: @fonttitre;
 	font-weight: normal;
 	text-transform: uppercase;
@@ -243,7 +244,7 @@ form.search{
 	width: 11.666%; 
 }
 
-@media screen and (max-width: 48em){ // ~768px
+@media @screenmedium{
 	.col-3{	width: 47.5%;	}
 
 	.col-3-2{ width: 47.5%; }
@@ -252,7 +253,7 @@ form.search{
 	.float-6{ width: 20%; }
 }
 
-@media screen and (max-width: 32.5em){ // ~520px
+@media @screensmall{
 	.col-2,
 	.col-3, 
 	.col-3-2, 

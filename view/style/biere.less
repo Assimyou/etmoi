@@ -46,6 +46,10 @@
 @bgrouge: @rouge url("img/bg-btn-red.jpg");
 @bgjaune: @jaune url("img/bg-btn-gold.jpg");
 
+//media queries
+@screensmall: ~"screen and (max-width: 32.5em)";
+@screenmedium: ~"screen and (max-width: 48em)";
+
 
 ///////////////////////////////
 ///////    Mixins       ///////
@@ -64,7 +68,7 @@
 }
 
 .animation-duration(@param: 1s){
-	-o-animation-duration: @param;
+  -o-animation-duration: @param;
   -moz-animation-duration: @param;
   -webkit-animation-duration: @param;
   animation-duration: @param;

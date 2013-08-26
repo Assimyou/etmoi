@@ -26,12 +26,12 @@ section.description{
 			background: @jaune;
 
 			a img { display:none; } 
-			.gmnoprint[style="z-index: 1000001; position: absolute; right: 95px; bottom: 0px;"]{
-				display: none;
-			}
-			.gmnoprint[style~="font-size"]{
-				display: none;
-			}
+			//.gmnoprint[style="z-index: 1000001; position: absolute; right: 95px; bottom: 0px;"]{
+				//display: none;
+			//}
+			//.gmnoprint[style~="font-size"]{
+				//display: none;
+			//}
 		}
 	}
 
@@ -223,14 +223,11 @@ section.badges{
 	}
 }
 
-@media screen and (max-width: 48em){ // ~768px
+@media @screenmedium{ 
 	section.share{
 		.image{
 			float: none;
 			width: 100%;
 		}
 	}
-}
-
-@media screen and (max-width: 32.5em){ // ~520px
 }

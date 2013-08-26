@@ -1,7 +1,10 @@
 $(document).ready(function() { // initialisation du DOM
 	var scrolltop = $(window).scrollTop();
 
-	// Fermeture du notification center
+
+	/*
+	 * Fermeture du notification center
+	 */
 	$('#close-notification').click(function() {
 		$('.notification-zone').toggleClass('animated bounceOutUp');
 
@@ -11,21 +14,30 @@ $(document).ready(function() { // initialisation du DOM
 
 	});
 
-	// FUUUUUUUN
+
+	/* 
+	 * FUUUUUUUN
+	 */
 	$('.pushbadges').hover(function() {
 		$('.fun').toggleClass('animated');
 		$('.badges figure').toggleClass('animated');
 	});
 
-	// Header parallax
+
+	/* 
+	 * Header parallax
+	 */
 	jQuery('#parallax .parallax-layer')
 	    .parallax({
 	      mouseport: jQuery('#parallax')
     });
 
-	// Menu fixed
+
+	/*
+	 * Menu fixed
+	 */
 	var menufixed = false;
-	var header = $("header");
+	var header = $('header');
 	var menu = header.find('nav.main-menu');
 	var menudumy = 0;
 	var navtop = menu.offset().top;
@@ -52,5 +64,17 @@ $(document).ready(function() { // initialisation du DOM
 			menu.addClass('fixed');
 			menufixed = true;
 		}
+	});
+
+
+	/*
+	 * Edit button -> create form
+	 */
+	$(document).on('click', 'a.btn.createform', function(){
+		var parent = $(this).parent().parent().parent();
+		parent.addClass('editing');
+		parent.removeClass('showing');
+
+		return false;
 	});
 });

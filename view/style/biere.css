@@ -97,7 +97,8 @@ header nav span.current,
 .registered,
 .evenement-by,
 .when,
-.more {
+.more,
+.edit {
   font-family: 'Bebas', Arial, sans-serif;
   font-weight: normal;
   text-transform: uppercase;
@@ -771,12 +772,6 @@ section.description .map .google {
 section.description .map .google a img {
   display: none;
 }
-section.description .map .google .gmnoprint[style="z-index: 1000001; position: absolute; right: 95px; bottom: 0px;"] {
-  display: none;
-}
-section.description .map .google .gmnoprint[style~="font-size"] {
-  display: none;
-}
 section.description:before {
   display: none !important;
 }
@@ -949,9 +944,6 @@ section.badges .badge a.more {
     width: 100%;
   }
 }
-@media screen and (max-width: 32.5em) {
-  
-}
 div.content.association {
   background: #e6eae0;
 }
@@ -982,8 +974,30 @@ div.content.profil section h1.banner {
 div.content.profil section h2 {
   margin-bottom: 0;
 }
-div.content.profil section form {
+div.content.profil section form,
+div.content.profil section .wrapper {
   text-align: left;
+}
+div.content.profil section.showing div.editing,
+div.content.profil section.showing input.editing {
+  display: none;
+}
+div.content.profil section.editing div.showing,
+div.content.profil section.editing a.btn.createform {
+  display: none;
+}
+div.content.profil section input[type='text'],
+div.content.profil section input[type='password'] {
+  width: 90%;
+  padding: 0.5em 5%;
+  margin: 0.3em -1px 0 -1px;
+  outline: none;
+  border: solid 1px #aaa;
+  background: #e6eae0;
+}
+div.content.profil section input[type='text']:focus,
+div.content.profil section input[type='password']:focus {
+  background: #fff;
 }
 section.social .col-3 span {
   font-size: 0.875em;
@@ -1007,6 +1021,15 @@ section.social .col-3 span {
 .menu-aside a:active,
 .menu-aside a:focus {
   color: #f7bb11;
+}
+.edit {
+  float: right;
+}
+.privacy {
+  display: inline-block;
+  font-size: 1.250em;
+  padding: 0 1em;
+  margin-top: 10px;
 }
 /***********************************
  *    Footer

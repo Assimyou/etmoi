@@ -13,8 +13,34 @@ div.content.profil{
 			margin-bottom: 0;
 		}
 
-		form{
+		form, .wrapper{
 			text-align: left;
+		}
+
+		&.showing{
+			div.editing, 
+			input.editing{ 
+				display: none; 
+			}
+		}
+
+		&.editing{
+			div.showing, 
+			a.btn.createform{ 
+				display: none; 
+			}
+		}
+
+		input[type='text'], input[type='password']{
+			width: 90%;
+			padding: 0.5em 5%;
+			margin: 0.3em -1px 0 -1px;
+			outline: none;
+			border: solid 1px #aaa;
+			background: @nuages;
+			&:focus{
+				background: #fff;
+			}
 		}
 	}
 }
@@ -46,4 +72,16 @@ section.social{
 		&.current{ color: @grisfonce; }
 		&:hover, &:active, &:focus{ color: @jaune; }
 	}
+}
+
+.edit{
+	float: right;
+}
+
+.privacy{
+	display: inline-block;
+	font-size: 1.250em;
+	//background: url("img/icones.png") -28px -31px no-repeat; 
+	padding: 0 1em;
+	margin-top: 10px;
 }
