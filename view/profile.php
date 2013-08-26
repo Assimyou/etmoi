@@ -32,118 +32,35 @@
 					</nav>
 				</aside>
 				<section class="col-3-2">
-					<?php if($ISME || $ISLEADER) : ?>
-					<!-- Début section profil -->
-					<section id="profil" class="profil showing group">
-						<form action="" method="post" >
-							<h1 class="banner">Profil</h1>
-							<?php 	if ($ISME) 
-									{
-										// Ajout du boutton
-										$visibility = 'Privé';
-										include "edit-button.php";
-									}
-
-							$showing = "";
-							$editing = "";
-
-							if (!empty($users['mail'])){
-								foreach ($users['mail'] as $key => $value){
-									$showing .= '<h2>E-Mail</h2><label>'.htmlentities($value, ENT_QUOTES).'</label>';
-									$editing .= '<h2>E-Mail</h2><input type="text" name="mail['.$key.']" value="'.htmlentities($value, ENT_QUOTES).'" placeholder="E-Mail" />';
-								}
-							} else {
-								$showing .= '';
-								$editing .= '<h2>E-Mail</h2><input type="text" name="mail[]" placeholder="E-Mail" />';
+					<?php if($ISME || $ISLEADER) : 
+							if ($ISLEADER) 
+							{
+								$showing = TRUE;
+								$editing = FALSE;
 							}
-							?>
-
-							<div class="showing">
-								<?php if($showing != "") : ?><?php echo $showing; ?><?php endif; ?>
-								<?php if($ISME) : ?><h2>Mot de sécurité</h2><label>********</label><?php endif; ?>
-							</div>
-
-							<?php if($ISME) : ?>
-							<div class="editing">
-								<?php if($editing != "") : ?><?php echo $editing; ?><?php endif; ?>
-								<h2>Mot de sécurité</h2><input type="password" name="password[]" placeholder="Mot de sécurité" />
-							</div>
-							<?php endif; ?>
-						</form action="" method="post" >
-					</section>
-					<!-- Fin section profil -->
-					<?php endif; ?>
-
-					<section id="identity" class="identity showing group">
-						<form action="" method="post" >
-							<h1 class="banner">Identité</h1>
-							<?php 	if ($ISME) 
-									{
-										$visibility = 'Public';
-										include "edit-button.php";
-									}
-							
-							$showing = "";
-							$editing = "";
-
-							if (!empty($users['firstname'])){
-								foreach ($users['firstname'] as $key => $value){
-									$showing .= '<h2>E-Mail</h2><label>'.htmlentities($value, ENT_QUOTES).'</label>';
-									$editing .= '<h2>E-Mail</h2><input type="text" name="mail['.$key.']" value="'.htmlentities($value, ENT_QUOTES).'" placeholder="Prénom" />';
-								}
-							} else {
-								$showing .= '';
-								$editing .= '<h2>E-Mail</h2><input type="text" name="mail[]" placeholder="Prénom" />';
+							if ($ISME) 
+							{
+								$showing = TRUE;
+								$editing = TRUE;
 							}
-							?>
+					 		
+					 		include "Profile-profil.php";
+					 	 endif; ?>
 
-							<div class="showing">
-								<div>
-									<div class="col-2">
-										<h2>Prénom</h2><label>Loïc</label>
-									</div>
-									<div class="col-2">
-										<h2>Nom</h2><label>Huck</label>
-									</div>
-								</div>
-								<div>
-									<div class="col-2">
-										<h2>Sexe</h2><label>Homme</label>
-									</div>
-									<div class="col-2">
-										<h2>Date de naissance</h2><label>13/09/2013</label>
-									</div>
-								</div>
-							</div>
-
-							<?php if($ISME) : ?>
-							<div class="editing">
-								<div>
-									<div class="col-2">
-										<h2>Prénom</h2><input type="text" value="Loïc" />
-									</div>
-									<div class="col-2">
-										<h2>Nom</h2><input type="text" value="Huck" />
-									</div>
-								</div>
-								<div>
-									<div class="col-2">
-										<h2>Sexe</h2>
-										<input type="radio" name="sexe[]" id="femme" value="Femme" /> 
-										<label for="femme">Femme</label> 
-										<input type="radio" name="sexe[]" id="homme" value="Homme" checked="true" /> 
-										<label for="homme">Homme</label> 
-										<input type="radio" name="sexe[]" id="autre" value="Autre" /> 
-										<label for="autre">Autre</label> 
-									</div>
-									<div class="col-2">
-										<h2>Date de naissance</h2><input type="date" />
-									</div>
-								</div>
-							</div>
-							<?php endif; ?>
-						</form action="" method="post" >
-					</section>
+					<?php if($ISME || $ISLEADER) : 
+							if ($ISLEADER) 
+							{
+								$showing = TRUE;
+								$editing = FALSE;
+							}
+							if ($ISME) 
+							{
+								$showing = TRUE;
+								$editing = TRUE;
+							}
+					 		
+					 		include "Profile-identity.php";
+					 	 endif; ?>
 
 					<section id="social" class="social showing group">
 						<h1 class="banner">Réseaux sociaux</h1>
