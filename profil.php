@@ -54,12 +54,13 @@ elseif (!empty($_GET['q']))
 
 if (!empty($id))
 {
+	include_once 'user/param.php';
+
 	if ($ISME) 
 	{
 		$newToken = generateToken($_SERVER['REQUEST_URI']);
 	}
-	
-	include_once 'user/param.php';
+
 	include_once 'view/profile.php';
 }
 else
