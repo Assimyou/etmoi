@@ -2,10 +2,15 @@
 
 		<!-- Debut du corps du site -->
 		<div class="content association group">
+			<div class="cover" style="background-image: url('images/vide-grenier.jpg');">
+				<?php if (!empty($associations['name'])) : ?><div class="center"><?php foreach ($associations['name'] as $key => $value) : ?><h1><?php echo $value; ?></h1><?php endforeach; ?></div><?php endif; ?>
+			</div>
+
+			<?php if(true) :
+				include("form-add-event.php");
+			endif; ?>
+
 			<section class="description group">
-				<div class="cover" style="background-image: url('images/vide-grenier.jpg');">
-					<?php if (!empty($associations['name'])) : ?><div class="center"><?php foreach ($associations['name'] as $key => $value) : ?><h1><?php echo $value; ?></h1><?php endforeach; ?></div><?php endif; ?>
-				</div>
 				<article class="center">
 					<div class="registering">
 						<div class="registered">61 membres</div>
