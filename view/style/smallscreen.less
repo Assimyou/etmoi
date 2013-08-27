@@ -6,9 +6,15 @@
 	.col-6{	width: 20%;	}
 	.float-6{ width: 20%; }
 
-	article.evenement.small{
-		width: 90%;
-		max-width: none;
+	article.evenement{
+		&.small{
+			width: 90%;
+			max-width: none;
+		}
+
+		&.big{
+			padding: 2em 5%;
+		}
 	}
 }
 
@@ -26,6 +32,11 @@
 	.col-3-2{ width: 100%; }
 	.col-6{	width: 47.5%; }
 	.float-6{ width: 45%; }
+
+	.center{ 
+		width: 90%;
+		margin: 0 5%;
+	}
 
 	header{
 		nav.main-menu{
@@ -69,6 +80,56 @@
 		&.submit{
 			margin-left: -40%;
 			width: 40%;
+		}
+	}
+
+	section.share>article.group>.col-3-2{
+		padding-bottom: 2em;
+	}
+
+	article.evenement.big{
+		padding-bottom: 5em;
+
+		figure{ 
+			position: relative;
+			right: auto; 
+			padding: 1em;
+		}
+
+		.left-50{ 
+			margin-left: 0 !important; 
+		}
+	}
+
+	.pushbadges{
+		.intro{
+			width: 100%;
+		}
+
+		.badges{
+			width: 100%;
+		}
+	}
+
+	.menu-aside{
+		margin-bottom: 2em;
+
+
+		a{
+			margin-bottom: 0.5em;
+			text-align: center;
+		}
+	}
+
+	footer{
+		font-size: 1.125em;
+
+		.col-3{
+			margin-bottom: 2em;
+		}
+
+		nav a{
+			margin: 0.5em 0;
 		}
 	}
 }
