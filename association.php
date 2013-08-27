@@ -12,43 +12,52 @@ session_write_close();
 
 include_once 'user/access.php';
 
-$allow = FALSE;
+$ISLEADER = FALSE;
 
 if (!empty($_SESSION['id']))
 {
+	if (checkToken(10, $_SERVER['REQUEST_URI']))
+	{
+		$token = $_SERVER['REQUEST_URI'];
+	}
+	else
+	{
+		$token = "";
+	}
+
 	if (!empty($_GET['act']) && $_GET['act'] == 'edit') 
 	{
 		foreach ($visa as $key => $value)
 		{
 			if ($value == 'leader')
 			{
-				if (checkToken(10, $_SERVER['REQUEST_URI']))
+				if ($value == 'webmaster')
 				{
-					$token = $_SERVER['REQUEST_URI'];
+					$ISLEADER = TRUE;
 				}
-				else
+				elseif ($value == 'leader' && $profil['association'] == $users['association']) 
 				{
-					$token = "";
+					$ISLEADER = TRUE;
 				}
-
-				$allow = TRUE;
-				include_once 'association/param.php';
-				include_once 'view/association-form.php';
 			}
 		}
 	}
 }
 
-if ($allow == FALSE) 
+if (!empty($_GET['q']))
 {
-	if (!empty($_GET['q']))
+	include_once 'event/param.php';
+	include_once 'association/param.php';
+
+	if ($ISLEADER)
 	{
-		include_once 'association/param.php';
-		include_once 'view/association.php';
+		$newToken = generateToken($_SERVER['REQUEST_URI']);
 	}
-	else
-	{
-		header('Location: .');
-	}
+
+	include_once 'view/association.php';
+}
+else
+{
+	header('Location: .');
 }
 ?>
