@@ -207,6 +207,7 @@ a.close {
 input.search {
   min-height: 1.5em;
   padding: 0 15px;
+  margin: 0 0 0.7em 0;
   font-size: 1.250em;
   color: #ffffff;
   background: #ac272d;
@@ -578,6 +579,7 @@ article.evenement.big figure {
   right: 50%;
   padding: 3.750em;
   background: url("img/image-circle.png") top left no-repeat;
+  background-size: 100%;
 }
 article.evenement.big .evenement-by {
   border-top: solid 1px #4c4c4c;
@@ -1202,9 +1204,6 @@ textarea {
   }
 }
 @media screen and (max-width: 32.5em) {
-  body {
-    font-size: 1.125em;
-  }
   .col-2,
   .col-3,
   .col-3-2,
@@ -1231,5 +1230,42 @@ textarea {
   }
   .float-6 {
     width: 45%;
+  }
+  header nav.main-menu {
+    position: relative;
+  }
+  header nav.main-menu a {
+    position: relative;
+    float: left;
+    width: 28.333%;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
+  }
+  header .login {
+    position: relative;
+  }
+  section.description figure {
+    margin: 0;
+  }
+  input.search {
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 40%;
+  }
+  input.search.field {
+    padding-right: 10%;
+    margin-right: 30%;
+  }
+  input.search.field:focus {
+    width: 40%;
+  }
+  input.search.field:focus + input.search.submit {
+    width: 40%;
+  }
+  input.search.submit {
+    margin-left: -40%;
+    width: 40%;
   }
 }
