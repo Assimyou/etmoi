@@ -445,7 +445,9 @@ header nav.main-menu.fixed {
   margin-top: -3em;
 }
 .notification {
-  padding: 0.75em 0;
+  width: 85% !important;
+  padding: 0.75em 10% 0.75em 5% !important;
+  margin: 0 auto !important;
 }
 .notification:after {
   position: absolute;
@@ -457,6 +459,7 @@ header nav.main-menu.fixed {
   width: 30px;
   margin-bottom: -15px;
   background: url("img/icones.png") 0 -560px no-repeat;
+  z-index: 1;
 }
 /***********************************
  *    Accueil
@@ -654,6 +657,9 @@ article.association figure {
   position: absolute;
   top: 0;
   left: 0;
+}
+article.association figure img {
+  border-radius: 100%;
 }
 article.association a.more {
   margin-left: 40%;
