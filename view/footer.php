@@ -24,7 +24,7 @@
 					</nav>
 				</div>
 
-				<div class="login col-3">
+				<div class="login col-3" id="login-footer">
 					<form action="" method="post" >
 						<?php if (empty($_SESSION['id'])) : ?>
 						<h3>Pas encore connecté ?</h3>
