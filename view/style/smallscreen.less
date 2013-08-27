@@ -1,0 +1,40 @@
+@media @screenmedium{
+	.col-3{	width: 47.5%;	}
+
+	.col-3-2{ width: 47.5%; }
+
+	.col-6{	width: 20%;	}
+	.float-6{ width: 20%; }
+
+	article.evenement.small{
+		width: 90%;
+		max-width: none;
+	}
+}
+
+@media @screensmall{
+	body{
+		font-size: 1.125em;
+	}
+
+	.col-2,
+	.col-3, 
+	.col-3-2, 
+	.col-6{
+		margin-right: 0;
+		&:last-child{ margin-right: inherit; }
+	}
+
+	.col-2{ width: 100%; }
+	.col-3{	width: 100%; }
+	.col-3-2{ width: 100%; }
+	.col-6{	width: 47.5%; }
+	.float-6{ width: 45%; }
+
+	header{
+		nav.main-menu{
+			a{
+			}
+		}
+	}
+}

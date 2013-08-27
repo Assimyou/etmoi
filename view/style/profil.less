@@ -1,8 +1,21 @@
 div.content{
-	input[type='text'], input[type='password']{
+	input[type='text'], input[type='password'], input[type="date"]{
 		width: 90%;
 		padding: 0.5em 5%;
-		margin: 0.3em -1px 0 -1px;
+		margin: 0.5em -1px;
+		outline: none;
+		border: solid 1px #aaa;
+		background: @nuages;
+		&:focus{
+			background: #fff;
+		}
+	}
+
+	textarea{
+		width: 90%;
+		height: 15em;
+		padding: 0.5em 5%;
+		margin: 0.5em -1px;
 		outline: none;
 		border: solid 1px #aaa;
 		background: @nuages;

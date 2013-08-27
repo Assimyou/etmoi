@@ -340,49 +340,6 @@ form.search {
   margin-right: 2.5%;
   width: 11.666%;
 }
-@media screen and (max-width: 48em) {
-  .col-3 {
-    width: 47.5%;
-  }
-  .col-3-2 {
-    width: 47.5%;
-  }
-  .col-6 {
-    width: 20%;
-  }
-  .float-6 {
-    width: 20%;
-  }
-}
-@media screen and (max-width: 32.5em) {
-  .col-2,
-  .col-3,
-  .col-3-2,
-  .col-6 {
-    margin-right: 0;
-  }
-  .col-2:last-child,
-  .col-3:last-child,
-  .col-3-2:last-child,
-  .col-6:last-child {
-    margin-right: inherit;
-  }
-  .col-2 {
-    width: 100%;
-  }
-  .col-3 {
-    width: 100%;
-  }
-  .col-3-2 {
-    width: 100%;
-  }
-  .col-6 {
-    width: 47.5%;
-  }
-  .float-6 {
-    width: 45%;
-  }
-}
 /***********************************
  *    Header
  *
@@ -461,7 +418,6 @@ header nav.main-menu a:hover,
 header nav.main-menu a:active,
 header nav.main-menu a:focus {
   color: #f7bb11;
-  padding: 0.875em 2em;
 }
 header nav.main-menu span.current {
   color: #f7bb11;
@@ -769,8 +725,10 @@ section.description .map .google {
   height: 350px;
   background: #f7bb11;
 }
-section.description .map .google a img {
-  display: none;
+section.description .map .google img {
+  width: auto;
+  max-width: none;
+  min-width: none;
 }
 section.description:before {
   display: none !important;
@@ -948,7 +906,7 @@ div.content.association {
   background: #e6eae0;
 }
 div.content.association section {
-  padding-bottom: 6em;
+  margin-bottom: 6em;
   position: relative;
 }
 div.content.association section:before {
@@ -961,17 +919,44 @@ div.content.association section:before {
   border-bottom: 1px solid #f7bb11;
   z-index: 0;
 }
+section.addevent {
+  text-align: left;
+  margin-top: 2em;
+}
+section.addevent h1.banner {
+  top: 0;
+}
+section.addevent h2 {
+  margin-bottom: 0;
+}
+section.addevent:before {
+  display: none !important;
+}
 div.content input[type='text'],
-div.content input[type='password'] {
+div.content input[type='password'],
+div.content input[type="date"] {
   width: 90%;
   padding: 0.5em 5%;
-  margin: 0.3em -1px 0 -1px;
+  margin: 0.5em -1px;
   outline: none;
   border: solid 1px #aaa;
   background: #e6eae0;
 }
 div.content input[type='text']:focus,
-div.content input[type='password']:focus {
+div.content input[type='password']:focus,
+div.content input[type="date"]:focus {
+  background: #fff;
+}
+div.content textarea {
+  width: 90%;
+  height: 15em;
+  padding: 0.5em 5%;
+  margin: 0.5em -1px;
+  outline: none;
+  border: solid 1px #aaa;
+  background: #e6eae0;
+}
+div.content textarea:focus {
   background: #fff;
 }
 div.content.profil {
@@ -1185,4 +1170,54 @@ textarea {
 }
 .group:after {
   clear: both;
+}
+@media screen and (max-width: 48em) {
+  .col-3 {
+    width: 47.5%;
+  }
+  .col-3-2 {
+    width: 47.5%;
+  }
+  .col-6 {
+    width: 20%;
+  }
+  .float-6 {
+    width: 20%;
+  }
+  article.evenement.small {
+    width: 90%;
+    max-width: none;
+  }
+}
+@media screen and (max-width: 32.5em) {
+  body {
+    font-size: 1.125em;
+  }
+  .col-2,
+  .col-3,
+  .col-3-2,
+  .col-6 {
+    margin-right: 0;
+  }
+  .col-2:last-child,
+  .col-3:last-child,
+  .col-3-2:last-child,
+  .col-6:last-child {
+    margin-right: inherit;
+  }
+  .col-2 {
+    width: 100%;
+  }
+  .col-3 {
+    width: 100%;
+  }
+  .col-3-2 {
+    width: 100%;
+  }
+  .col-6 {
+    width: 47.5%;
+  }
+  .float-6 {
+    width: 45%;
+  }
 }
