@@ -20,7 +20,13 @@
 			<textarea name="description[]" placeholder="description" ></textarea>
 			<?php endif; ?>
 			<h2>Adresse</h2>
-			<input type="text" />
+			<?php if (!empty($events['address'])) : ?>
+			<?php foreach ($events['address'] as $key => $value) : ?>
+			<input type="text" name="address[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="adresse" />
+			<?php endforeach; ?>
+			<?php else : ?>
+			<input type="text" name="address[]" placeholder="adresse" />
+			<?php endif; ?>
 			<div class="group">
 				<div class="col-3"><input type="text" /></div>
 				<div class="col-3"><input type="text" /></div>
