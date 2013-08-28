@@ -1,4 +1,4 @@
-<?php include_once "header.php"; ?>
+<?php include_once "view/header.php"; ?>
 
 		<script type="text/javascript">
 			function addLoadEvent(func) {
@@ -364,4 +364,4 @@
 			</div>
 		</div>
 		<!-- Fin page evenement -->
-<?php include_once "footer.php"; ?>
+<?php include_once "view/footer.php"; ?>

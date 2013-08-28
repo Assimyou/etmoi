@@ -1,4 +1,4 @@
-<?php include_once "header.php"; ?>
+<?php include_once "view/header.php"; ?>
 
 		<!-- Debut du corps du site -->
 		<div class="content profil group">
@@ -41,7 +41,7 @@
 								$showing = TRUE;
 								$editing = TRUE;
 							endif;
-					 		include "Profile-profil.php";
+					 		include "view/profile-profil.php";
 					 	 endif; ?>
 
 					<?php if($ISME || $ISLEADER) : 
@@ -53,7 +53,7 @@
 								$showing = TRUE;
 								$editing = TRUE;
 							endif;
-					 		include "Profile-identity.php";
+					 		include "view/profile-identity.php";
 					 	 endif; ?>
 
 					<?php if($ISME || $ISLEADER) : 
@@ -65,7 +65,7 @@
 								$showing = TRUE;
 								$editing = TRUE;
 							endif;
-					 		include "Profile-network.php";
+					 		include "view/profile-network.php";
 					 	 endif; ?>
 
 					<?php if($ISME || $ISLEADER) : ?>
@@ -74,7 +74,7 @@
 						<?php 	if ($ISME)
 								{
 									$visibility = 'Public';
-									include "edit-button.php";
+									include "view/edit-button.php";
 								}
 						?>
 						<form action="" method="post" >
@@ -89,7 +89,7 @@
 						<?php 	if ($ISME)
 								{
 									$visibility = 'Public';
-									include "edit-button.php";
+									include "view/edit-button.php";
 								}
 						?>
 						<form action="" method="post" >
@@ -202,4 +202,4 @@
 		</div>
 		<!-- Fin du corps du site -->
 
-<?php include_once "footer.php"; ?>
+<?php include_once "view/footer.php"; ?>

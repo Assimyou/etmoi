@@ -4,13 +4,11 @@ session_start();
 header("Cache-Control: no-cache, must-revalidate");
 header("Pragma: no-cache");
 
-ini_set('include_path', ini_get('include_path').';./model/;./view/;./controller/');
-
 include_once 'dbh.php';
-include_once 'user/authentication.php';
+include_once 'controller/user/authentication.php';
 session_write_close();
 
-include_once 'user/access.php';
+include_once 'controller/user/access.php';
 
 $allow = FALSE;
 
@@ -32,7 +30,7 @@ if (!empty($_SESSION['id']))
 				}
 
 				$allow = TRUE;
-				include_once 'event/param.php';
+				include_once 'controller/event/param.php';
 				include_once 'view/event-form.php';
 			}
 		}
@@ -43,7 +41,7 @@ if ($allow == FALSE)
 {
 	if (!empty($_GET['q']))
 	{
-		include_once 'event/param.php';
+		include_once 'controller/event/param.php';
 		require_once 'model/classes/instagram.class.php';
 		$instagram = new Instagram('44a354e34a344471aed0e4df151513b4');
 		include_once 'view/event.php';

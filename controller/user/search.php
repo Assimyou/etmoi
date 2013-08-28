@@ -7,7 +7,7 @@
 *	@version    2013-07-13
 */
 
-include_once 'classes/user.php';
+include_once 'model/classes/user.php';
 
 if (!empty($_POST) && $_POST['research'] == "rechercher") 
 {

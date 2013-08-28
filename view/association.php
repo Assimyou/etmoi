@@ -1,13 +1,13 @@
-<?php include_once "header.php"; ?>
+<?php include_once "view/header.php"; ?>
 
 		<!-- Debut du corps du site -->
 		<div class="content association group">
 			<div class="cover" style="background-image: url('images/vide-grenier.jpg');">
 				<?php if (!empty($associations['name'])) : ?><div class="center"><?php foreach ($associations['name'] as $key => $value) : ?><h1><?php echo $value; ?></h1><?php endforeach; ?></div><?php endif; ?>
 			</div>
-			
+
 			<?php if($ISLEADER) :
-				include("form-add-event.php");
+				include "view/form-add-event.php";
 			endif; ?>
 
 			<section class="description group">
@@ -282,4 +282,4 @@
 		</div>
 		<!-- Fin du corps du site -->
 
-<?php include_once "footer.php"; ?>
+<?php include_once "view/footer.php"; ?>

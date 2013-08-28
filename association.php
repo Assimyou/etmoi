@@ -4,13 +4,11 @@ session_start();
 header("Cache-Control: no-cache, must-revalidate");
 header("Pragma: no-cache");
 
-ini_set('include_path', ini_get('include_path').';./model/;./view/;./controller/');
-
 include_once 'dbh.php';
-include_once 'user/authentication.php';
+include_once 'controller/user/authentication.php';
 session_write_close();
 
-include_once 'user/access.php';
+include_once 'controller/user/access.php';
 
 $ISLEADER = FALSE;
 
@@ -25,7 +23,7 @@ if (!empty($_SESSION['id']))
 		$token = "";
 	}
 
-	include_once 'user/param.php';
+	include_once 'controller/user/param.php';
 
 	foreach ($visa as $key => $value)
 	{
@@ -47,11 +45,11 @@ if (!empty($_GET['q']))
 {
 	$id = $_GET['q'];
 }
-include_once 'association/param.php';
+include_once 'controller/association/param.php';
 
 if (!empty($_GET['q']))
 {
-	include_once 'event/param.php';
+	include_once 'controller/event/param.php';
 
 	if ($ISLEADER)
 	{
@@ -69,7 +67,7 @@ if (!empty($_GET['q']))
 }
 elseif (!empty($_GET['act']) && $_GET['act'] == 'edit') 
 {
-	include_once 'association/param.php';
+	include_once 'controller/association/param.php';
 
 	include_once 'view/association-form.php';
 }

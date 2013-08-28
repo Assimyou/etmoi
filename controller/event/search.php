@@ -7,7 +7,7 @@
 *	@version    2013-07-13
 */
 
-include_once 'classes/event.php';
+include_once 'model/classes/event.php';
 
 if (!empty($_GET['q'])) 
 {

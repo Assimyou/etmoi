@@ -3,7 +3,7 @@
 		<h1 class="banner">Réseaux sociaux</h1>
 			<?php 	if ($editing) :
 						$visibility = 'Privé';
-						include "edit-button.php";
+						include "view/edit-button.php";
 					endif; 
 
 					if (!empty($users['twitter'])) :
