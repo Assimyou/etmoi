@@ -1,6 +1,6 @@
 <?php
 
-include_once 'mother.php';
+include_once 'model/classes/mother.php';
 
 class user extends mother
 {

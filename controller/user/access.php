@@ -7,9 +7,9 @@
 *	@version    2013-07-13
 */
 
-include_once 'classes/passport.php';
-include_once 'generateToken.php';
-include_once 'checkToken.php';
+include_once 'model/classes/passport.php';
+include_once 'model/generateToken.php';
+include_once 'model/checkToken.php';
 
 if (!empty($profil['passport']))
 {

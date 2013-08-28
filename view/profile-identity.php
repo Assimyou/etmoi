@@ -3,7 +3,7 @@
 		<h1 class="banner">Identité</h1>
 			<?php 	if ($editing) :
 						$visibility = 'Privé';
-						include "edit-button.php";
+						include "view/edit-button.php";
 					endif; 
 					
 					if (!empty($users['firstname'])) :

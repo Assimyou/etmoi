@@ -4,13 +4,11 @@ session_start();
 header("Cache-Control: no-cache, must-revalidate");
 header("Pragma: no-cache");
 
-ini_set('include_path', ini_get('include_path').';./model/;./view/;./controller/');
-
 include_once 'dbh.php';
-include_once 'user/authentication.php';
+include_once 'controller/user/authentication.php';
 session_write_close();
 
-include_once 'user/access.php';
+include_once 'controller/user/access.php';
 
 $ISLEADER = FALSE;
 
@@ -46,8 +44,8 @@ if (!empty($_SESSION['id']))
 
 if (!empty($_GET['q']))
 {
-	include_once 'event/param.php';
-	include_once 'association/param.php';
+	include_once 'controller/event/param.php';
+	include_once 'controller/association/param.php';
 
 	if ($ISLEADER)
 	{

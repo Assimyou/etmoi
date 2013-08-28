@@ -1,4 +1,4 @@
-<?php include_once "header.php"; ?>
+<?php include_once "view/header.php"; ?>
 
 		<!-- Debut du corps du site -->
 		<div class="content home group">
@@ -170,4 +170,4 @@
 		</section>
 		<!-- Fin du corps du site -->
 
-<?php include_once "footer.php"; ?>
+<?php include_once "view/footer.php"; ?>

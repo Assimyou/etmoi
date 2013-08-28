@@ -1,4 +1,4 @@
-<?php include_once "header.php"; ?>
+<?php include_once "view/header.php"; ?>
 
 		<!-- Debut du corps du site -->
 		<div class="content association group">
@@ -7,7 +7,7 @@
 			</div>
 
 			<?php if(true) :
-				include("form-add-event.php");
+				include "view/form-add-event.php";
 			endif; ?>
 
 			<section class="description group">
@@ -283,4 +283,4 @@
 		</div>
 		<!-- Fin du corps du site -->
 
-<?php include_once "footer.php"; ?>
+<?php include_once "view/footer.php"; ?>
