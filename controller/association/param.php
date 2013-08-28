@@ -9,11 +9,11 @@
 
 include_once 'model/classes/association.php';
 
-if (!empty($_GET['q']))
+if (!empty($id))
 {
 	$association = new association($dbh);
 
-	$association->setId($_GET['q']);
+	$association->setId($id);
 	$association->selectAsso();
 
 	$association->setRight($association->getResult()['right']);
@@ -76,7 +76,7 @@ if (!empty($_POST['submit']) && $_POST['submit'] == 'supprimer')
 	}
 }
 
-if (!empty($token) && !empty($_POST[$_SESSION[$token]['token']]) && $_POST[$_SESSION[$token]['token']] == "enregistrer") 
+if (!empty($token) && !empty($_POST['association-'.$_SESSION[$token]['token']]) && $_POST['association-'.$_SESSION[$token]['token']] == "enregistrer") 
 {
 	extract($_POST);
 
@@ -195,7 +195,7 @@ if (!empty($token) && !empty($_POST[$_SESSION[$token]['token']]) && $_POST[$_SES
 
 	$association = new association($dbh);
 
-	if (empty($_GET['id']))
+	if (empty($_GET['q']))
 	{
 		unset($init);
 

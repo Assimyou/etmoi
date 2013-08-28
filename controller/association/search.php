@@ -11,12 +11,19 @@ include_once 'model/classes/association.php';
 
 if (!empty($_GET['q'])) 
 {
-	extract($_POST);
+	$q = $_GET['q'];
+}
+else
+{
+	$q = '';
+}
+	
+$association = new association($dbh);
 
-	$association = new association($dbh);
+$association->search($q);
 
-	$association->search($_GET['q']);
-
+if ($association->getResult() != FALSE) 
+{
 	foreach ($association->getResult() as $index => $result)
 	{
 		$association->setRight($result['right']);

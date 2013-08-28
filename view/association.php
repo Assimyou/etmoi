@@ -6,7 +6,7 @@
 				<?php if (!empty($associations['name'])) : ?><div class="center"><?php foreach ($associations['name'] as $key => $value) : ?><h1><?php echo $value; ?></h1><?php endforeach; ?></div><?php endif; ?>
 			</div>
 
-			<?php if(true) :
+			<?php if($ISLEADER) :
 				include "view/form-add-event.php";
 			endif; ?>
 
@@ -28,7 +28,6 @@
 								endforeach;
 						  	endforeach;
 						endif; ?>
-				 <?php if (!empty($events['tag'])) : ?><div class="category">Catégories : <?php foreach ($events['tag'] as $key => $value) : ?><a href="evenements.php?q=<?php echo $value; ?>"><?php echo $value; ?></a><?php endforeach; ?></div><?php endif; ?>
 				</article>
 			</section>
 
