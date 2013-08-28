@@ -1,7 +1,7 @@
 <?php include_once "header.php"; ?>
 	
 	<!-- Debut du corps du site -->
-	<div>
+	<div class="content center group">
 		<section>
 			<form action="" enctype="multipart/form-data" method="post" />
 				<?php if (!empty($events['association'])) : ?>
@@ -93,7 +93,7 @@
 				<?php else : ?>
 				<input type="text" name="date[]" placeholder="date de l'évènement" />
 				<?php endif; ?>
-				<input type="submit" name="<?php echo generateToken($_SERVER['REQUEST_URI']); ?>" value="enregistrer" />
+				<input type="submit" class="btn" name="<?php echo generateToken($_SERVER['REQUEST_URI']); ?>" value="enregistrer" />
 			</form>
 		</section>
 	</div>
