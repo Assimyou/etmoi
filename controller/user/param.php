@@ -64,7 +64,7 @@ if (!empty($_POST['submit']) && $_POST['submit'] == 'supprimer')
 	}
 }
 
-if (!empty($token) && !empty($_POST[$_SESSION[$token]['token']]) && $_POST[$_SESSION[$token]['token']] == "enregistrer") 
+if (!empty($token) && !empty($_POST['user-'.$_SESSION[$token]['token']]) && $_POST['user-'.$_SESSION[$token]['token']] == "enregistrer") 
 {
 	extract($_POST);
 
@@ -108,6 +108,16 @@ if (!empty($token) && !empty($_POST[$_SESSION[$token]['token']]) && $_POST[$_SES
 			}
 		}
 	}
+	if (!empty($sex)) 
+	{
+		foreach ($sex as $key => $value)
+		{
+			if (!empty($value))
+			{
+				$form['sex'][$key] = $value;
+			}
+		}
+	}
 	if (!empty($description)) 
 	{
 		foreach ($description as $key => $value) 
@@ -118,7 +128,7 @@ if (!empty($token) && !empty($_POST[$_SESSION[$token]['token']]) && $_POST[$_SES
 			}
 		}
 	}
-	if (!empty($_FILES["illustration"]) && $_FILES['cover']['error'] == 0)
+	if (!empty($_FILES["illustration"]) && $_FILES['illustration']['error'] == 0)
 	{
 		if ($_FILES['illustration']['size'] <= 1000000) 
 		{
@@ -127,8 +137,83 @@ if (!empty($token) && !empty($_POST[$_SESSION[$token]['token']]) && $_POST[$_SES
 
 			if (in_array($info['extension'], $accept)) 
 			{
-				move_uploaded_file($_FILES["illustration"]["tmp_name"], str_replace('controller\user\param.php', 'view\images\\'.$_FILES["illustration"]["name"], __FILE__));
+				$path['dir'] = explode('\\', __DIR__);
+
+				foreach ($path['dir'] as $key => $value) 
+				{
+					if ($value == 'controller' || $value == 'model')
+					{
+						$replace = array('controller' => 'view', 'model' => 'view', $path['dir'][$key+1] => 'images ');
+
+						$path['img-dir'] = explode(' ', strtr(__DIR__, $replace));
+						$path['img-dir'] = $path['img-dir'][0];
+					}
+				}
+
+				$folder['dir'] = uniqid(mt_rand());
+
+				$folder['path'] = $path['img-dir'].'\\'.$folder['dir'];
+
+				mkdir($folder['path'], 0, true);
+
+				$img['large'] = array('dir' => '\lagre');
+				$img['medium'] = array('dir' => '\medium', 'width' => '512', 'height' => '384');
+				$img['small'] = array('dir' => '\small', 'width' => '256', 'height' => '192');
+
+				foreach ($img as $size => $info) 
+				{
+					foreach ($info as $key => $value) 
+					{
+						if ($key == 'dir') 
+						{
+							mkdir($folder['path'].$value, 0, true);
+
+							$img[$size]['path'] = $folder['path'].$value;
+							$img[$size]['file'] = $img[$size]['path'].'\\'.$_FILES["illustration"]["name"];
+						}
+					}
+				}
 				
+				move_uploaded_file($_FILES["illustration"]["tmp_name"], $img['large']['file']);
+				
+				$img['large']['data'] = imagecreatefromjpeg($img['large']['file']);
+							
+				$img['large']['size'] = getimagesize($img['large']['file']);
+
+				list($img['large']['width'], $img['large']['height']) = $img['large']['size'];
+
+				foreach ($img as $size => $info) 
+				{
+					if ($size != 'large') 
+					{
+						$img[$size]['data'] = imagecreatetruecolor($img[$size]['width'], $img[$size]['height']);
+						imagecopyresampled($img[$size]['data'], $img['large']['data'], 0, 0, 0, 0, $img[$size]['width'], $img[$size]['height'], $img['large']['width'], $img['large']['height']);
+
+						imagejpeg($img[$size]['data'], $img[$size]['file']);		
+					}
+				}
+
+				/*
+				$folder = uniqid(mt_rand());
+				$path = './view/images/profiles/'.$folder.'/src';
+				mkdir($path, 0, true);
+				
+				move_uploaded_file($_FILES["illustration"]["tmp_name"], str_replace('controller\user\param.php', 'view\images\profiles\\'.$folder.'\src\\'.$_FILES["illustration"]["name"], __FILE__));
+				
+				$src['data-img'] = imagecreatefromjpeg($path.'/'.$_FILES["illustration"]["name"]);
+				
+				$size = getimagesize(str_replace('controller\user\param.php', 'view\images\profiles\\'.$folder.'\src\\'.$_FILES["illustration"]["name"], __FILE__));
+
+				list($src['width'], $src['height']) = $size;
+
+				var_dump($src);
+				var_dump(__DIR__);
+				echo str_replace('controller\user', 'view\images\\'.md5('profiles'), __DIR__);
+				exit();
+				imagecopyresampled($, $src, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
+				*/
+				//move_uploaded_file($_FILES["illustration"]["tmp_name"], str_replace('controller\user\param.php', 'view\images\\'.$_FILES["illustration"]["name"], __FILE__));
+
 				if (!empty($users['illustration'])) 
 				{
 					foreach ($users['illustration'] as $key => $value)
@@ -140,7 +225,7 @@ if (!empty($token) && !empty($_POST[$_SESSION[$token]['token']]) && $_POST[$_SES
 					}
 				}
 
-				$form['illustration'][$index] = 'images/'.$_FILES["illustration"]["name"];
+				$form['illustration'][$index] = 'images/'.$folder['dir'].'/large/'.$_FILES["illustration"]["name"];
 			}
 		}
 	}
@@ -220,6 +305,36 @@ if (!empty($token) && !empty($_POST[$_SESSION[$token]['token']]) && $_POST[$_SES
 			}
 		}
 	}
+	if (!empty($twitter)) 
+	{
+		foreach ($twitter as $key => $value)
+		{
+			if (!empty($value)) 
+			{
+				$form['twitter'][$key] = $value;
+			}
+		}
+	}
+	if (!empty($facebook)) 
+	{
+		foreach ($facebook as $key => $value)
+		{
+			if (!empty($value)) 
+			{
+				$form['facebook'][$key] = $value;
+			}
+		}
+	}
+	if (!empty($instagram)) 
+	{
+		foreach ($instagram as $key => $value)
+		{
+			if (!empty($value)) 
+			{
+				$form['instagram'][$key] = $value;
+			}
+		}
+	}
 
 	$user = new user($dbh);
 
@@ -242,6 +357,10 @@ if (!empty($token) && !empty($_POST[$_SESSION[$token]['token']]) && $_POST[$_SES
 		$init[] = 'city';
 		$init[] = "data-location";
 		$init[] = 'date';
+		$init[] = 'sex';
+		$init[] = 'twitter';
+		$init[] = 'facebook';
+		$init[] = 'instagram';
 
 		foreach ($init as $key => $value) 
 		{

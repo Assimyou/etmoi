@@ -25,36 +25,53 @@ if (!empty($_SESSION['id']))
 		$token = "";
 	}
 
-	if (!empty($_GET['act']) && $_GET['act'] == 'edit') 
+	include_once 'user/param.php';
+
+	foreach ($visa as $key => $value)
 	{
-		foreach ($visa as $key => $value)
+		if ($value == 'webmaster')
 		{
-			if ($value == 'leader')
+			$ISLEADER = TRUE;
+		}
+		elseif ($ISLEADER == FALSE) 
+		{
+			if ($value == 'leader' && $profil['association'] == $users['association']) 
 			{
-				if ($value == 'webmaster')
-				{
-					$ISLEADER = TRUE;
-				}
-				elseif ($value == 'leader' && $profil['association'] == $users['association']) 
-				{
-					$ISLEADER = TRUE;
-				}
+				$ISLEADER = TRUE;
 			}
 		}
 	}
 }
 
+if (!empty($_GET['q'])) 
+{
+	$id = $_GET['q'];
+}
+include_once 'association/param.php';
+
 if (!empty($_GET['q']))
 {
 	include_once 'event/param.php';
-	include_once 'association/param.php';
 
 	if ($ISLEADER)
 	{
-		$newToken = generateToken($_SERVER['REQUEST_URI']);
+		$newToken = 'association-'.generateToken($_SERVER['REQUEST_URI']);
 	}
 
-	include_once 'view/association.php';
+	if (!empty($_GET['act']) && $_GET['act'] == 'edit') 
+	{
+		include_once 'view/association-form.php';
+	}
+	else
+	{
+		include_once 'view/association.php';
+	}
+}
+elseif (!empty($_GET['act']) && $_GET['act'] == 'edit') 
+{
+	include_once 'association/param.php';
+
+	include_once 'view/association-form.php';
 }
 else
 {

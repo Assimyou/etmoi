@@ -28,7 +28,7 @@
 						<?php endforeach; ?>
 						</div>
 	  					<?php endif; ?>
-						<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+						<a class="more" href="association.php?q=<?php echo $id; ?>"><span class="plus ir">Plus</span> de détails</a>
 					</article>
 					<?php endforeach; ?>
 				</div>
