@@ -69,15 +69,15 @@
 			<div>
 				<div class="col-3">
 					<h2>Twitter</h2>
-					<input type="text" name="twitt[<?php if (!empty($twit['key'])) : echo $twit['key']; endif; ?>]" value="<?php if (!empty($twit['value'])) : echo htmlentities($twit['value'], ENT_QUOTES); endif; ?>" placeholder="@utilisateur" />
+					<input type="text" name="twitter[<?php if (!empty($twit['key'])) : echo $twit['key']; endif; ?>]" value="<?php if (!empty($twit['value'])) : echo htmlentities($twit['value'], ENT_QUOTES); endif; ?>" placeholder="@utilisateur" />
 				</div>
 				<div class="col-3">
 					<h2>Facebook</h2>
-					<input type="text" name="fb[<?php if (!empty($fb['key'])) : echo $fb['key']; endif; ?>]" value="<?php if (!empty($fb['value'])) : echo htmlentities($fb['value'], ENT_QUOTES); endif; ?>" placeholder="facebook.com/utilisateur" />
+					<input type="text" name="facebook[<?php if (!empty($fb['key'])) : echo $fb['key']; endif; ?>]" value="<?php if (!empty($fb['value'])) : echo htmlentities($fb['value'], ENT_QUOTES); endif; ?>" placeholder="facebook.com/utilisateur" />
 				</div>
 				<div class="col-3">
 					<h2>Instagram</h2>
-					<input type="text" name="instagr[<?php if (!empty($insta['key'])) : echo $insta['key']; endif; ?>]" value="<?php if (!empty($insta['value'])) : echo htmlentities($insta['value'], ENT_QUOTES); endif; ?>" placeholder="instagr.am/utilisateur" />
+					<input type="text" name="instagram[<?php if (!empty($insta['key'])) : echo $insta['key']; endif; ?>]" value="<?php if (!empty($insta['value'])) : echo htmlentities($insta['value'], ENT_QUOTES); endif; ?>" placeholder="instagr.am/utilisateur" />
 				</div>
 			</div>
 		</div>

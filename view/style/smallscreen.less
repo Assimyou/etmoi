@@ -1,0 +1,135 @@
+@media @screenmedium{
+	.col-3{	width: 47.5%;	}
+
+	.col-3-2{ width: 47.5%; }
+
+	.col-6{	width: 20%;	}
+	.float-6{ width: 20%; }
+
+	article.evenement{
+		&.small{
+			width: 90%;
+			max-width: none;
+		}
+
+		&.big{
+			padding: 2em 5%;
+		}
+	}
+}
+
+@media @screensmall{
+	.col-2,
+	.col-3, 
+	.col-3-2, 
+	.col-6{
+		margin-right: 0;
+		&:last-child{ margin-right: inherit; }
+	}
+
+	.col-2{ width: 100%; }
+	.col-3{	width: 100%; }
+	.col-3-2{ width: 100%; }
+	.col-6{	width: 47.5%; }
+	.float-6{ width: 45%; }
+
+	.center{ 
+		width: 90%;
+		margin: 0 5%;
+	}
+
+	header{
+		nav.main-menu{
+			position: relative;
+			a{
+				position: relative;
+				float: left;
+				width: 28.333%;
+				padding-right: 2.5%;
+				padding-left: 2.5%;
+			}
+		}
+
+		.login{
+			position: relative;
+		}
+	}
+
+	section.description{
+		figure {
+			margin: 0;
+		}
+	}
+
+	input.search{
+		padding-left: 5%;
+		padding-right: 5%;
+		margin-left: 5%;
+		margin-right: 5%;
+		width: 40%;
+		&.field{
+			padding-right: 10%;
+			margin-right: 30%;
+			&:focus{
+				width: 40%;
+				&+input.search.submit{
+					width: 40%;
+				}
+			}
+		}
+		&.submit{
+			margin-left: -40%;
+			width: 40%;
+		}
+	}
+
+	section.share>article.group>.col-3-2{
+		padding-bottom: 2em;
+	}
+
+	article.evenement.big{
+		padding-bottom: 5em;
+
+		figure{ 
+			position: relative;
+			right: auto; 
+			padding: 1em;
+		}
+
+		.left-50{ 
+			margin-left: 0 !important; 
+		}
+	}
+
+	.pushbadges{
+		.intro{
+			width: 100%;
+		}
+
+		.badges{
+			width: 100%;
+		}
+	}
+
+	.menu-aside{
+		margin-bottom: 2em;
+
+
+		a{
+			margin-bottom: 0.5em;
+			text-align: center;
+		}
+	}
+
+	footer{
+		font-size: 1.125em;
+
+		.col-3{
+			margin-bottom: 2em;
+		}
+
+		nav a{
+			margin: 0.5em 0;
+		}
+	}
+}

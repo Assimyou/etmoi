@@ -28,6 +28,7 @@ a{
 /* Fonts */
 a.btn, 
 input.btn,
+button.btn,
 input.search,
 h1, h2, h3,
 .notification, 
@@ -89,7 +90,7 @@ h1.banner, .banner{
 }
 
 /* Boutons */
-a.btn, input.btn{
+a.btn, input.btn, button.btn{
 	display: inline-block;
 
 	min-height: 1.5em;
@@ -130,6 +131,7 @@ a.close{
 input.search{
 	min-height: 1.5em;
 	padding: 0 15px;
+	margin: 0 0 0.7em 0;
 
 	font-size: 1.250em;
 	color: @blanc;
@@ -242,29 +244,4 @@ form.search{
 	margin-left: 2.5%;
 	margin-right: 2.5%;
 	width: 11.666%; 
-}
-
-@media @screenmedium{
-	.col-3{	width: 47.5%;	}
-
-	.col-3-2{ width: 47.5%; }
-
-	.col-6{	width: 20%;	}
-	.float-6{ width: 20%; }
-}
-
-@media @screensmall{
-	.col-2,
-	.col-3, 
-	.col-3-2, 
-	.col-6{
-		margin-right: 0;
-		&:last-child{ margin-right: inherit; }
-	}
-
-	.col-2{ width: 100%; }
-	.col-3{	width: 100%; }
-	.col-3-2{ width: 100%; }
-	.col-6{	width: 47.5%; }
-	.float-6{ width: 45%; }
 }

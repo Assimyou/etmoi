@@ -52,15 +52,15 @@
 				<div class="center">
 					<div class="logo"><img src="images/logo.png" alt="Montrouge" /><div class="user-logo">& <?php if (!empty($profil['firstname'])) : echo htmlentities($profil['firstname'], ENT_QUOTES); else : echo 'Moi'; endif; ?></div></div>
 					<div class="login">
-						<a href="#">Inscription | Connexion</a>
+						<a href="#login-footer">Inscription | Connexion</a>
 					</div>
 				</div>
 			</section>
 			<nav class="main-menu">
+				<?php if (!empty($_SESSION['id'])) : ?><a href="profil.php"><?php if (!empty($profil['firstname'])) : echo htmlentities($profil['firstname'], ENT_QUOTES); else : echo 'Moi'; endif; ?></a><?php endif; ?>
 				<a class="current" href=".">Accueil</a>
 				<a href="evenements.php">Événements</a>
 				<a href="associations.php">Associations</a>
-				<?php if (!empty($_SESSION['id'])) : ?><a href="profil.php"><?php if (!empty($profil['firstname'])) : echo htmlentities($profil['firstname'], ENT_QUOTES); else : echo 'Moi'; endif; ?></a><?php endif; ?>
 				<form name="search" class="search" action="evenements.php" method="get"><input type="text" name="q" class="search field" placeholder="Rechercher" /><input type="submit" class="search submit" value="Rechercher"></form>
 			</nav>
 		</header>

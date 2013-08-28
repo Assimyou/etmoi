@@ -22,56 +22,79 @@
 				<div class="map">	
 					<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCSGWvl82q9C_nnbjfprJOL6jXdr_xPMHo&sensor=true"></script>
 					<script type="text/javascript">
-					  var geocoder;
-					  var map;
+						var address = "efficom rue camille peltant montrouge, france";
+						var geocoder;
+						var map;
+						var panorama;
+						var lieu;
 
-					  function initialize() {
-					    geocoder = new google.maps.Geocoder();
+						function initialize() {
+							geocoder = new google.maps.Geocoder();
 
-					    var latlng = new google.maps.LatLng(<?php
-
-					    	if (!empty($events['data-location'])) : 
-					    		foreach ($events['data-location'] as $key => $value) : 
-					    			echo $value;
-					 			endforeach;
-					 		else:
-					 			echo "48.816363, 2.3173839999999473";
-							endif;
-							
+							var latlng = new google.maps.LatLng(<?php
+								if (!empty($events['data-location'])) : 
+									foreach ($events['data-location'] as $key => $value) : 
+										echo $value;
+									endforeach;
+									else:
+										echo "48.816363, 2.3173839999999473";
+								endif;
 							?>);
-					    var mapOptions = {
-					      zoom: 14,
-					      center: latlng,
-					      scrollwheel: false,
-					      navigationControl: false,
-					      mapTypeControl: false,
-					      scaleControl: false,
-					      draggable: true,
-					      disableDefaultUI: false,
-					      mapTypeId: google.maps.MapTypeId.ROADMAP
-					    }
-					    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-					    codeAddress();
-					  }
+							var mapOptions = {
+								zoom: 14,
+								center: latlng,
+								scrollwheel: false,
+								navigationControl: false,
+								mapTypeControl: false,
+								scaleControl: false,
+								draggable: true,
+								disableDefaultUI: true,
+								mapTypeId: google.maps.MapTypeId.ROADMAP
+							}
+							map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+							codeAddress();
 
-					  function codeAddress() {
-					    var address = "Montrouge, France";
-					    geocoder.geocode( { 'address': address}, function(results, status) {
-					      if (status == google.maps.GeocoderStatus.OK) {
-					        map.setCenter(results[0].geometry.location);
-					        var marker = new google.maps.Marker({
-					            map: map,
-					            position: results[0].geometry.location
-					        });
-					      } else {
-					        alert("Geocode was not successful for the following reason: " + status);
-					      }
-					    });
-					  }
+							panorama = map.getStreetView();
+							panorama.setPov(/** @type {google.maps.StreetViewPov} */({
+								heading: 265,
+								pitch: 0
+							}));
+						}
 
-					  addLoadEvent(initialize);
+						function toggleStreetView() {
+							var toggle = panorama.getVisible();
+							if (toggle == false) {
+								panorama.setVisible(true);
+							} else {
+								panorama.setVisible(false);
+							}
+						}
+
+						function codeAddress() {
+							var resultat;
+							geocoder.geocode( { 'address': address}, function(results, status) {
+								if (status == google.maps.GeocoderStatus.OK) {
+									map.setCenter(results[0].geometry.location);
+									var marker = new google.maps.Marker({
+										map: map,
+										position: results[0].geometry.location
+									});
+									panorama.setPosition(results[0].geometry.location);
+									lieu = results[0].geometry.location;
+								} else {
+									alert("Geocode was not successful for the following reason: " + status);
+								}
+							});
+						}
+
+						addLoadEvent(initialize);
 					</script>
 					<div id="map-canvas" class="google"></div>
+					<div class="streetview">
+						<div class="center">
+							<button onclick="toggleStreetView()" class="btn">Dans la rue ?</button>
+						</div>
+					</div>
 				</div>
 				<article class="center">
 					<figure><img src="images/barbecue-eleves-montrouge.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>

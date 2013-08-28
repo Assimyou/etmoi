@@ -20,18 +20,23 @@ div.content.event{
 
 section.description{
 	.map{
+		position: relative;
 		.google{
 			width: 100%;
 			height: 350px;
 			background: @jaune;
+			img{ 
+				width: auto;
+				max-width: none;
+				min-width: none;
+			}
+		}
 
-			a img { display:none; } 
-			//.gmnoprint[style="z-index: 1000001; position: absolute; right: 95px; bottom: 0px;"]{
-				//display: none;
-			//}
-			//.gmnoprint[style~="font-size"]{
-				//display: none;
-			//}
+		.streetview{
+			position: absolute;
+			bottom: 1em;
+			width: 100%;
+			text-align: right;
 		}
 	}
 
