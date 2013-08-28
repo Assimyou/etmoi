@@ -58,7 +58,7 @@ if (!empty($id))
 
 	if ($ISME) 
 	{
-		$newToken = generateToken($_SERVER['REQUEST_URI']);
+		$newToken = 'user-'.generateToken($_SERVER['REQUEST_URI']);
 	}
 
 	include_once 'view/profile.php';
