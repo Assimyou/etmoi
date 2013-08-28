@@ -1267,16 +1267,6 @@ textarea {
     width: 90%;
     margin: 0 5%;
   }
-  header nav.main-menu {
-    position: relative;
-  }
-  header nav.main-menu a {
-    position: relative;
-    float: left;
-    width: 28.333%;
-    padding-right: 2.5%;
-    padding-left: 2.5%;
-  }
   header .login {
     position: relative;
   }
