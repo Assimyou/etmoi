@@ -172,8 +172,8 @@
 							<figure class="instagram big"><img src="<?php echo $popular->data[5]->images->low_resolution->url ?>" alt="" /></figure>
 						</div>
 					</div>
-					<div class="col-3" id="twitter" data-tag="<?php echo $hashtag; ?>"></div>
 					<script type="text/javascript" src="js/twitter.js"></script>
+					<div class="col-3" id="twitter" data-tag="<?php echo $hashtag; ?>"></div>
 				</article>
 			</section>
 			<?php endif; ?>
