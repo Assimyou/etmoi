@@ -100,60 +100,31 @@
 				</article>
 			</section>
 
-			<section class="comments center">
-				<h1 class="banner">Commentaires</h1>
-				<article class="group">
-					<div class="col-3-2">
-						<div class="comment group">
-							<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
-							<article>
-								<div class="date">10h32 - 10/06/13</div>
-								<h2><a href="#">Bernard Martin</a></h2>
-								<div class="text">J'ouvrirais mon bar ce dimanche sur le chemin du vide grenier, n'hésitez pas a venir vous rafraichir entre deux achats autour d'une bière pour cette journée ensoleillé</div>
-								<a class="reply">Répondre</a>
-								<a class="report">Signaler</a>
-							</article>
-						</div>
-						<div class="comment answer group">
-							<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
-							<article>
-								<div class="date">10h32 - 10/06/13</div>
-								<h2><a href="#">Steven Triangle</a></h2>
-								<div class="text">Je serais au rendez-vous, discuter avec toi en humant du houblon est toujours un imense plaisir !</div>
-								<a class="reply">Répondre</a>
-								<a class="report">Signaler</a>
-							</article>
-						</div>
-						<div class="comment group">
-							<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
-							<article>
-								<div class="date">10h32 - 10/06/13</div>
-								<h2><a href="#">Michel Gerard</a></h2>
-								<div class="text">Pour les féru de vielles consoles mon stand sera à coté de l'église ! N'hésitez pas à venir me voir pour trouver votre donheur ou simplement discuter rétro-gaming</div>
-								<a class="reply">Répondre</a>
-								<a class="report">Signaler</a>
-							</article>
-						</div>
-						<div class="comment group">
-							<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
-							<article>
-								<div class="date">10h32 - 10/06/13</div>
-								<h2><a href="#">Giselle Michou</a></h2>
-								<div class="text">Le club de lecture organise un truc de livres au centre de la plance ! Venez avec votre ouvrage et repartez avec une noucelle aventure. Restez parler lecture, échangez vos conseils et vos livres.</div>
-								<a class="reply">Répondre</a>
-								<a class="report">Signaler</a>
-							</article>
-						</div>
-					</div>
-					<div class="col-3">
-						<form>
-							<label for="comment">Commenter</label>
-							<textarea id="comment"></textarea>
-							<input type="submit" class="btn" value="Envoyer">
-						</form>
-					</div>
-				</article>
+			<section class="center comments group">
+				<h1 class="banner">Commentaires</h1> 
+			    <div id="disqus_thread"></div>
 			</section>
+		    <script type="text/javascript">
+		        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		        var disqus_shortname = 'etmoi'; // required: replace example with your forum shortname
+
+		        /* * * DON'T EDIT BELOW THIS LINE * * */
+		        (function() {
+		            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		        })();
+		    </script>
+		    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		    <script>
+		    	var cssLink = document.createElement("link") 
+				cssLink.href = "style/disqus.css"; 
+				cssLink .rel = "stylesheet"; 
+				cssLink .type = "text/css"; 
+				frames['dsq1'].document.body.appendChild(cssLink);
+		    </script>
+    
 
 			<?php if (!empty($events['hashtag'])) : ?>
 			<section class="share center">
