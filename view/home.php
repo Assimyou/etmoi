@@ -36,10 +36,10 @@
 
 					<?php if (!empty($uneEvent['illustration'])) : ?>
 					<?php foreach ($uneEvent['illustration'] as $index => $illustration) : ?>
-					<figure><img src="<?php echo $illustration; ?>" alt="" /></figure>
+					<figure><a href="evenement.php?q=<?php echo $uneEvent['id']; ?>"><img src="<?php echo $illustration; ?>" alt="" /></a></figure>
 					<?php endforeach; ?>
 					<?php else : ?>
-					<figure><img src="view/images/event-remplace.png" alt="" /></figure>
+					<figure><a href="evenement.php?q=<?php echo $uneEvent['id']; ?>"><img src="view/images/event-remplace.png" alt="" /></a></figure>
 						<?php endif; ?>
 
 					<?php if (!empty($uneEvent['description'])) : ?>
@@ -75,7 +75,7 @@
 					<article class="evenement small">
 						<?php if (!empty($events['headline'])) : ?>
 						<?php foreach ($events['headline'] as $index => $headline) : ?>
-						<h2><?php echo htmlentities($headline, ENT_QUOTES); ?></h2>
+						<h2><a href="evenement.php?q=<?php echo $events['id']; ?>"><?php echo htmlentities($headline, ENT_QUOTES); ?></a></h2>
 						<?php endforeach; ?>
 						<?php endif; ?>
 						<div class="group">
@@ -94,10 +94,10 @@
 							</div>
 							<?php if (!empty($events['illustration'])) : ?>
 							<?php foreach ($events['illustration'] as $index => $illustration) : ?>
-							<figure><img src="<?php echo $illustration; ?>" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
+							<figure><a href="evenement.php?q=<?php echo $events['id']; ?>"><img src="<?php echo $illustration; ?>" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></a></figure>
 							<?php endforeach; ?>
 		  					<?php else : ?>
-							<figure><img src="view/images/event-remplace.png" alt="" /></figure>
+							<figure><a href="evenement.php?q=<?php echo $events['id']; ?>"><img src="view/images/event-remplace.png" alt="" /></a></figure>
 							<?php endif; ?>
 						</div>
 						<div class="evenement-by">
@@ -120,15 +120,17 @@
 					<article class="association">
 						<?php if (!empty($associations['name'])) : ?>
 						<?php foreach ($associations['name'] as $index => $name) : ?>
-						<h2><?php echo $name; ?></h2>
+						<h2><a href="association.php?q=<?php echo $id; ?>"><?php echo $name; ?></a></h2>
 						<?php endforeach; ?>
 	  					<?php endif; ?>
 	  					<?php if (!empty($associations['illustration'])) : ?>
 						<figure>
 						<?php foreach ($associations['illustration'] as $index => $illustration) : ?>
-						<img src="<?php echo $illustration; ?>" alt="Logo du club du parc" />
+						<a href="association.php?q=<?php echo $id; ?>"><img src="<?php echo $illustration; ?>" alt="Logo du club du parc" /></a>
 						<?php endforeach; ?>
 						</figure>
+						<?php else : ?>
+						<figure><a href="association.php?q=<?php echo $id; ?>"><img src="view/images/event-remplace.png" alt="" /></a></figure>
 						<?php endif; ?>
 						<a class="more" href="association.php?q=<?php echo $id; ?>"><span class="plus ir">Plus</span> de détails</a>
 					</article>
