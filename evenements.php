@@ -10,6 +10,27 @@ session_write_close();
 
 include_once 'controller/user/access.php';
 
+if (!empty($_GET['q'])) 
+{
+	$q = $_GET['q'];
+
+	if (!empty($_GET['cat'])) 
+	{	
+		$category = $_GET['cat'];
+
+		if ($_GET['cat'] == 'date')
+		{
+			$dateSearch = DateTime::createFromFormat('d-m-Y', $_GET['q']);
+			$q = $dateSearch->format('Y-m-d');
+		}
+	}
+}
+else
+{
+	$q = date('Y-m-');
+	$category = 'date';
+}
+
 include_once 'controller/event/search.php';
 include_once 'view/event-search.php';
 ?>
