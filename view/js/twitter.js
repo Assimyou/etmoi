@@ -1,3 +1,9 @@
+var replaceURLWithHTMLLinks = function(text) {
+	var exp = /(\b(https?|ftp|file):\/\/[\-A-Z0-9+&@#\/%?=~_|!:,.;]*[\-A-Z0-9+&@#\/%=~_|])/ig;
+	var res = text.replace(exp,"<a href='$1' target='_blank'>$1</a>"); 
+	return res;
+}
+
 var twitter = function(){
 	var t = $("#twitter");
 	var hashtag = t.attr('data-tag');
@@ -15,7 +21,7 @@ var twitter = function(){
 						'<article>'+
 							'<div class="date"></div>'+
 							'<h2><a href="#">'+item.user.name+'</a></h2>'+
-							'<div class="text">'+item.text+'</div>'+
+							'<div class="text">'+replaceURLWithHTMLLinks(item.text)+'</div>'+
 						'</article>'+
 					'</div>';
 				};
