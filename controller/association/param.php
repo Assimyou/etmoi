@@ -110,10 +110,10 @@ if (!empty($token) && !empty($_POST['association-'.$_SESSION[$token]['token']]) 
 			if (in_array($info['extension'], $accept)) 
 			{
 				$folder = uniqid(mt_rand());
-				$path = './view/images/associations/'.$folder;
-				mkdir($path, 0, true);
+				$path = 'view/images/associations/'.$folder;
+				mkdir($path, 0777, true);
 				
-				move_uploaded_file($_FILES["illustration"]["tmp_name"], str_replace('controller\association\param.php', 'view\images\associations\\'.$folder.'\\'.$_FILES["illustration"]["name"], __FILE__));
+				move_uploaded_file($_FILES["illustration"]["tmp_name"], str_replace('controller/association/param.php', 'view/images/associations/'.$folder.'/'.$_FILES["illustration"]["name"], __FILE__));
 
 				if (!empty($users['illustration'])) 
 				{
@@ -141,10 +141,10 @@ if (!empty($token) && !empty($_POST['association-'.$_SESSION[$token]['token']]) 
 			if (in_array($info['extension'], $accept)) 
 			{
 				$folder = uniqid(mt_rand());
-				$path = './view/images/associations/'.$folder;
-				mkdir($path, 0, true);
+				$path = 'view/images/associations/'.$folder;
+				mkdir($path, 0777, true);
 				
-				move_uploaded_file($_FILES["cover"]["tmp_name"], str_replace('controller\association\param.php', 'view\images\associations\\'.$folder.'\\'.$_FILES["cover"]["name"], __FILE__));
+				move_uploaded_file($_FILES["cover"]["tmp_name"], str_replace('controller/association/param.php', 'view/images/associations/'.$folder.'/'.$_FILES["cover"]["name"], __FILE__));
 
 				if (!empty($users['cover']))
 				{

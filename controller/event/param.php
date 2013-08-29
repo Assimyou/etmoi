@@ -1,12 +1,4 @@
 <?php
-/**
-*	@category   controller
-*	@package    event
-*	@copyright  Copyright (c) 2013 BiereStorming 
-*	@license    BiereStroming
-*	@version    2013-07-13
-*/
-
 include_once 'model/classes/event.php';
 include_once 'model/classes/association.php';
 
@@ -37,7 +29,7 @@ if (!empty($id['event']))
 			{
 				if ($child['left'] < $kid['left'] && $child['right'] > $kid['right'])
 				{
-					if ($kid['right'] - $kid['left'] == 1) 
+					if ($kid['right'] - $kid['left'] == 1)
 					{
 						$multiple[$kid['id']] = $kid['wording'];
 					}
@@ -99,6 +91,8 @@ if (!empty($token) && !empty($_POST['event-'.$_SESSION[$token]['token']]) && $_P
 		}
 	}
 
+	//var_dump($_FILES);
+	//exit();
 	if (!empty($_FILES["illustration"]) && $_FILES['illustration']['error'] == 0)
 	{
 		if ($_FILES['illustration']['size'] <= 1000000) 
@@ -109,10 +103,10 @@ if (!empty($token) && !empty($_POST['event-'.$_SESSION[$token]['token']]) && $_P
 			if (in_array($info['extension'], $accept)) 
 			{
 				$folder = uniqid(mt_rand());
-				$path = './view/images/events/'.$folder;
-				mkdir($path, 0, true);
+				$path = 'view/images/events/'.$folder;
+				mkdir($path, 0777, true);
 				
-				move_uploaded_file($_FILES["illustration"]["tmp_name"], str_replace('controller\event\param.php', 'view\images\events\\'.$folder.'\\'.$_FILES["illustration"]["name"], __FILE__));
+				move_uploaded_file($_FILES["illustration"]["tmp_name"], str_replace('controller/event/param.php', 'view/images/events/'.$folder.'/'.$_FILES["illustration"]["name"], __FILE__));
 
 				if (!empty($users['illustration'])) 
 				{
