@@ -91,8 +91,6 @@ if (!empty($token) && !empty($_POST['event-'.$_SESSION[$token]['token']]) && $_P
 		}
 	}
 
-	//var_dump($_FILES);
-	//exit();
 	if (!empty($_FILES["illustration"]) && $_FILES['illustration']['error'] == 0)
 	{
 		if ($_FILES['illustration']['size'] <= 1000000) 

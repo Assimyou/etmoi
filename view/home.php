@@ -4,108 +4,110 @@
 		<div class="content home group">
 
 			<!-- Debut Évènement à la Une -->
+			<?php $uneEvent = array_shift($listEvent);?>
+
+			<?php if(isset($uneEvent)) : ?>
 			<section class="une">
 				<article class="evenement big">
-					<h1 class="left-50">Barbecue des anciens élèves de Montrouge</h1>
+					<?php if (!empty($uneEvent['headline'])) : ?>
+					<?php foreach ($uneEvent['headline'] as $index => $headline) : ?>
+					<h1 class="left-50"><a href="evenement.php?q=<?php echo $uneEvent['id']; ?>"><?php echo htmlentities($headline, ENT_QUOTES); ?></a></h1>
+					<?php endforeach; ?>
+					<?php endif; ?>
+
 					<div class="evenement-by left-50">
 						Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
-						<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+						<a class="more" href="evenement.php?q=<?php echo $uneEvent['id']; ?>"><span class="plus ir">Plus</span> de détails</a>
 					</div>
+
 					<div class="infos left-50 group">
-						<div class="when">10.06.2013</div>
-						<div class="where">Place Victor Hugo, Impasse des citrons</div>
+						<?php if (!empty($uneEvent['date'])) : ?>
+						<?php foreach ($uneEvent['date'] as $index => $datetime) : ?>
+						<div class="when"><?php $date = DateTime::createFromFormat('Y-m-d', $datetime);
+						echo $date->format('d-m-Y'); ?></div>
+						<?php endforeach; ?>
+						<?php endif; ?>
+						<?php if (!empty($uneEvent['address'])) : ?>
+						<?php foreach ($uneEvent['address'] as $index => $address) : ?>
+						<div class="where"><?php echo htmlentities($address, ENT_QUOTES); ?></div>
+						<?php endforeach; ?>
+						<?php endif; ?>
 					</div>
-					<figure><img src="images/barbecue-eleves-montrouge.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
+
+					<?php if (!empty($uneEvent['illustration'])) : ?>
+					<?php foreach ($uneEvent['illustration'] as $index => $illustration) : ?>
+					<figure><img src="<?php echo $illustration; ?>" alt="" /></figure>
+					<?php endforeach; ?>
+					<?php else : ?>
+					<figure><img src="view/images/event-remplace.png" alt="" /></figure>
+						<?php endif; ?>
+
+					<?php if (!empty($uneEvent['description'])) : ?>
 					<div class="description left-50 group">
-						<p>The regret on our side is., they used to say years ago, we are reading about you in science class.</p>
-						<p>We are all connected; To each other, biologically. To the earth, chemically. To the rest of the universe atomically....</p>
+						<?php 
+						foreach ($uneEvent['description'] as $key => $value) : 
+							$paragraph = mb_split('\r\n', $value);
+							foreach ($paragraph as $p) :
+								if (!empty($p)) : ?>
+									<p><?php echo htmlentities($p, ENT_QUOTES); ?></p>
+								<?php endif;
+							endforeach;
+						endforeach; ?>
 					</div>
-					<div class="category left-50">Catégories : <a href="evenements?category=vide-grenier">Vide grenier</a> <a href="evenements?category=public">public</a></div>
+					<?php endif; ?>
+					<?php if (!empty($uneEvent['tag'])) : ?><div class="category left-50">Catégories : <?php foreach ($uneEvent['tag'] as $key => $value) : ?><a href="evenements.php?q=<?php echo $value; ?>"><?php echo htmlentities($value, ENT_QUOTES); ?></a><?php endforeach; ?></div><?php endif; ?>
+
 					<div class="registering left-50 group">
 						<div class="registered">61 inscrits</div>
 						<a href="#register" class="btn register">J'y vais </a>
 					</div>
 				</article>
 			</section>
+			<?php endif; ?>
 			<!-- Fin Évènement à la Une -->
 
 			<!-- Debut Section Derniers Évènement -->
+			<?php if (!empty($listEvent)) : ?>
 			<section class="evenements col-3-2">
 				<h1 class="banner">Derniers évènements</h1>
 				<div class="wrapper">
+					<?php foreach ($listEvent as $id => $events) : ?>
 					<article class="evenement small">
-						<h2>Barbecue des anciens élèves de Montrouge</h2>
+						<?php if (!empty($events['headline'])) : ?>
+						<?php foreach ($events['headline'] as $index => $headline) : ?>
+						<h2><?php echo htmlentities($headline, ENT_QUOTES); ?></h2>
+						<?php endforeach; ?>
+						<?php endif; ?>
 						<div class="group">
 							<div class="infos">
-								<div class="when">10.06.2013</div>
-								<div class="where">Place Victor Hugo, Impasse des citrons</div>
+								<?php if (!empty($events['date'])) : ?>
+								<?php foreach ($events['date'] as $index => $datetime) : ?>
+								<div class="when"><?php $date = DateTime::createFromFormat('Y-m-d', $datetime);
+								echo $date->format('d-m-Y'); ?></div>
+								<?php endforeach; ?>
+								<?php endif; ?>
+								<?php if (!empty($events['address'])) : ?>
+								<?php foreach ($events['address'] as $index => $address) : ?>
+								<div class="where"><?php echo htmlentities($address, ENT_QUOTES); ?></div>
+								<?php endforeach; ?>
+								<?php endif; ?>
 							</div>
-							<figure><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
+							<?php if (!empty($events['illustration'])) : ?>
+							<?php foreach ($events['illustration'] as $index => $illustration) : ?>
+							<div class="thumbnail"><img src="<?php echo $illustration; ?>" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
+							<?php endforeach; ?>
+		  					<?php endif; ?>
 						</div>
 						<div class="evenement-by">
 							Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
-							<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+							<a class="more" href="evenement.php?q=<?php echo $events['id']; ?>"><span class="plus ir">Plus</span> de détails</a>
 						</div>
 					</article>
-					<article class="evenement small">
-						<h2>Barbecue des anciens élèves de Montrouge</h2>
-						<div class="group">
-							<div class="infos">
-								<div class="when">10.06.2013</div>
-								<div class="where">Place Victor Hugo, Impasse des citrons</div>
-							</div>
-							<figure><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
-						</div>
-						<div class="evenement-by">
-							Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
-							<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
-						</div>
-					</article>
-					<article class="evenement small">
-						<h2>Barbecue des anciens</h2>
-						<div class="group">
-							<div class="infos">
-								<div class="when">10.06.2013</div>
-								<div class="where">Place Victor Hugo, Impasse des citrons</div>
-							</div>
-							<figure><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
-						</div>
-						<div class="evenement-by">
-							Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
-							<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
-						</div>
-					</article>
-					<article class="evenement small">
-						<h2>Barbecue des anciens élèves de Montrouge</h2>
-						<div class="group">
-							<div class="infos">
-								<div class="when">10.06.2013</div>
-								<div class="where">Place Victor Hugo, Impasse des citrons</div>
-							</div>
-							<figure><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
-						</div>
-						<div class="evenement-by">
-							Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
-							<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
-						</div>
-					</article>
-					<article class="evenement small">
-						<h2>Barbecue des anciens élèves de Montrouge</h2>
-						<div class="group">
-							<div class="infos">
-								<div class="when">10.06.2013</div>
-								<div class="where">Place Victor Hugo, Impasse des citrons</div>
-							</div>
-							<figure><img src="images/chanter.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
-						</div>
-						<div class="evenement-by">
-							Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
-							<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
-						</div>
-					</article>
+					<?php endforeach; ?>
 				</div>
 			</section>
 			<!-- Fin Derniers Évènement -->
+			<?php endif; ?>
 
 			<!-- Debut Section les associations -->
 			<section class="associations col-3">
