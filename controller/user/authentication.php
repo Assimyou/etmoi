@@ -41,20 +41,22 @@ if (!empty($_POST['submit']) && $_POST['submit'] == "Se connecter")
 		{
 			unset($init);
 
-			$init[] = 'user';
-			$init[] = 'mail';
-			$init[] = 'password';
-			$init[] = 'passport';
-			$init[] = 'name';
-			$init[] = 'firstname';
-			$init[] = 'association';
-			$init[] = 'description';
-			$init[] = 'illustration';
-			$init[] = 'cover';
-			$init[] = 'address';
-			$init[] = 'zip';
-			$init[] = 'city';
-			$init[] = 'date';
+				$init[] = 'user';
+				$init[] = 'mail';
+				$init[] = 'password';
+				$init[] = 'passport';
+				$init[] = 'name';
+				$init[] = 'firstname';
+				$init[] = 'association';
+				$init[] = 'description';
+				$init[] = 'illustration';
+				$init[] = 'cover';
+				$init[] = 'address';
+				$init[] = 'date';
+				$init[] = 'sex';
+				$init[] = 'twitter';
+				$init[] = 'facebook';
+				$init[] = 'instagram';
 
 			foreach ($init as $key => $value) 
 			{

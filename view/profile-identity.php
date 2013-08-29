@@ -72,7 +72,6 @@
 				<?php endif; ?>
 				<?php if (!empty($date['value'])) : ?>
 				<div class="col-2">
-					<label>13/09/2013</label>
 					<h2>Date de naissance</h2><label><?php echo htmlentities($date['value'], ENT_QUOTES); ?></label>
 				</div>
 				<?php endif; ?>
@@ -96,16 +95,16 @@
 				<div>
 					<div class="col-2">
 						<h2>Sexe</h2>
-						<input type="radio" name="sexe[<?php if (!empty($sex['key'])) : echo $sex['key']; endif; ?>]" id="femme" value="Femme" <?php if (!empty($sex['value']) && $sex['value'] == 'Femme') : ?>checked="true"<?php endif; ?> /> 
+						<input type="radio" name="sex[<?php if (!empty($sex['key'])) : echo $sex['key']; endif; ?>]" id="femme" value="Femme" <?php if (!empty($sex['value']) && $sex['value'] == 'Femme') : ?>checked="true"<?php endif; ?> /> 
 						<label for="femme">Femme</label> 
-						<input type="radio" name="sexe[<?php if (!empty($sex['key'])) : echo $sex['key']; endif; ?>]" id="homme" value="Homme" <?php if (!empty($sex['value']) && $sex['value'] == 'Homme') : ?>checked="true"<?php endif; ?> /> 
+						<input type="radio" name="sex[<?php if (!empty($sex['key'])) : echo $sex['key']; endif; ?>]" id="homme" value="Homme" <?php if (!empty($sex['value']) && $sex['value'] == 'Homme') : ?>checked="true"<?php endif; ?> /> 
 						<label for="homme">Homme</label> 
-						<input type="radio" name="sexe[<?php if (!empty($sex['key'])) : echo $sex['key']; endif; ?>]" id="autre" value="Autre" <?php if (!empty($sex['value']) && $sex['value'] == 'Autre') : ?>checked="true"<?php endif; ?> /> 
+						<input type="radio" name="sex[<?php if (!empty($sex['key'])) : echo $sex['key']; endif; ?>]" id="autre" value="Autre" <?php if (!empty($sex['value']) && $sex['value'] == 'Autre') : ?>checked="true"<?php endif; ?> /> 
 						<label for="autre">Autre</label> 
 					</div>
 					<div class="col-2">
 						<h2>Date de naissance</h2>
-						<input type="date" />
+						<input type="date" name="date[<?php if (!empty($date['key'])) : echo $date['key']; endif; ?>]" <?php if (!empty($date['value'])) : ?>value="<?php echo htmlentities($date['value'], ENT_QUOTES); ?>"<?php endif; ?> />
 					</div>
 				</div>
 			</div>

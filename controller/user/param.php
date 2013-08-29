@@ -287,9 +287,6 @@ if (!empty($token) && !empty($_POST['user-'.$_SESSION[$token]['token']]) && $_PO
 		$init[] = 'illustration';
 		$init[] = 'cover';
 		$init[] = 'address';
-		$init[] = 'zip';
-		$init[] = 'city';
-		$init[] = "data-location";
 		$init[] = 'date';
 		$init[] = 'sex';
 		$init[] = 'twitter';

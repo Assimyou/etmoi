@@ -15,17 +15,6 @@
 			<textarea name="description[]" placeholder="description" ></textarea>
 			<h2>Adresse</h2>
 			<input type="text" name="address[]" placeholder="adresse" />
-			<div class="group">
-				<div class="col-3">
-					<input type="text" name="zip[]" placeholder="Code postal" />
-				</div>
-				<div class="col-3">
-					<input type="text" name="city[]" placeholder="ville" />
-				</div>
-				<div class="col-3">
-					<input type="text" />
-				</div>
-			</div>
 			<h2>Catégories</h2>
 			<input type="text" name="tag[]" placeholder="catégories" />
 		</div>
