@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
 *	@category   PDO
 *	@package    PDO
@@ -20,4 +20,3 @@
 	{
 		exit();
 	}
-?>

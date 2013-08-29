@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
 *	@category   controller
 *	@package    event
@@ -378,5 +378,3 @@ if (!empty($token) && !empty($_POST['event-'.$_SESSION[$token]['token']]) && $_P
 	header( "Location: ".$_SERVER['REQUEST_URI']);
 	exit();
 }
-
-?>

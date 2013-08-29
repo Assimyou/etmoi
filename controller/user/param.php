@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
 *	@category   controller
 *	@package    user
@@ -442,4 +442,3 @@ if (!empty($token) && !empty($_POST['user-'.$_SESSION[$token]['token']]) && $_PO
 	header( "Location: ".$_SERVER['REQUEST_URI']);
 	exit();
 }
-?>

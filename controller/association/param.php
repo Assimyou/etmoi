@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
 *	@category   controller
 *	@package    association
@@ -364,4 +364,3 @@ if (!empty($token) && !empty($_POST['association-'.$_SESSION[$token]['token']]) 
 	header( "Location: ".$_SERVER['REQUEST_URI']);
 	exit();
 }
-?>

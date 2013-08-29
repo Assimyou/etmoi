@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 include_once 'model/classes/mother.php';
 
@@ -270,4 +270,3 @@ class user extends mother
 		$this->_gap = $gap;
 	}
 }
-?>

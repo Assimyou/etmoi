@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
 *	@category   controller
 *	@package    user
@@ -196,4 +196,3 @@ if (!empty($_SESSION['id']))
 		}
 	}
 }
-?>

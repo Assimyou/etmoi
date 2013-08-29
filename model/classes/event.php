@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
 *	@category   model
 *	@package    event
@@ -226,4 +226,3 @@ class event extends mother
 		$this->_gap = $gap;
 	}
 }
-?>

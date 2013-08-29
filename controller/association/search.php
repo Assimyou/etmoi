@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
 *	@category   controller
 *	@package    association
@@ -73,5 +73,3 @@ if ($association->getResult() != FALSE)
 		}
 	}
 }
-
-?>

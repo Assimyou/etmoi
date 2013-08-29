@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
 *	@category   model
 *	@package    passport
@@ -211,4 +211,3 @@ class passport extends mother
 		$this->_gap = $gap;
 	}
 }
-?>

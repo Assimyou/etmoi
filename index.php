@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 
 header("Cache-Control: no-cache, must-revalidate");
@@ -18,4 +18,3 @@ include_once 'controller/association/search.php';
 include_once 'controller/user/access.php';
 
 include_once 'view/home.php';
-?>

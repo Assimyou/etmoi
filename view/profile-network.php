@@ -1,4 +1,4 @@
-﻿<section id="social" class="social showing group">
+<section id="social" class="social showing group">
 	<form action="" method="post" >
 		<h1 class="banner">Réseaux sociaux</h1>
 			<?php 	if ($editing) :

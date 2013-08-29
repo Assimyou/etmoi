@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
 *	@category   controller
 *	@package    user
@@ -28,4 +28,3 @@ if (!empty($profil['passport']))
 		$visa[$child['id']] = $child['wording'];
 	}
 }
-?>

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
 *	@category   controller
 *	@package    user
@@ -68,5 +68,3 @@ if (!empty($_POST) && $_POST['research'] == "rechercher")
 		}
 	}
 }
-
-?>

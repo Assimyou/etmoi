@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
 *	@category   model
 *	@package    asssociation
@@ -239,4 +239,3 @@ class association extends mother
 		$this->_gap = $gap;
 	}
 }
-?>

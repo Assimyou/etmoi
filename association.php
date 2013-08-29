@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 
 header("Cache-Control: no-cache, must-revalidate");
@@ -76,4 +76,3 @@ else
 {
 	header('Location: .');
 }
-?>

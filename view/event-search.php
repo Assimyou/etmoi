@@ -1,4 +1,4 @@
-﻿<?php include_once "view/header.php"; ?>
+<?php include_once "view/header.php"; ?>
 	
 	<div class="search-zone group">
 		<form action="" method="get" id="search" />

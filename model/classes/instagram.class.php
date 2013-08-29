@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /**
  * Instagram API class

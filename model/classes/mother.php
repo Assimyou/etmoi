@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
 *	@category   model
 *	@package    mother
@@ -57,4 +57,3 @@ class mother
 		$this->result = $result;
 	}
 }
-?>

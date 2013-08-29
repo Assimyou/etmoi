@@ -1,4 +1,4 @@
-﻿RewriteEngine On
+RewriteEngine On
     RewriteBase /etmoi/
 
 Redirect permanent /etmoi/images/ /etmoi/view/images/

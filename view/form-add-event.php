@@ -1,4 +1,4 @@
-﻿<section class="addevent center group">
+<section class="addevent center group">
 	<form action="" enctype="multipart/form-data" method="post" />
 		<h1 class="banner">Nouvel événement</h1>
 		<div class="edit">

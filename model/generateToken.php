@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 function generateToken($name)
 {
 	session_start();
@@ -12,4 +12,3 @@ function generateToken($name)
 
 	return $token;
 }
-?>

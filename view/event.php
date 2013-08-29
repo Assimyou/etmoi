@@ -1,4 +1,4 @@
-﻿<?php include_once "view/header.php"; ?>
+<?php include_once "view/header.php"; ?>
 
 		<script type="text/javascript">
 			function addLoadEvent(func) {

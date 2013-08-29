@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 
 header("Cache-Control: no-cache, must-revalidate");
@@ -33,4 +33,3 @@ else
 
 include_once 'controller/event/search.php';
 include_once 'view/event-search.php';
-?>

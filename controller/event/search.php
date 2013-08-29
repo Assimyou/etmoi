@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
 *	@category   controller
 *	@package    event
@@ -105,5 +105,3 @@ if (!empty($q['event']))
 		}
 	}
 }
-
-?>

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 
 header("Cache-Control: no-cache, must-revalidate");
@@ -17,4 +17,3 @@ if (!empty($_GET['q']))
 
 include_once 'controller/association/search.php';
 include_once 'view/association-search.php';
-?>

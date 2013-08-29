@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 if(!empty($_GET['instagram'])){
 	include_once 'model/classes/instagram.class.php';
@@ -20,4 +20,3 @@ if(!empty($_GET['twitter'])){
 
 	echo json_encode($tweets);
 }
-?>
