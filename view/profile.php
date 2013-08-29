@@ -4,7 +4,7 @@
 		<div class="content profil group">
 			<section class="cover" style="background-image:url('images/cover-cat.jpg')">
 				<div class="center">
-					<h1><?php 	if (!empty($users['firstname']) && !empty($users['name'])) : 
+					<h1><?php 	if (!empty($users['firstname']) || !empty($users['name'])) : 
 						 			if (!empty($users['firstname'])) : 
 						 				foreach ($users['firstname'] as $key => $value) : 
 						 					echo htmlentities($value, ENT_QUOTES); 
