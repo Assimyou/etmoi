@@ -27,8 +27,8 @@
 						<a href="#profil" class="current">Profil</a>
 						<a href="#events">Évènements</a>
 						<a href="#associations">Associations</a>
-						<a href="#">Badges</a>
-						<?php if($ISME) : ?><a href="#">Notifications</a><?php endif; ?>
+						<a href="#badges">Badges</a>
+						<?php if($ISME) : ?><a href="#notifications">Notifications</a><?php endif; ?>
 					</nav>
 				</aside>
 				<section class="col-3-2">
@@ -197,6 +197,62 @@
 							</article>
 						</div>
 					</section>
+
+					<section id="badges" class="badges group">
+						<h1 class="banner">Les Badges</h1>
+						<div class="group">
+							<article class="badge group">
+								<h2>Papiers s'il-vous-plaît</h2>
+								<figure><img src="images/badge-passeport.png" alt="badge"></figure>
+								<p>Félicitations ! Vous avez rentré avec succès votre Nom et Prénom, vous êtes enfin prêt à faire de belles recontre sur Montrouge & Moi. ;)</p>
+							</article>
+							<article class="badge group">
+								<h2>Explorateur</h2>
+								<figure><img src="images/badge-explorateur.png" alt="badge"></figure>
+								<p>Vous êtes réelement impliqué dans la vie associative de Montrouge, un véritable modèle à suivre ! Continuez sur cette voie.</p>
+							</article>
+							<article class="badge group">
+								<h2>Arche de noé</h2>
+								<figure></figure>
+								<p>À poil, à plume, à  écaille, vous adorez les animaux de compagnie.</p>
+							</article>
+							<article class="badge group">
+								<h2>Louis la brocante</h2>
+								<figure><img src="images/badge-louis.png" alt="badge"></figure>
+								<p>Vous êtes né pour chiner, la brocante est votre passion et vous le faîtes partager à vos amis.</p>
+							</article>
+							<article class="badge group">
+								<h2>Ceci n’est pas un badge</h2>
+								<figure><img src="images/badge-ceci-nest-pas-un-badge.png" alt="badge"></figure>
+								<p>Vous adorez sortir au musée pour vous instruire, vos week-end sont consacrés à votre passion pour l’art.</p>
+							</article>
+							<article class="badge group">
+								<h2>J’apporte les saucisses ?</h2>
+								<figure><img src="images/badge-barbecue.png" alt="badge"></figure>
+								<p>Rien de tel qu’un bon barbecue pour passer un bon moment entre amis, Participez à encore plus de barbecue pour obtenir une meilleure gratification.</p>
+							</article>
+						</div>
+					</section>
+
+					<?php if($ISME) : ?>
+					<section id="notifications" class="notifications" class="group">
+						<h1 class="banner">Notifications par email</h1>
+						<div class="group">
+							<h2>Nouvel événement</h2>
+							<div><label>Publication d'un événement d'une association dont je suis membre</label><div class="slideThree"><input type="checkbox" value="None" id="slideThree1" name="check" checked /><label for="slideThree1"></label></div></div>
+							<div><label>Publication d'un événement d'une association dont je ne suis pas membre</label><div class="slideThree"><input type="checkbox" value="None" id="slideThree2" name="check" /><label for="slideThree2"></label></div></div>
+
+							<h2>Commentaires</h2>
+							<div><label>M'avertir quand un événement au quel je participe est commenté</label><div class="slideThree"><input type="checkbox" value="None" id="slideThree3" name="check" checked /><label for="slideThree3"></label></div></div>
+							<div><label>M'avertir quand on commente un événement que j'ai commenté</label><div class="slideThree"><input type="checkbox" value="None" id="slideThree4" name="check" checked /><label for="slideThree4"></label></div></div>
+							<div><label>M'avertir quand on répond à un de mes commentaires</label><div class="slideThree"><input type="checkbox" value="None" id="slideThree5" name="check" checked /><label for="slideThree5"></label></div></div>
+
+							<h2>Badges</h2>
+							<div><label>Lors-ce que je reçois un nouveau badge</label><div class="slideThree"><input type="checkbox" value="None" id="slideThree6" name="check" checked /><label for="slideThree6"></label></div></div>
+							<div><label>Lors-ce qu'une association dont je suis membre reçoit un nouveau badge</label><div class="slideThree"><input type="checkbox" value="None" id="slideThree7" name="check" /><label for="slideThree7"></label></div></div>
+						</div>
+					</section>
+					<?php endif; ?>
 				</section>
 			</div>
 		</div>
