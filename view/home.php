@@ -16,7 +16,11 @@
 					<?php endif; ?>
 
 					<div class="evenement-by left-50">
-						Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
+						<?php if (!empty($events['association'])) : ?>
+						<?php foreach ($events['association'] as $index => $assoc) : ?>
+						Par : <a href="association.php?q=<?php echo $assoc; ?>">Génération Montrouge</a>
+						<?php endforeach; ?>
+						<?php endif; ?>
 						<a class="more" href="evenement.php?q=<?php echo $uneEvent['id']; ?>"><span class="plus ir">Plus</span> de détails</a>
 					</div>
 
@@ -101,7 +105,11 @@
 							<?php endif; ?>
 						</div>
 						<div class="evenement-by">
-							Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
+							<?php if (!empty($events['association'])) : ?>
+							<?php foreach ($events['association'] as $index => $assoc) : ?>
+							Par : <a href="association.php?q=<?php echo $assoc; ?>">Génération Montrouge</a>
+							<?php endforeach; ?>
+							<?php endif; ?>
 							<a class="more" href="evenement.php?q=<?php echo $events['id']; ?>"><span class="plus ir">Plus</span> de détails</a>
 						</div>
 					</article>
