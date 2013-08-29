@@ -63,6 +63,12 @@ if (!empty($_GET['q']))
 	}
 	else
 	{
+		$q['event'] = $id['association'];
+
+		$category = 'association';
+
+		include_once 'controller/event/search.php';
+
 		include_once 'view/association.php';
 	}
 }
