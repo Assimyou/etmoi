@@ -80,9 +80,9 @@
 			<input type="date" name="publish[<?php echo $key; ?>]" value="<?php echo $value; ?>" />
 			<?php endforeach; ?>
 			<?php else : ?>
-			<input type="date" name="publish[]" />
+			<input type="date" name="publish[]" value="<?php echo date('Y-m-d');?>" />
 			<?php endif; ?>
-			<h2>Date du début</h2>
+			<h2>Date de l'événement</h2>
 			<?php if (!empty($events['date'])) : ?>
 			<?php foreach ($events['date'] as $key => $value) : ?>
 			<input type="date" name="date[<?php echo $key; ?>]" value="<?php echo $value; ?>" />
@@ -90,8 +90,6 @@
 			<?php else : ?>
 			<input type="date" name="date[]" />
 			<?php endif; ?>
-			<h2>Date de fin</h2>
-			<input type="date" />
 			<h2>Image</h2>
 			<input type="file" name="illustration" accept="image/*" />
 			
