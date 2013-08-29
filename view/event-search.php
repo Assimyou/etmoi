@@ -4,7 +4,8 @@
 		<form action="" method="get" id="search" />
 			<input type="text" name="q" placeholder="rechercher un évènement" />
 			<select name="cat" >
-				<option value="date" selected>date</option>
+				<option value="" selected></option>
+				<option value="date">date</option>
 				<option value="headline" >titre</option>
 				<option value="address" >adresse</option>
 				<option value="tag" >catégorie</option>
