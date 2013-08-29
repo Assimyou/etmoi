@@ -1030,11 +1030,9 @@ section.badges .badge a.more {
   float: right;
   margin: 0.25em 0 0.25em 1em;
 }
-@media screen and (max-width: 48em) {
-  section.share .image {
-    float: none;
-    width: 100%;
-  }
+#twitter {
+  height: 480px;
+  overflow: auto;
 }
 div.content.association {
   background: #e6eae0;
@@ -1733,6 +1731,10 @@ textarea {
   }
   article.evenement.big {
     padding: 2em 5%;
+  }
+  section.share .image {
+    float: none;
+    width: 100%;
   }
 }
 @media screen and (max-width: 32.5em) {

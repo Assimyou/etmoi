@@ -16,7 +16,7 @@ if(!empty($_GET['twitter'])){
 	$tag = $_GET['twitter'];
 
 	$twitter = new TwitterOAuth('utXk1ldX0xyOejBhRZAg', 'Ht2HwfQYaoWtUHU45CbFeTSkYUTEY1HWpzezvX5II', '1662502975-HX16mxnB8Hk9lXGC2uOIqni3QMa23gKtC53cAtf', '1jFgAlEgCRv9CtLbqMVzGLwf6VM7AyyvnrC8nrNE');
-	$tweets = $twitter->get('search/tweets', array('q'=>"#".$tag, 'count'=>3));
+	$tweets = $twitter->get('search/tweets', array('q'=>"#".$tag, 'count'=>20));
 
 	echo json_encode($tweets);
 }
