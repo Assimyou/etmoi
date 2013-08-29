@@ -96,7 +96,9 @@
 							<?php foreach ($events['illustration'] as $index => $illustration) : ?>
 							<figure><img src="<?php echo $illustration; ?>" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
 							<?php endforeach; ?>
-		  					<?php endif; ?>
+		  					<?php else : ?>
+							<figure><img src="view/images/event-remplace.png" alt="" /></figure>
+							<?php endif; ?>
 						</div>
 						<div class="evenement-by">
 							Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
