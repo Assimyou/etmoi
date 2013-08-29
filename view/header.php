@@ -57,10 +57,13 @@
 				</div>
 			</section>
 			<nav class="main-menu">
-				<?php if (!empty($_SESSION['id'])) : ?><a href="profil.php"><?php if (!empty($profil['firstname'])) : echo htmlentities($profil['firstname'], ENT_QUOTES); else : echo 'Moi'; endif; ?></a><?php endif; ?>
-				<a class="current" href=".">Accueil</a>
-				<a href="evenements.php">Événements</a>
-				<a href="associations.php">Associations</a>
+				<span class="burger">Menu<span class="line"></span><span class="line"></span><span class="line"></span></span>
+				<span class="menu">
+					<?php if (!empty($_SESSION['id'])) : ?><a href="profil.php"><?php if (!empty($profil['firstname'])) : echo htmlentities($profil['firstname'], ENT_QUOTES); else : echo 'Moi'; endif; ?></a><?php endif; ?>
+					<a class="current" href=".">Accueil</a>
+					<a href="evenements.php">Événements</a>
+					<a href="associations.php">Associations</a>
+				</span>
 				<form name="search" class="search" action="evenements.php" method="get"><input type="text" name="q" class="search field" placeholder="Rechercher" /><input type="submit" class="search submit" value="Rechercher"></form>
 			</nav>
 		</header>
