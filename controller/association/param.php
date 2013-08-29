@@ -100,7 +100,7 @@ if (!empty($token) && !empty($_POST['association-'.$_SESSION[$token]['token']]) 
 			}
 		}
 	}
-	if (!empty($_FILES["illustration"]))
+	if (!empty($_FILES["illustration"]) && $_FILES['illustration']['error'] == 0)
 	{
 		if ($_FILES['illustration']['size'] <= 1000000) 
 		{
@@ -109,11 +109,15 @@ if (!empty($token) && !empty($_POST['association-'.$_SESSION[$token]['token']]) 
 
 			if (in_array($info['extension'], $accept)) 
 			{
-				move_uploaded_file($_FILES["illustration"]["tmp_name"], str_replace('controller\association\param.php', 'view\images\\'.$_FILES["illustration"]["name"], __FILE__));
+				$folder = uniqid(mt_rand());
+				$path = './view/images/associations/'.$folder;
+				mkdir($path, 0, true);
 				
-				if (!empty($associations['illustration'])) 
+				move_uploaded_file($_FILES["illustration"]["tmp_name"], str_replace('controller\association\param.php', 'view\images\associations\\'.$folder.'\\'.$_FILES["illustration"]["name"], __FILE__));
+
+				if (!empty($users['illustration'])) 
 				{
-					foreach ($associations['illustration'] as $key => $value)
+					foreach ($users['illustration'] as $key => $value)
 					{
 						if (!empty($value))
 						{
@@ -122,24 +126,29 @@ if (!empty($token) && !empty($_POST['association-'.$_SESSION[$token]['token']]) 
 					}
 				}
 
-				$form['illustration'][$index] = 'images/'.$_FILES["illustration"]["name"];
+				$form['illustration'][$index] = 'view/images/associations/'.$folder.'/'.$_FILES["illustration"]["name"];
 			}
 		}
 	}
+	
 	if (!empty($_FILES['cover']) && $_FILES['cover']['error'] == 0)
 	{
 		if ($_FILES['cover']['size'] <= 1000000) 
 		{
 			$accept = array('jpg', 'jpeg', 'gif', 'png');
-			$info = pathinfo($_FILES['cover']['size']);
+			$info = pathinfo($_FILES['illustration']['name']);
 
 			if (in_array($info['extension'], $accept)) 
 			{
-				move_uploaded_file($_FILES["cover"]["tmp_name"], str_replace('controller\association\param.php', 'view\images\\'.$_FILES["cover"]["name"], __FILE__));
-		
-				if (empty($associations['cover'])) 
+				$folder = uniqid(mt_rand());
+				$path = './view/images/associations/'.$folder;
+				mkdir($path, 0, true);
+				
+				move_uploaded_file($_FILES["cover"]["tmp_name"], str_replace('controller\association\param.php', 'view\images\associations\\'.$folder.'\\'.$_FILES["cover"]["name"], __FILE__));
+
+				if (!empty($users['cover']))
 				{
-					foreach ($associations['cover'] as $key => $value)
+					foreach ($users['cover'] as $key => $value)
 					{
 						if (!empty($value))
 						{
@@ -148,7 +157,7 @@ if (!empty($token) && !empty($_POST['association-'.$_SESSION[$token]['token']]) 
 					}
 				}
 
-				$form['cover'][$index] = 'images/'.$_FILES["cover"]["name"];
+				$form['cover'][$index] = 'view/images/associations/'.$folder.'/'.$_FILES["cover"]["name"];
 			}
 		}
 	}
