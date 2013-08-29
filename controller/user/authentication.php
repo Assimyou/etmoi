@@ -163,7 +163,7 @@ if (!empty($_POST['submit']) && $_POST['submit'] == "Se connecter")
 		}
 	}
 
-	header( "Location: ".$_SERVER['REQUEST_URI']);
+	header( "Location: profil.php");
 	exit();
 }
 
