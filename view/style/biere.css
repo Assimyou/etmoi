@@ -513,19 +513,15 @@ header nav.main-menu.fixed {
   color: #4c4c4c;
   animation-duration: 2s;
   -webkit-animation-duration: 2s;
-  -webkit-transition: margin-top 0.3s ease;
-  -moz-transition: margin-top 0.3s ease;
-  transition: margin-top 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  max-height: 100px;
 }
 .notification-zone.folded {
-  margin-top: -3em;
+  max-height: 3px;
 }
-.notification {
-  width: 85% !important;
-  padding: 0.75em 10% 0.75em 5% !important;
-  margin: 0 auto !important;
-}
-.notification:after {
+.notification-zone:after {
   position: absolute;
   display: block;
   content: " ";
@@ -536,6 +532,11 @@ header nav.main-menu.fixed {
   margin-bottom: -15px;
   background: url("img/icones.png") 0 -560px no-repeat;
   z-index: 1;
+}
+.notification {
+  width: 85% !important;
+  padding: 0.75em 10% 0.75em 5% !important;
+  margin: 0 auto !important;
 }
 /***********************************
  *    Accueil

@@ -6,7 +6,7 @@ $(document).ready(function() { // initialisation du DOM
 	 * Fermeture du notification center
 	 */
 	$('#close-notification').click(function() {
-		$('.notification-zone').toggleClass('animated bounceOutUp');
+		$('.notification').toggleClass('animated bounceOutUp');
 
 		setTimeout(function(){
 			$('.notification-zone').toggleClass('folded');
