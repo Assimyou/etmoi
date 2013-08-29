@@ -1012,9 +1012,10 @@ section.badges .badge article {
 }
 section.badges .badge h2 {
   margin: 0;
+  font-size: 1.5em;
 }
-section.badges .badge .text {
-  font-size: 0.875em;
+section.badges .badge p {
+  margin-top: 0.5em;
 }
 section.badges .badge a.more {
   float: right;
@@ -1123,30 +1124,30 @@ div.content.profil section.editing div.showing,
 div.content.profil section.editing a.btn.createform {
   display: none;
 }
-section.social .col-3 span {
-  font-size: 0.875em;
-  color: #999;
-}
-section.badges .badge {
+div.content.profil section.badges .badge {
   width: 100%;
   position: relative;
   margin-top: 2em;
 }
-section.badges .badge figure {
+div.content.profil section.badges .badge figure {
   position: absolute;
   width: 130px;
   top: 0;
   left: 0;
 }
-section.badges .badge figure img {
+div.content.profil section.badges .badge figure img {
   border-radius: 0;
 }
-section.badges .badge h2 {
+div.content.profil section.badges .badge h2 {
   margin-top: 0.5em;
   margin-left: 146px;
 }
-section.badges .badge p {
+div.content.profil section.badges .badge p {
   margin-left: 146px;
+}
+section.social .col-3 span {
+  font-size: 0.875em;
+  color: #999;
 }
 section.notifications h2 {
   margin-bottom: 0.5em !important;
