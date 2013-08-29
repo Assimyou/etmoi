@@ -102,7 +102,13 @@
 					</div>
 				</div>
 				<article class="center">
-					<figure><img src="images/barbecue-eleves-montrouge.jpg" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
+					<?php if (!empty($events['illustration'])) : ?>
+					<?php foreach ($events['illustration'] as $index => $illustration) : ?>
+					<figure><img src="<?php echo $illustration; ?>" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
+					<?php endforeach; ?>
+		  			<?php else : ?>
+					<figure><img src="view/images/event-remplace.png" alt="" /></figure>
+					<?php endif; ?>
 					<?php if (!empty($events['headline'])) : ?>
 					<?php foreach ($events['headline'] as $key => $value) : ?>
 						<h1><?php echo htmlentities($value, ENT_QUOTES); ?></h1>
