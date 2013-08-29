@@ -410,6 +410,12 @@ input[type=checkbox] {
   margin-right: 2.5%;
   width: 11.666%;
 }
+.float-3 {
+  float: left;
+  margin-left: 2.5% !important;
+  margin-right: 2.5% !important;
+  width: 28.333% !important;
+}
 /***********************************
  *    Header
  *
@@ -732,6 +738,7 @@ article.association figure {
   position: absolute;
   top: 0;
   left: 0;
+  width: 35%;
 }
 article.association figure img {
   border-radius: 100%;
@@ -1717,6 +1724,9 @@ textarea {
   .float-6 {
     width: 20%;
   }
+  .float-3 {
+    width: 45% !important;
+  }
   article.evenement.small {
     width: 90%;
     max-width: none;
@@ -1752,6 +1762,9 @@ textarea {
   }
   .float-6 {
     width: 45%;
+  }
+  .float-3 {
+    width: 95% !important;
   }
   .center {
     width: 90%;
