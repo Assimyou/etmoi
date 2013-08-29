@@ -47,7 +47,7 @@
 								navigationControl: false,
 								mapTypeControl: false,
 								scaleControl: false,
-								draggable: true,
+								draggable: false,
 								disableDefaultUI: true,
 								mapTypeId: google.maps.MapTypeId.ROADMAP
 							}
