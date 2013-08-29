@@ -205,27 +205,16 @@
 				<section class="badges col-3">
 					<h1 class="banner">Les badges ?</h1>
 					<article class="group">
-						<div class="badge group">
-							<figure><img src="images/badge.png" alt="Bernard Martin" /></figure>
-							<article>
-								<h2><a href="#">Steven Triangle</a></h2>
-								<div class="text">Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod</div>
-							</article>
-						</div>
-						<div class="badge group">
-							<figure><img src="images/badge.png" alt="Bernard Martin" /></figure>
-							<article>
-								<h2><a href="#">Steven Triangle</a></h2>
-								<div class="text">Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod</div>
-							</article>
-						</div>
-						<div class="badge group">
-							<figure><img src="images/badge.png" alt="Bernard Martin" /></figure>
-							<article>
-								<h2><a href="#">Steven Triangle</a></h2>
-								<div class="text">Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod</div>
-							</article>
-						</div>
+						<article class="badge group">
+							<figure><img src="images/badge-explorateur.png" alt="badge"></figure>
+							<h2>Explorateur</h2>
+							<p>Vous êtes réelement impliqué dans la vie associative de Montrouge, un véritable modèle à suivre ! Continuez sur cette voie.</p>
+						</article>
+						<article class="badge group">
+							<figure><img src="images/badge-barbecue.png" alt="badge"></figure>
+							<h2>J’apporte les saucisses ?</h2>
+							<p>Rien de tel qu’un bon barbecue pour passer un bon moment entre amis, Participez à encore plus de barbecue pour obtenir une meilleure gratification.</p>
+						</article>
 					</article>
 				</section>
 			</div>
