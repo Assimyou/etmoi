@@ -68,6 +68,15 @@ $(document).ready(function() { // initialisation du DOM
 
 
 	/*
+	 * Menu mobile
+	 */
+	$(document).on('click', 'nav.main-menu .burger', function(){
+		var sousmenu = menu.find(".menu");
+		sousmenu.toggleClass('ouvert');
+	});
+
+
+	/*
 	 * Edit button -> create form
 	 */
 	$(document).on('click', 'a.btn.createform', function(){

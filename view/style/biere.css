@@ -1799,6 +1799,12 @@ textarea {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     font-size: 0;
+    cursor: pointer;
+  }
+  .burger:hover .line,
+  .burger:active .line,
+  .burger:focus .line {
+    background: #f7bb11;
   }
   .line {
     width: 60%;
@@ -1811,6 +1817,18 @@ textarea {
   }
   nav.main-menu .menu {
     display: none;
+  }
+  nav.main-menu .menu a {
+    display: block;
+  }
+  nav.main-menu .menu.ouvert {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #4c4c4c;
+    z-index: 1000;
   }
   section.share > article.group > .col-3-2 {
     padding-bottom: 2em;
