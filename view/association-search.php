@@ -26,7 +26,9 @@
 						<a href="association.php?q=<?php echo $id; ?>"><img src="<?php echo $illustration; ?>" alt="Logo du club du parc" /></a>
 					<?php endforeach; ?>
 					</figure>
-  					<?php endif; ?>
+					<?php else : ?>
+					<figure><a href="association.php?q=<?php echo $id; ?>"><img src="view/images/event-remplace.png" alt="" /></a></figure>
+					<?php endif; ?>
 					<a class="more" href="association.php?q=<?php echo $id; ?>"><span class="plus ir">Plus</span> de détails</a>
 				</article>
 				<?php endforeach; ?>
