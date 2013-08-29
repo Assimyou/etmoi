@@ -22,7 +22,12 @@
 				<div class="map">	
 					<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCSGWvl82q9C_nnbjfprJOL6jXdr_xPMHo&sensor=true"></script>
 					<script type="text/javascript">
-						var address = "efficom rue camille peltant montrouge, france";
+						var address = <?php 
+						if (!empty($events['address'])) {
+							foreach ($events['address'] as $index => $address){
+								echo '"'.htmlentities($address, ENT_QUOTES).'"';
+							}
+						} ?>;
 						var geocoder;
 						var map;
 						var panorama;
