@@ -98,6 +98,7 @@ if (!empty($token) && !empty($_POST['event-'.$_SESSION[$token]['token']]) && $_P
 			}
 		}
 	}
+
 	if (!empty($_FILES["illustration"]) && $_FILES['illustration']['error'] == 0)
 	{
 		if ($_FILES['illustration']['size'] <= 1000000) 
@@ -107,20 +108,24 @@ if (!empty($token) && !empty($_POST['event-'.$_SESSION[$token]['token']]) && $_P
 
 			if (in_array($info['extension'], $accept)) 
 			{
-				move_uploaded_file($_FILES["illustration"]["tmp_name"], str_replace('controller\event\param.php', 'view\images\\'.$_FILES["illustration"]["name"], __FILE__));
+				$folder = uniqid(mt_rand());
+				$path = './view/images/events/'.$folder;
+				mkdir($path, 0, true);
+				
+				move_uploaded_file($_FILES["illustration"]["tmp_name"], str_replace('controller\event\param.php', 'view\images\events\\'.$folder.'\\'.$_FILES["illustration"]["name"], __FILE__));
 
-				if (!empty($events['illustration'])) 
+				if (!empty($users['illustration'])) 
 				{
-					foreach ($events['illustration'] as $key => $value)
+					foreach ($users['illustration'] as $key => $value)
 					{
-						if (!empty($key))
+						if (!empty($value))
 						{
 							$index = $key;
 						}
 					}
 				}
 
-				$form['illustration'][$index] = 'images/'.$_FILES["illustration"]["name"];
+				$form['illustration'][$index] = 'view/images/events/'.$folder.'/'.$_FILES["illustration"]["name"];
 			}
 		}
 	}

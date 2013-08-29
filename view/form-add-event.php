@@ -94,7 +94,7 @@
 			<input type="date" />
 			<h2>Image</h2>
 			<input type="file" name="illustration" accept="image/*" />
-
+			
 			<!-- Association -->
 			<?php if (!empty($events['association'])) : ?>
 			<?php foreach ($events['association'] as $key => $value) : ?>
