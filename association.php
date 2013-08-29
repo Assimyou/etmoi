@@ -41,10 +41,11 @@ if (!empty($_SESSION['id']))
 	}
 }
 
-if (!empty($_GET['q'])) 
+if (!empty($_GET['q']))
 {
-	$id = $_GET['q'];
+	$id['association'] = $_GET['q'];
 }
+
 include_once 'controller/association/param.php';
 
 if (!empty($_GET['q']))

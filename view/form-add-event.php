@@ -101,7 +101,7 @@
 			<input type="text" name="association[<?php echo $key; ?>]" value="<?php echo $value; ?>" placeholder="association" />
 			<?php endforeach; ?>
 			<?php else : ?>
-			<input type="text" name="association[]" placeholder="association" />
+			<input type="hidden" name="association[]" value="<?php echo $id['association']; ?>" />
 			<?php endif; ?>
 		</div>
 	</form>

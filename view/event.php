@@ -279,52 +279,25 @@
 						<div class="association group">
 							<figure><img src="images/commerces.jpg" alt="Logo du club du parc" /></figure>
 							<article>
-								<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
-								<h2>Le Club du parc</h2>
+								<a class="more" href="association.php?q=<?php echo $id['association']; ?>"><span class="plus ir">Plus</span> de détails</a>
+								<?php if (!empty($associations['name'])) : ?>
+								<?php foreach ($associations['name'] as $key => $value) : ?>
+								<h2><?php echo $value; ?></h2>
+								<?php endforeach; ?>
+								<?php endif; ?>
 								<div class="text">
-									Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod
-								</div>
-								<div class="registering group">
-									<div class="registered">61 membres</div>
-									<a href="#register" class="btn register">J'adhère </a>
-								</div>
-							</article>
-						</div>
-						<div class="association group">
-							<figure><img src="images/commerces.jpg" alt="Logo du club du parc" /></figure>
-							<article>
-								<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
-								<h2>Le Club du parc</h2>
-								<div class="text">
-									Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod
-								</div>
-								<div class="registering group">
-									<div class="registered">61 membres</div>
-									<a href="#register" class="btn register">J'adhère </a>
-								</div>
-							</article>
-						</div>
-						<div class="association group">
-							<figure><img src="images/commerces.jpg" alt="Logo du club du parc" /></figure>
-							<article>
-								<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
-								<h2>Le Club du parc</h2>
-								<div class="text">
-									Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod
-								</div>
-								<div class="registering group">
-									<div class="registered">61 membres</div>
-									<a href="#register" class="btn register">J'adhère </a>
-								</div>
-							</article>
-						</div>
-						<div class="association group">
-							<figure><img src="images/commerces.jpg" alt="Logo du club du parc" /></figure>
-							<article>
-								<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
-								<h2>Le Club du parc</h2>
-								<div class="text">
-									Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed diam nonummy nibh euismod
+									<?php if (!empty($associations['description'])) : ?>
+									<?php foreach ($associations['description'] as $key => $value) : ?>
+
+									<?php $paragraph = mb_split('\r\n', $value);
+
+											foreach ($paragraph as $p) :
+											if (!empty($p)) : ?>
+								<p><?php echo htmlentities($p, ENT_QUOTES); ?></p>
+											<?php endif;
+											endforeach;
+									  	endforeach;
+									endif; ?>
 								</div>
 								<div class="registering group">
 									<div class="registered">61 membres</div>
