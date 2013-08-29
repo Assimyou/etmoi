@@ -134,7 +134,7 @@
 						<article class="evenement small">
 							<?php if (!empty($events['headline'])) : ?>
 							<?php foreach ($events['headline'] as $index => $headline) : ?>
-							<h2><?php echo htmlentities($headline, ENT_QUOTES); ?></h2>
+							<h2><a href="evenement.php?q=<?php echo $events['id']; ?>"><?php echo htmlentities($headline, ENT_QUOTES); ?></a></h2>
 							<?php endforeach; ?>
 							<?php endif; ?>
 							<div class="group">
@@ -161,7 +161,7 @@
 							</div>
 							<div class="evenement-by">
 								Par : <a href="associations/generation-montrouge.html">Génération Montrouge</a>
-								<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+								<a class="more" href="evenement.php?q=<?php echo $events['id']; ?>"><span class="plus ir">Plus</span> de détails</a>
 							</div>
 						</article>
 						<?php endforeach; ?>
