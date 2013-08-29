@@ -276,6 +276,64 @@ form.search {
   position: relative;
   display: inline;
 }
+input[type=checkbox] {
+  visibility: hidden;
+}
+/* SLIDE THREE */
+.slideThree {
+  width: 80px;
+  height: 26px;
+  background: #333333;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  position: relative;
+  float: right;
+}
+.slideThree:after {
+  content: 'NON';
+  font: 12px/26px 'asap', Arial, sans-serif;
+  color: #e6eae0;
+  position: absolute;
+  right: 10px;
+  z-index: 0;
+  font-weight: bold;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.15);
+}
+.slideThree:before {
+  content: 'OUI';
+  font: 12px/26px 'asap', Arial, sans-serif;
+  color: #e6eae0;
+  position: absolute;
+  left: 10px;
+  z-index: 0;
+  font-weight: bold;
+}
+.slideThree label {
+  display: block;
+  width: 34px;
+  height: 20px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  -ms-transition: all .4s ease;
+  transition: all .4s ease;
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  z-index: 1;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  background: #fcfff4;
+}
+.slideThree input[type=checkbox]:checked + label {
+  left: 43px;
+}
 /* Cover */
 .cover {
   position: relative;
@@ -439,6 +497,9 @@ header nav.main-menu.fixed {
   top: 0;
   position: fixed;
   z-index: 1000;
+}
+.burger {
+  display: none;
 }
 .notification-zone {
   position: relative;
@@ -1066,6 +1127,33 @@ section.social .col-3 span {
   font-size: 0.875em;
   color: #999;
 }
+section.badges .badge {
+  width: 100%;
+  position: relative;
+  margin-top: 2em;
+}
+section.badges .badge figure {
+  position: absolute;
+  width: 130px;
+  top: 0;
+  left: 0;
+}
+section.badges .badge figure img {
+  border-radius: 0;
+}
+section.badges .badge h2 {
+  margin-top: 0.5em;
+  margin-left: 146px;
+}
+section.badges .badge p {
+  margin-left: 146px;
+}
+section.notifications h2 {
+  margin-bottom: 0.5em !important;
+}
+section.notifications label {
+  line-height: 2;
+}
 .menu-aside a {
   display: block;
   font-family: 'Bebas', Arial, sans-serif;
@@ -1673,25 +1761,55 @@ textarea {
     margin: 0;
   }
   input.search {
-    padding-left: 5%;
-    padding-right: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
-    width: 40%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
   input.search.field {
-    padding-right: 10%;
-    margin-right: 30%;
+    padding-left: 1em;
+    padding-right: 2em;
+    margin: 0.7em 0;
+    width: 100%;
   }
   input.search.field:focus {
-    width: 40%;
+    width: 100%;
   }
   input.search.field:focus + input.search.submit {
-    width: 40%;
+    width: 0;
   }
   input.search.submit {
-    margin-left: -40%;
-    width: 40%;
+    margin-left: -30px;
+    width: 0;
+  }
+  form.search {
+    display: block;
+    margin-left: 60px;
+    margin-right: 1em;
+  }
+  .burger {
+    position: relative;
+    display: block;
+    float: left;
+    width: 44px;
+    height: 44px;
+    margin: 7px;
+    color: #fff;
+    padding-top: 4px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-size: 0;
+  }
+  .line {
+    width: 60%;
+    height: 4px;
+    background: #fff;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    margin: 6px auto;
+  }
+  nav.main-menu .menu {
+    display: none;
   }
   section.share > article.group > .col-3-2 {
     padding-bottom: 2em;
@@ -1728,5 +1846,31 @@ textarea {
   }
   footer nav a {
     margin: 0.5em 0;
+  }
+  section.badges .badge {
+    width: 100%;
+    position: relative;
+    margin-top: 2em;
+  }
+  section.badges .badge figure {
+    position: static;
+    float: none;
+    width: 60%;
+    margin: 0 15%;
+    top: 0;
+    left: 0;
+    text-align: center;
+  }
+  section.badges .badge figure img {
+    border-radius: 0;
+  }
+  section.badges .badge h2 {
+    margin-bottom: 1em !important;
+    margin-left: 0;
+    text-align: center;
+  }
+  section.badges .badge p {
+    margin-left: 0;
+    margin-top: 1m;
   }
 }

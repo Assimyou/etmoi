@@ -177,6 +177,79 @@ form.search{
 	display: inline;
 }
 
+
+
+input[type=checkbox] {
+	visibility: hidden;
+}
+
+/* SLIDE THREE */
+.slideThree {
+	width: 80px;
+	height: 26px;
+	background: @grisfonce;
+
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	position: relative;
+
+	float: right;
+}
+
+.slideThree:after {
+	content: 'NON';
+	font: 12px/26px @fontbase;
+	color: @nuages;
+	position: absolute;
+	right: 10px;
+	z-index: 0;
+	font-weight: bold;
+	text-shadow: 1px 1px 0px rgba(255,255,255,.15);
+}
+
+.slideThree:before {
+	content: 'OUI';
+	font: 12px/26px @fontbase;
+	color: @nuages;
+	position: absolute;
+	left: 10px;
+	z-index: 0;
+	font-weight: bold;
+}
+
+.slideThree label {
+	display: block;
+	width: 34px;
+	height: 20px;
+
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+
+	-webkit-transition: all .4s ease;
+	-moz-transition: all .4s ease;
+	-o-transition: all .4s ease;
+	-ms-transition: all .4s ease;
+	transition: all .4s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	z-index: 1;
+
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+	background: #fcfff4;
+
+}
+
+.slideThree input[type=checkbox]:checked + label {
+	left: 43px;
+}
+
+
 /* Cover */
 .cover{
 	position: relative;
