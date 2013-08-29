@@ -18,6 +18,35 @@ div.content.event{
 	}
 }
 
+.search-zone{
+	padding-top: 2em;
+	padding-bottom: 5em;
+	background: @nuages;
+	text-align: center;
+
+	input[type='text'], input[type='password'], input[type="date"]{
+		width: 15em;
+		padding: 0.5em 1em;
+		margin: 0.5em 0;
+		outline: none;
+		border: solid 1px #aaa;
+		background: @nuages;
+		&:focus{
+			background: #fff;
+		}
+	}
+
+	select{
+		min-width: 7em;
+		height: 2.25em;
+		outline: none;
+		border: 1px solid #999;
+		margin-right: 0.75em;
+		display: inline-block;
+		background: #e6eae0;
+	}
+}
+
 section.description{
 	.map{
 		position: relative;
