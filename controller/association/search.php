@@ -9,18 +9,16 @@
 
 include_once 'model/classes/association.php';
 
+$association = new association($dbh);
+
 if (!empty($_GET['q'])) 
 {
-	$q = $_GET['q'];
+	$association->search($_GET['q']);
 }
 else
 {
-	$q = '';
+	$association->selectAll('association');
 }
-	
-$association = new association($dbh);
-
-$association->search($q);
 
 if ($association->getResult() != FALSE) 
 {
@@ -33,7 +31,7 @@ if ($association->getResult() != FALSE)
 
 		foreach ($association->getResult() as $parents => $parent) 
 		{
-			if ($result['left'] > $parent['left'] && $result['right'] < $parent['right']) 
+			if ($result['left'] >= $parent['left'] && $result['right'] <= $parent['right']) 
 			{
 				if ($parent['wording'] == 'association') 
 				{

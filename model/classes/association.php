@@ -107,7 +107,7 @@ class association extends mother
 
 	public function selectParent()
 	{
-		$this->setQuery($this->getDbh()->prepare("SELECT * FROM `association` WHERE `left` < :left AND `right` > :right ORDER BY `right`;"));
+		$this->setQuery($this->getDbh()->prepare("SELECT * FROM `association` WHERE `left` <= :left AND `right` >= :right ORDER BY `right`;"));
 		$this->getQuery()->bindParam(':left', $this->_left, PDO::PARAM_INT);
 		$this->getQuery()->bindParam(':right', $this->_right, PDO::PARAM_INT);
 		$this->getQuery()->execute();
@@ -134,6 +134,29 @@ class association extends mother
 		$this->getQuery()->execute();
 
 		$this->setResult($this->getQuery()->fetch(PDO::FETCH_ASSOC));
+
+		$this->getQuery()->closeCursor();
+	}
+
+	public function selectAll($wording)
+	{
+		$this->setWording('%'.$wording.'%');
+		$this->setQuery($this->getDbh()->prepare("SELECT * FROM `association` WHERE `wording` LIKE :wording"));
+		$this->getQuery()->bindParam(':wording', $this->_wording, PDO::PARAM_STR);
+		$this->getQuery()->execute();
+
+		if ($this->getQuery()->rowCount() < 1) 
+		{
+			$this->setResult('');
+		}
+		else 
+		{
+			while ($this->_result = $this->getQuery()->fetch(PDO::FETCH_ASSOC))
+			{
+				$this->_associations[] = $this->_result;
+			}
+			$this->setResult($this->_associations);
+		}
 
 		$this->getQuery()->closeCursor();
 	}
