@@ -94,7 +94,7 @@
 							</div>
 							<?php if (!empty($events['illustration'])) : ?>
 							<?php foreach ($events['illustration'] as $index => $illustration) : ?>
-							<div class="thumbnail"><img src="<?php echo $illustration; ?>" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></div>
+							<figure><img src="<?php echo $illustration; ?>" alt="Image des anciens élèves de montrouge au rassemblement de 2011 en train de griller des mergezes" /></figure>
 							<?php endforeach; ?>
 		  					<?php endif; ?>
 						</div>
