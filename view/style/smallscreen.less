@@ -42,6 +42,28 @@
 		.login{
 			position: relative;
 		}
+
+		nav.main-menu{
+			position: relative;
+			overflow: visible;
+			.menu{
+				display: none;
+
+				a{
+					display: block;
+				}
+
+				&.ouvert{
+					display: block;
+					position: absolute;
+					top: 58px;
+					left: 0;
+					width: 100%;
+					background: @gris;
+					z-index: 1000;
+				}
+			}
+		}
 	}
 
 	section.description{
@@ -106,26 +128,6 @@
 		color: #fff;
 		display: block;
 		margin: 6px auto; 
-	}
-
-	nav.main-menu{
-		.menu{
-			display: none;
-
-			a{
-				display: block;
-			}
-
-			&.ouvert{
-				display: block;
-				position: absolute;
-				top: 100%;
-				left: 0;
-				width: 100%;
-				background: @gris;
-				z-index: 1000;
-			}
-		}
 	}
 
 	section.share>article.group>.col-3-2{

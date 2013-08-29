@@ -1758,6 +1758,25 @@ textarea {
   header .login {
     position: relative;
   }
+  header nav.main-menu {
+    position: relative;
+    overflow: visible;
+  }
+  header nav.main-menu .menu {
+    display: none;
+  }
+  header nav.main-menu .menu a {
+    display: block;
+  }
+  header nav.main-menu .menu.ouvert {
+    display: block;
+    position: absolute;
+    top: 58px;
+    left: 0;
+    width: 100%;
+    background: #4c4c4c;
+    z-index: 1000;
+  }
   section.description figure {
     margin: 0;
   }
@@ -1814,21 +1833,6 @@ textarea {
     color: #fff;
     display: block;
     margin: 6px auto;
-  }
-  nav.main-menu .menu {
-    display: none;
-  }
-  nav.main-menu .menu a {
-    display: block;
-  }
-  nav.main-menu .menu.ouvert {
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #4c4c4c;
-    z-index: 1000;
   }
   section.share > article.group > .col-3-2 {
     padding-bottom: 2em;
