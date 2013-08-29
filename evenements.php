@@ -31,5 +31,7 @@ else
 	$category = 'date';
 }
 
+include_once 'controller/association/search.php';
+
 include_once 'controller/event/search.php';
 include_once 'view/event-search.php';

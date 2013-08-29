@@ -31,7 +31,7 @@
 					<div class="evenement-by left-50">
 						<?php if (!empty($events['association'])) : ?>
 						<?php foreach ($events['association'] as $index => $assoc) : ?>
-						Par : <a href="association.php?q=<?php echo $assoc; ?>">Génération Montrouge</a>
+						Par : <a href="association.php?q=<?php echo $assoc; ?>"><?php if (!empty($listAssos[$assoc]['name'])) : foreach ($listAssos[$assoc]['name'] as $name) : echo $name; endforeach; endif; ?></a>
 						<?php endforeach; ?>
 						<?php endif; ?>
 						<a class="more" href="evenement.php?q=<?php echo $events['id']; ?>"><span class="plus ir">Plus</span> de détails</a>
