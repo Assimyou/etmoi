@@ -56,16 +56,17 @@
 
 					<?php if (!empty($events['description'])) : ?>
 					<div class="description left-50 group">
-						<?php foreach ($events['description'] as $key => $value) : ?>
-						<?php $paragraph = mb_split('\r\n', $value);
-								foreach ($paragraph as $p) :
+						<?php 
+						foreach ($events['description'] as $key => $value) : 
+							$paragraph = mb_split('\r\n', $value);
+							foreach ($paragraph as $p) :
 								if (!empty($p)) : ?>
 									<p><?php echo htmlentities($p, ENT_QUOTES); ?></p>
 								<?php endif;
-								endforeach;
-						  	endforeach;
-						endif; ?>
+							endforeach;
+						endforeach; ?>
 					</div>
+					<?php endif; ?>
 					<?php if (!empty($events['tag'])) : ?><div class="category left-50">Catégories : <?php foreach ($events['tag'] as $key => $value) : ?><a href="evenements.php?q=<?php echo $value; ?>"><?php echo htmlentities($value, ENT_QUOTES); ?></a><?php endforeach; ?></div><?php endif; ?>
 
 					<div class="registering left-50 group">
@@ -76,8 +77,8 @@
 				<?php endforeach; ?>
 			</div>
 		</section>
-		<!-- Fin Derniers Évènement -->
 		<?php endif; ?>
+		<!-- Fin Derniers Évènement -->
 	</div>
 
 <?php include_once "view/footer.php"; ?>
