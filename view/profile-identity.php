@@ -1,4 +1,4 @@
-<section id="identity" class="identity showing group">
+﻿<section id="identity" class="identity showing group">
 	<form action="" method="post" >
 		<h1 class="banner">Identité</h1>
 			<?php 	if ($editing) :

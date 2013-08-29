@@ -1,4 +1,4 @@
-<section id="profil" class="profil showing group">
+﻿<section id="profil" class="profil showing group">
 	<form action="" enctype="multipart/form-data" method="post" >
 		<h1 class="banner">Profil</h1>
 		<?php 	if ($editing) :
