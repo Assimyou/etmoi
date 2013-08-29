@@ -1,4 +1,4 @@
-		<!-- Debut du footer -->
+﻿		<!-- Debut du footer -->
 		<footer class="group">
 			<div class="center">
 				<div class="sitemap col-3">

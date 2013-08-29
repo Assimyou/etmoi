@@ -1,4 +1,4 @@
-<div class="edit">
+﻿<div class="edit">
 	<?php if($visibility == "Privé") : ?>
 		<div class="privacy hint--left" data-hint="Les informations privé ne sont visible que par vous et les dirigeants de vos associations"><?php echo $visibility; ?></div>
 	<?php else : ?>

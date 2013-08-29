@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 function checkToken($timeOut, $name)
 {
 	$boolean = FALSE;

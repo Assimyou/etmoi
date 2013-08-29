@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
 *	@category   controller
 *	@package    event

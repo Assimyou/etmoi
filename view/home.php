@@ -1,4 +1,4 @@
-<?php include_once "view/header.php"; ?>
+﻿<?php include_once "view/header.php"; ?>
 
 		<!-- Debut du corps du site -->
 		<div class="content home group">
