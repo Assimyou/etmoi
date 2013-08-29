@@ -162,14 +162,14 @@
 				<article class="group">
 					<div class="col-3-2">
 						<div class="image">
-							<figure class="instagram big"><img src="<?php echo $popular->data[0]->images->low_resolution->url ?>" alt="" /></figure>
-							<figure class="instagram small"><img src="<?php echo $popular->data[1]->images->thumbnail->url ?>" alt="" /></figure>
-							<figure class="instagram small"><img src="<?php echo $popular->data[2]->images->thumbnail->url ?>" alt="" /></figure>
+							<?php if(isset($popular->data[0])) : ?><figure class="instagram big"><img src="<?php echo $popular->data[0]->images->low_resolution->url ?>" alt="" /></figure><?php endif; ?>
+							<?php if(isset($popular->data[1])) : ?><figure class="instagram small"><img src="<?php echo $popular->data[1]->images->thumbnail->url ?>" alt="" /></figure><?php endif; ?>
+							<?php if(isset($popular->data[2])) : ?><figure class="instagram small"><img src="<?php echo $popular->data[2]->images->thumbnail->url ?>" alt="" /></figure><?php endif; ?>
 						</div>
 						<div class="image">
-							<figure class="instagram small"><img src="<?php echo $popular->data[3]->images->thumbnail->url ?>" alt="" /></figure>
-							<figure class="instagram small"><img src="<?php echo $popular->data[4]->images->thumbnail->url ?>" alt="" /></figure>
-							<figure class="instagram big"><img src="<?php echo $popular->data[5]->images->low_resolution->url ?>" alt="" /></figure>
+							<?php if(isset($popular->data[3])) : ?><figure class="instagram small"><img src="<?php echo $popular->data[3]->images->thumbnail->url ?>" alt="" /></figure><?php endif; ?>
+							<?php if(isset($popular->data[4])) : ?><figure class="instagram small"><img src="<?php echo $popular->data[4]->images->thumbnail->url ?>" alt="" /></figure><?php endif; ?>
+							<?php if(isset($popular->data[5])) : ?><figure class="instagram big"><img src="<?php echo $popular->data[5]->images->low_resolution->url ?>" alt="" /></figure><?php endif; ?>
 						</div>
 					</div>
 					<script type="text/javascript" src="js/twitter.js"></script>
