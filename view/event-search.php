@@ -49,10 +49,10 @@
 
 					<?php if (!empty($events['illustration'])) : ?>
 					<?php foreach ($events['illustration'] as $index => $illustration) : ?>
-					<figure><img src="<?php echo $illustration; ?>" alt="" /></figure>
+					<figure><a href="evenement.php?q=<?php echo $events['id']; ?>"><img src="<?php echo $illustration; ?>" alt="" /></a></figure>
 					<?php endforeach; ?>
 					<?php else : ?>
-					<figure><img src="view/images/event-remplace.png" alt="" /></figure>
+					<figure><a href="evenement.php?q=<?php echo $events['id']; ?>"><img src="view/images/event-remplace.png" alt="" /></a></figure>
   					<?php endif; ?>
 
 					<?php if (!empty($events['description'])) : ?>
