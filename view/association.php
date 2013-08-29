@@ -218,56 +218,6 @@
 					</article>
 				</section>
 			</div>
-
-			<section class="share center">
-				<h1 class="banner">Partageons avec #GrenierMntRge</h1>
-				<article class="group">
-					<div class="col-3-2">
-						<div class="image">
-							<figure class="instagram big"><img src="images/barbecue-eleves-montrouge.jpg" alt="" /></figure>
-							<figure class="instagram small"><img src="images/barbecue-eleves-montrouge.jpg" alt="" /></figure>
-							<figure class="instagram small"><img src="images/chanter.jpg" alt="" /></figure>
-						</div>
-						<div class="image">
-							<figure class="instagram small"><img src="images/barbecue-eleves-montrouge.jpg" alt="" /></figure>
-							<figure class="instagram small"><img src="images/chanter.jpg" alt="" /></figure>
-							<figure class="instagram big"><img src="images/barbecue-eleves-montrouge.jpg" alt="" /></figure>
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="comment group">
-							<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
-							<article>
-								<div class="date">10h32 - 10/06/13</div>
-								<h2><a href="#">Bernard Martin</a></h2>
-								<div class="text">J'ouvrirais mon bar ce dimanche sur le chemin du vide grenier, n'hésitez pas a venir vous rafraichir entre deux achats autour d'une bière pour cette journée ensoleillé</div>
-								<a class="reply">Répondre</a>
-								<a class="report">Signaler</a>
-							</article>
-						</div>
-						<div class="comment group">
-							<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
-							<article>
-								<div class="date">10h32 - 10/06/13</div>
-								<h2><a href="#">Michel Gerard</a></h2>
-								<div class="text">Pour les féru de vielles consoles mon stand sera à coté de l'église ! N'hésitez pas à venir me voir pour trouver votre donheur ou simplement discuter rétro-gaming</div>
-								<a class="reply">Répondre</a>
-								<a class="report">Signaler</a>
-							</article>
-						</div>
-						<div class="comment group">
-							<figure><img src="images/avatar.png" alt="Bernard Martin" /></figure>
-							<article>
-								<div class="date">10h32 - 10/06/13</div>
-								<h2><a href="#">Giselle Michou</a></h2>
-								<div class="text">Le club de lecture organise un truc de livres au centre de la plance ! Venez avec votre ouvrage et repartez avec une noucelle aventure. Restez parler lecture, échangez vos conseils et vos livres.</div>
-								<a class="reply">Répondre</a>
-								<a class="report">Signaler</a>
-							</article>
-						</div>
-					</div>
-				</article>
-			</section>
 		</div>
 		<!-- Fin du corps du site -->
 
