@@ -110,28 +110,27 @@
 			<!-- Debut Section les associations -->
 			<section class="associations col-3">
 				<h1 class="banner">Les associations</h1>
+				<?php if (!empty($listAssos)) : ?>
 				<div class="wrapper">
+					<?php foreach ($listAssos as $id => $associations) : ?>
 					<article class="association">
-						<h2>Le Club du parc</h2>
-						<figure><img src="images/commerces.jpg" alt="Logo du club du parc" /></figure>
-						<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
+						<?php if (!empty($associations['name'])) : ?>
+						<?php foreach ($associations['name'] as $index => $name) : ?>
+						<h2><?php echo $name; ?></h2>
+						<?php endforeach; ?>
+	  					<?php endif; ?>
+	  					<?php if (!empty($associations['illustration'])) : ?>
+						<figure>
+						<?php foreach ($associations['illustration'] as $index => $illustration) : ?>
+						<img src="<?php echo $illustration; ?>" alt="Logo du club du parc" />
+						<?php endforeach; ?>
+						</figure>
+						<?php endif; ?>
+						<a class="more" href="association.php?q=<?php echo $id; ?>"><span class="plus ir">Plus</span> de détails</a>
 					</article>
-					<article class="association">
-						<h2>Le Club du parc</h2>
-						<figure><img src="images/commerces.jpg" alt="Logo du club du parc" /></figure>
-						<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
-					</article>
-					<article class="association">
-						<h2>Le Club du parc</h2>
-						<figure><img src="images/commerces.jpg" alt="Logo du club du parc" /></figure>
-						<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
-					</article>
-					<article class="association">
-						<h2>Le Club du parc</h2>
-						<figure><img src="images/commerces.jpg" alt="Logo du club du parc" /></figure>
-						<a class="more" href="#"><span class="plus ir">Plus</span> de détails</a>
-					</article>
+					<?php endforeach; ?>
 				</div>
+				<?php endif; ?>
 			</section>
 			<!-- Fin Section les associations -->
 		</div>
