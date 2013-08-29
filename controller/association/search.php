@@ -11,9 +11,9 @@ include_once 'model/classes/association.php';
 
 $association = new association($dbh);
 
-if (!empty($_GET['q'])) 
+if (!empty($q['association'])) 
 {
-	$association->search($_GET['q']);
+	$association->search($q['association']);
 }
 else
 {

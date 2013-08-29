@@ -12,7 +12,7 @@ include_once 'controller/user/access.php';
 
 if (!empty($_GET['q'])) 
 {
-	$q = $_GET['q'];
+	$q['event'] = $_GET['q'];
 
 	if (!empty($_GET['cat'])) 
 	{	
@@ -21,13 +21,13 @@ if (!empty($_GET['q']))
 		if ($_GET['cat'] == 'date')
 		{
 			$dateSearch = DateTime::createFromFormat('d-m-Y', $_GET['q']);
-			$q = $dateSearch->format('Y-m-d');
+			$q['event'] = $dateSearch->format('Y-m-d');
 		}
 	}
 }
 else
 {
-	$q = date('Y-m-');
+	$q['event'] = date('Y-m-');
 	$category = 'date';
 }
 

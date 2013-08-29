@@ -10,6 +10,11 @@ session_write_close();
 
 include_once 'controller/user/access.php';
 
+if (!empty($_GET['q'])) 
+{
+	$q['association'] = $_GET['q'];
+}
+
 include_once 'controller/association/search.php';
 include_once 'view/association-search.php';
 ?>

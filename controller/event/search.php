@@ -9,118 +9,101 @@
 
 include_once 'model/classes/event.php';
 
-if (!empty($_GET['q'])) 
+if (!empty($q['event'])) 
 {
-	$q = $_GET['q'];
+	$event = new event($dbh);
 
-	if (!empty($_GET['cat'])) 
-	{	
-		$category = $_GET['cat'];
+	$event->search($q['event']);
 
-		if ($_GET['cat'] == 'date')
-		{
-			$dateSearch = DateTime::createFromFormat('d-m-Y', $_GET['q']);
-			$q = $dateSearch->format('Y-m-d');
-		}
-	}
-}
-else
-{
-	$q = date('Y-m-');
-	$category = 'date';
-}
-
-$event = new event($dbh);
-
-$event->search($q);
-
-if ($event->getResult() != FALSE)
-{
-	foreach ($event->getResult() as $index => $result)
+	if ($event->getResult() != FALSE)
 	{
-		$event->setRight($result['right']);
-		$event->setLeft($result['left']);
-			
-		$event->selectParent();
-
-		foreach ($event->getResult() as $parents => $parent) 
+		foreach ($event->getResult() as $index => $result)
 		{
-			if ($result['left'] > $parent['left'] && $result['right'] < $parent['right']) 
+			$event->setRight($result['right']);
+			$event->setLeft($result['left']);
+				
+			$event->selectParent();
+
+			foreach ($event->getResult() as $parents => $parent) 
 			{
-				$valid = TRUE;
-
-				if (!empty($category)) 
+				if ($result['left'] > $parent['left'] && $result['right'] < $parent['right']) 
 				{
-					$valid = FALSE;
+					$valid = TRUE;
 
-					foreach ($event->getResult() as $key => $value) 
+					if (!empty($category)) 
 					{
-						if ($result['left'] > $value['left'] && $result['right'] < $value['right']) 
+						$valid = FALSE;
+
+						foreach ($event->getResult() as $key => $value) 
 						{
-							if ($value['wording'] == $category) 
+							if ($result['left'] > $value['left'] && $result['right'] < $value['right']) 
 							{
-								$valid = TRUE;
-							}
-						}
-					}
-				}
-
-				if ($parent['wording'] == 'event' && $valid) 
-				{	
-					$event->setId($parent['id']);
-					$event->setRight($parent['right']);
-					$event->setLeft($parent['left']);
-
-					$event->selectChild();
-
-					$events['id'] = $event->getId();
-
-					foreach ($event->getResult() as $children => $child) 
-					{
-						if (isset($events[$child['wording']])) 
-						{
-							unset($events[$child['wording']]);
-						}
-
-						if ($child['right'] - $child['left'] > 1) 
-						{
-							$multiple = array();
-
-							foreach ($event->getResult() as $kids => $kid) 
-							{
-								if ($child['left'] < $kid['left'] && $child['right'] > $kid['right']) 
+								if ($value['wording'] == $category) 
 								{
-									if ($kid['right'] - $kid['left'] == 1) 
-									{
-										$multiple[$kid['id']] = $kid['wording'];
-									}
-									if ($child['wording'] == 'publish') 
-									{
-										$publish = new DateTime($kid['wording']);
-										$today = new DateTime(date('Y-m-d'));
-										$diff = $publish->diff($today);
-											
-										$publish = $diff->format('%R%a');
-									}
+									$valid = TRUE;
 								}
 							}
+						}
+					}
 
-							$events[$child['wording']] = $multiple;
+					if ($parent['wording'] == 'event' && $valid) 
+					{	
+						$event->setId($parent['id']);
+						$event->setRight($parent['right']);
+						$event->setLeft($parent['left']);
+
+						$event->selectChild();
+
+						$events['id'] = $event->getId();
+
+						foreach ($event->getResult() as $children => $child) 
+						{
+							if (isset($events[$child['wording']])) 
+							{
+								unset($events[$child['wording']]);
+							}
+
+							if ($child['right'] - $child['left'] > 1) 
+							{
+								$multiple = array();
+
+								foreach ($event->getResult() as $kids => $kid) 
+								{
+									if ($child['left'] < $kid['left'] && $child['right'] > $kid['right']) 
+									{
+										if ($kid['right'] - $kid['left'] == 1) 
+										{
+											$multiple[$kid['id']] = $kid['wording'];
+										}
+										if ($child['wording'] == 'publish') 
+										{
+											$publish = new DateTime($kid['wording']);
+											$today = new DateTime(date('Y-m-d'));
+											$diff = $publish->diff($today);
+												
+											$publish = $diff->format('%R%a');
+										}
+									}
+								}
+
+								$events[$child['wording']] = $multiple;
+							}
 						}
 					}
 				}
 			}
-		}
-					
-		if (!empty($publish) && $publish >= 0)
-		{
-			foreach ($events['date'] as $key => $value) 
+						
+			if (!empty($publish) && $publish >= 0)
 			{
-				$date = $value.$event->getId();
-			}
+				foreach ($events['date'] as $key => $value) 
+				{
+					$date = $value.$event->getId();
+				}
 
-			$listEvent[$date] = $events;
+				$listEvent[$date] = $events;
+			}
 		}
 	}
 }
+
 ?>

@@ -80,9 +80,6 @@ if (!empty($token) && !empty($_POST['association-'.$_SESSION[$token]['token']]) 
 {
 	extract($_POST);
 
-	var_dump($association);
-	exit();
-
 	if (!empty($name)) 
 	{
 		foreach ($name as $key => $value)
