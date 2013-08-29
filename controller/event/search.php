@@ -112,7 +112,7 @@ if ($event->getResult() != FALSE)
 			}
 		}
 					
-		if (!empty($publish) && $publish > 0)
+		if (!empty($publish) && $publish >= 0)
 		{
 			foreach ($events['date'] as $key => $value) 
 			{
