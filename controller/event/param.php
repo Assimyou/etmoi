@@ -10,12 +10,11 @@
 include_once 'model/classes/event.php';
 include_once 'model/classes/association.php';
 
-
-if (!empty($_GET['q']))
+if (!empty($id['event']))
 {
 	$event = new event($dbh);
 
-	$event->setId($_GET['q']);
+	$event->setId($id['event']);
 	$event->selectEvent();
 
 	$event->setRight($event->getResult()['right']);
@@ -208,7 +207,7 @@ if (!empty($token) && !empty($_POST['event-'.$_SESSION[$token]['token']]) && $_P
 
 	$event = new event($dbh);
 
-	if (empty($_GET['q']))
+	if (empty($id['event']))
 	{
 		unset($init);
 
@@ -222,7 +221,7 @@ if (!empty($token) && !empty($_POST['event-'.$_SESSION[$token]['token']]) && $_P
 		$init[] = 'address';
 		$init[] = 'zip';
 		$init[] = 'city';
-		$init[] = "data-location";
+		$init[] = 'data-location';
 		$init[] = 'hashtag';
 		$init[] = 'tag';
 		$init[] = 'publish';
@@ -253,9 +252,9 @@ if (!empty($token) && !empty($_POST['event-'.$_SESSION[$token]['token']]) && $_P
 
 	if(!empty($form))
 	{
-		if (!empty($_GET['q'])) 
+		if (!empty($id['event'])) 
 		{
-			$event->setId($_GET['q']);
+			$event->setId($id['event']);
 			$event->selectEvent();
 		}
 		else

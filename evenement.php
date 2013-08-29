@@ -30,6 +30,10 @@ if (!empty($_SESSION['id']))
 				}
 
 				$allow = TRUE;
+				if (!empty($_GET['q'])) 
+				{
+					$id['event'] = $_GET['q'];
+				}
 				include_once 'controller/event/param.php';
 				include_once 'view/event-form.php';
 			}
@@ -41,6 +45,7 @@ if ($allow == FALSE)
 {
 	if (!empty($_GET['q']))
 	{
+		$id['event'] = $_GET['q'];
 		include_once 'controller/event/param.php';
 		require_once 'model/classes/instagram.class.php';
 		$instagram = new Instagram('44a354e34a344471aed0e4df151513b4');
